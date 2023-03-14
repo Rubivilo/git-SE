@@ -4,6 +4,7 @@
 
 #define WEAK __attribute__ ((weak))
 
+
 void WEAK  ResetHandler(void);
 void WEAK  NMIIntHandler(void);
 void WEAK  HardFaultIntHandler(void);
@@ -13,7 +14,7 @@ void WEAK  UsageFaultIntHandler(void);
 void WEAK  SVCIntHandler(void);
 void WEAK  DebugMonIntHandler(void);
 void WEAK  PendSVIntHandler(void);
-void WEAK  SysTickIntHandler(void);
+void WEAK  SysTickHandler(void);
 void WEAK  DMA0IntHandler(void);
 void WEAK  DMA1IntHandler(void);
 void WEAK  DMA2IntHandler(void);
@@ -143,10 +144,11 @@ void (* const g_pfnVectors[])(void) =
 //!
 //! \return None.
 //*****************************************************************************
+#include <system_MKL46Z4.h>
 void Default_ResetHandler(void)
 {
   unsigned long *pulSrc, *pulDest;
-
+  SystemInit();
   /* copy the data segment initializers from flash to SRAM */
   pulSrc = &_sidata;
   for(pulDest = &_sdata; pulDest < &_edata; )

@@ -14,7 +14,7 @@ void WEAK  UsageFaultIntHandler(void);
 void WEAK  SVCIntHandler(void);
 void WEAK  DebugMonIntHandler(void);
 void WEAK  PendSVIntHandler(void);
-void WEAK  SysTickHandler(void);
+void WEAK  SysTickIntHandler(void);
 void WEAK  DMA0IntHandler(void);
 void WEAK  DMA1IntHandler(void);
 void WEAK  DMA2IntHandler(void);
@@ -145,9 +145,11 @@ void (* const g_pfnVectors[])(void) =
 //! \return None.
 //*****************************************************************************
 #include <system_MKL46Z4.h>
+
 void Default_ResetHandler(void)
 {
   unsigned long *pulSrc, *pulDest;
+  
   SystemInit();
   /* copy the data segment initializers from flash to SRAM */
   pulSrc = &_sidata;

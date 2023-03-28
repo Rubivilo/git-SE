@@ -394,14 +394,14 @@ LOAD linker stubs
  .debug_line    0x000000000000087c      0x1ba /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
  .debug_line    0x0000000000000a36      0x1d5 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
 
-.debug_str      0x0000000000000000      0x56d
- .debug_str     0x0000000000000000      0x310 main.o
-                                        0x349 (size before relaxing)
- .debug_str     0x0000000000000310       0xa1 startup.o
-                                        0x16d (size before relaxing)
- .debug_str     0x00000000000003b1      0x12f /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+.debug_str      0x0000000000000000      0x55d
+ .debug_str     0x0000000000000000      0x300 main.o
+                                        0x339 (size before relaxing)
+ .debug_str     0x0000000000000300       0xa1 startup.o
+                                        0x15d (size before relaxing)
+ .debug_str     0x00000000000003a1      0x12f /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
                                         0x1bf (size before relaxing)
- .debug_str     0x00000000000004e0       0x8d /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .debug_str     0x00000000000004d0       0x8d /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
                                         0x19a (size before relaxing)
 
 .debug_frame    0x0000000000000000      0x1e8

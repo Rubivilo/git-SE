@@ -50,7 +50,6 @@ Discarded input sections
  .ARM.attributes
                 0x0000000000000000       0x1a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
  .data          0x0000000000000000        0x0 main.o
- .bss           0x0000000000000000        0x0 main.o
  .data          0x0000000000000000        0x0 startup.o
  .bss           0x0000000000000000        0x0 startup.o
  .text          0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
@@ -201,9 +200,9 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
                 0x0000000000000408        0x4 LONG 0xffffffff
                 0x000000000000040c        0x4 LONG 0xfffffffe
 
-.text           0x0000000000000410      0x61c
+.text           0x0000000000000410      0x5f8
  *(.text .text.* .gnu.linkonce.t.*)
- .text          0x0000000000000410      0x244 main.o
+ .text          0x0000000000000410      0x364 main.o
                 0x0000000000000410                delay
                 0x0000000000000434                led_green_init
                 0x0000000000000470                led_green_toggle
@@ -214,93 +213,93 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
                 0x00000000000004e8                green_led_on
                 0x00000000000004f4                red_led_on
                 0x0000000000000508                ptc3_push_button_init
-                0x0000000000000544                ptc12_push_button_init
-                0x0000000000000580                is_ptc3_pushed
-                0x0000000000000590                is_ptc12_pushed
-                0x00000000000005a0                init
- .text.startup  0x0000000000000654      0x14c main.o
-                0x0000000000000654                main
- .text          0x00000000000007a0       0x50 startup.o
-                0x00000000000007a0                HardFaultIntHandler
-                0x00000000000007a0                PendSVIntHandler
-                0x00000000000007a0                SysTickIntHandler
-                0x00000000000007a0                BusFaultIntHandler
-                0x00000000000007a0                NMIIntHandler
-                0x00000000000007a0                UsageFaultIntHandler
-                0x00000000000007a0                MemManageIntHandler
-                0x00000000000007a0                SVCIntHandler
-                0x00000000000007a0                DebugMonIntHandler
-                0x00000000000007a4                RTCSIntHandler
-                0x00000000000007a4                FTM1IntHandler
-                0x00000000000007a4                USBOTGIntHandler
-                0x00000000000007a4                UART0SEIntHandler
-                0x00000000000007a4                UART2SEIntHandler
-                0x00000000000007a4                FTM2IntHandler
-                0x00000000000007a4                I2C1IntHandler
-                0x00000000000007a4                PORTDIntHandler
-                0x00000000000007a4                Default_ResetHandler
-                0x00000000000007a4                DMA1IntHandler
-                0x00000000000007a4                DACIntHandler
-                0x00000000000007a4                ACMPIntHandler
-                0x00000000000007a4                ResetHandler
-                0x00000000000007a4                LVDIntHandler
-                0x00000000000007a4                PORTAIntHandler
-                0x00000000000007a4                SPI1IntHandler
-                0x00000000000007a4                FTFAIntHandler
-                0x00000000000007a4                UART1SEIntHandler
-                0x00000000000007a4                ADCIntHandler
-                0x00000000000007a4                DMA0IntHandler
-                0x00000000000007a4                I2C0IntHandler
-                0x00000000000007a4                FTM0IntHandler
-                0x00000000000007a4                LLWUIntHandler
-                0x00000000000007a4                MCGIntHandler
-                0x00000000000007a4                RTCAIntHandler
-                0x00000000000007a4                SPI0IntHandler
-                0x00000000000007a4                TSIIntHandler
-                0x00000000000007a4                LPTMRIntHandler
-                0x00000000000007a4                PITIntHandler
-                0x00000000000007a4                DMA3IntHandler
-                0x00000000000007a4                DMA2IntHandler
- .text          0x00000000000007f0      0x120 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
-                0x00000000000007f0                memcpy
- .text          0x0000000000000910      0x11c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
-                0x0000000000000910                memset
+                0x0000000000000558                ptc12_push_button_init
+                0x00000000000005a8                is_ptc3_pushed
+                0x00000000000005b8                is_ptc12_pushed
+                0x00000000000005c8                init
+                0x00000000000006b0                PORTDIntHandler
+ .text.startup  0x0000000000000774        0x8 main.o
+                0x0000000000000774                main
+ .text          0x000000000000077c       0x50 startup.o
+                0x000000000000077c                HardFaultIntHandler
+                0x000000000000077c                PendSVIntHandler
+                0x000000000000077c                SysTickIntHandler
+                0x000000000000077c                BusFaultIntHandler
+                0x000000000000077c                NMIIntHandler
+                0x000000000000077c                UsageFaultIntHandler
+                0x000000000000077c                MemManageIntHandler
+                0x000000000000077c                SVCIntHandler
+                0x000000000000077c                DebugMonIntHandler
+                0x0000000000000780                RTCSIntHandler
+                0x0000000000000780                FTM1IntHandler
+                0x0000000000000780                USBOTGIntHandler
+                0x0000000000000780                UART0SEIntHandler
+                0x0000000000000780                UART2SEIntHandler
+                0x0000000000000780                FTM2IntHandler
+                0x0000000000000780                I2C1IntHandler
+                0x0000000000000780                Default_ResetHandler
+                0x0000000000000780                DMA1IntHandler
+                0x0000000000000780                DACIntHandler
+                0x0000000000000780                ACMPIntHandler
+                0x0000000000000780                ResetHandler
+                0x0000000000000780                LVDIntHandler
+                0x0000000000000780                PORTAIntHandler
+                0x0000000000000780                SPI1IntHandler
+                0x0000000000000780                FTFAIntHandler
+                0x0000000000000780                UART1SEIntHandler
+                0x0000000000000780                ADCIntHandler
+                0x0000000000000780                DMA0IntHandler
+                0x0000000000000780                I2C0IntHandler
+                0x0000000000000780                FTM0IntHandler
+                0x0000000000000780                LLWUIntHandler
+                0x0000000000000780                MCGIntHandler
+                0x0000000000000780                RTCAIntHandler
+                0x0000000000000780                SPI0IntHandler
+                0x0000000000000780                TSIIntHandler
+                0x0000000000000780                LPTMRIntHandler
+                0x0000000000000780                PITIntHandler
+                0x0000000000000780                DMA3IntHandler
+                0x0000000000000780                DMA2IntHandler
+ .text          0x00000000000007cc      0x120 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+                0x00000000000007cc                memcpy
+ .text          0x00000000000008ec      0x11c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+                0x00000000000008ec                memset
  *(.glue_7t)
- .glue_7t       0x0000000000000a2c        0x0 linker stubs
+ .glue_7t       0x0000000000000a08        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x0000000000000a2c        0x0 linker stubs
+ .glue_7        0x0000000000000a08        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
 
-.vfp11_veneer   0x0000000000000a2c        0x0
- .vfp11_veneer  0x0000000000000a2c        0x0 linker stubs
+.vfp11_veneer   0x0000000000000a08        0x0
+ .vfp11_veneer  0x0000000000000a08        0x0 linker stubs
 
-.v4_bx          0x0000000000000a2c        0x0
- .v4_bx         0x0000000000000a2c        0x0 linker stubs
+.v4_bx          0x0000000000000a08        0x0
+ .v4_bx         0x0000000000000a08        0x0 linker stubs
 
-.init           0x0000000000000a2c        0xc
- .init          0x0000000000000a2c        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
-                0x0000000000000a2c                _init
+.init           0x0000000000000a08        0xc
+ .init          0x0000000000000a08        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
+                0x0000000000000a08                _init
 
-.fini           0x0000000000000a38        0xc
- .fini          0x0000000000000a38        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
-                0x0000000000000a38                _fini
+.fini           0x0000000000000a14        0xc
+ .fini          0x0000000000000a14        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
+                0x0000000000000a14                _fini
 
-.iplt           0x0000000000000a44        0x0
- .iplt          0x0000000000000a44        0x0 main.o
+.iplt           0x0000000000000a20        0x0
+ .iplt          0x0000000000000a20        0x0 main.o
 
-.rel.dyn        0x0000000000000a44        0x0
- .rel.iplt      0x0000000000000a44        0x0 main.o
+.rel.dyn        0x0000000000000a20        0x0
+ .rel.iplt      0x0000000000000a20        0x0 main.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000000000000a44                . = ALIGN (0x4)
-                0x0000000000000a44                _etext = .
-                0x0000000000000a44                _sidata = .
+                0x0000000000000a20                . = ALIGN (0x4)
+                0x0000000000000a20                _etext = .
+                0x0000000000000a20                _sidata = .
 
-.data           0x000000001fffe000        0x0 load address 0x0000000000000a44
+.data           0x000000001fffe000        0x0 load address 0x0000000000000a20
                 0x000000001fffe000                _sdata = .
  *(.data .data.*)
                 0x000000001fffe000                . = ALIGN (0x4)
@@ -309,20 +308,22 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
 .igot.plt       0x000000001fffe000        0x0
  .igot.plt      0x000000001fffe000        0x0 main.o
 
-.bss            0x000000001fffe000        0x0
+.bss            0x000000001fffe000        0x4
                 0x000000001fffe000                _sbss = .
  *(.bss .bss.*)
+ .bss           0x000000001fffe000        0x4 main.o
  *(COMMON)
-                0x000000001fffe000                . = ALIGN (0x4)
-                0x000000001fffe000                _ebss = .
+                0x000000001fffe004                . = ALIGN (0x4)
+                0x000000001fffe004                _ebss = .
 
-.co_stack       0x000000001fffe000      0x400
-                0x000000001fffe000                . = ALIGN (0x8)
-                0x000000001fffe400                . = (. + STACK_SIZE)
- *fill*         0x000000001fffe000      0x400 
-                0x000000001fffe400                _start_of_stack = .
-                0x000000001fffe400                . = ALIGN (0x4)
-                0x000000001fffe400                _end = .
+.co_stack       0x000000001fffe004      0x404
+                0x000000001fffe008                . = ALIGN (0x8)
+ *fill*         0x000000001fffe004        0x4 
+                0x000000001fffe408                . = (. + STACK_SIZE)
+ *fill*         0x000000001fffe008      0x400 
+                0x000000001fffe408                _start_of_stack = .
+                0x000000001fffe408                . = ALIGN (0x4)
+                0x000000001fffe408                _end = .
 LOAD main.o
 LOAD startup.o
 START GROUP
@@ -358,22 +359,22 @@ LOAD linker stubs
  .comment       0x0000000000000033       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
  .comment       0x0000000000000033       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
 
-.debug_info     0x0000000000000000      0xa5c
- .debug_info    0x0000000000000000      0x686 main.o
- .debug_info    0x0000000000000686      0x13d startup.o
- .debug_info    0x00000000000007c3      0x15c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_info    0x000000000000091f      0x13d /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+.debug_info     0x0000000000000000      0xcec
+ .debug_info    0x0000000000000000      0x916 main.o
+ .debug_info    0x0000000000000916      0x13d startup.o
+ .debug_info    0x0000000000000a53      0x15c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_info    0x0000000000000baf      0x13d /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
 
-.debug_abbrev   0x0000000000000000      0x47d
- .debug_abbrev  0x0000000000000000      0x209 main.o
- .debug_abbrev  0x0000000000000209       0xf9 startup.o
- .debug_abbrev  0x0000000000000302       0xc7 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_abbrev  0x00000000000003c9       0xb4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+.debug_abbrev   0x0000000000000000      0x52a
+ .debug_abbrev  0x0000000000000000      0x2b6 main.o
+ .debug_abbrev  0x00000000000002b6       0xf9 startup.o
+ .debug_abbrev  0x00000000000003af       0xc7 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_abbrev  0x0000000000000476       0xb4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
 
-.debug_loc      0x0000000000000000      0x6c8
- .debug_loc     0x0000000000000000      0x194 main.o
- .debug_loc     0x0000000000000194      0x221 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_loc     0x00000000000003b5      0x313 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+.debug_loc      0x0000000000000000      0x672
+ .debug_loc     0x0000000000000000      0x13e main.o
+ .debug_loc     0x000000000000013e      0x221 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_loc     0x000000000000035f      0x313 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
 
 .debug_aranges  0x0000000000000000       0x88
  .debug_aranges
@@ -385,27 +386,27 @@ LOAD linker stubs
  .debug_aranges
                 0x0000000000000068       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
 
-.debug_ranges   0x0000000000000000      0x328
- .debug_ranges  0x0000000000000000      0x328 main.o
+.debug_ranges   0x0000000000000000       0xd0
+ .debug_ranges  0x0000000000000000       0xd0 main.o
 
-.debug_line     0x0000000000000000      0xc0b
- .debug_line    0x0000000000000000      0x7e9 main.o
- .debug_line    0x00000000000007e9       0x93 startup.o
- .debug_line    0x000000000000087c      0x1ba /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_line    0x0000000000000a36      0x1d5 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+.debug_line     0x0000000000000000      0x95c
+ .debug_line    0x0000000000000000      0x53a main.o
+ .debug_line    0x000000000000053a       0x93 startup.o
+ .debug_line    0x00000000000005cd      0x1ba /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_line    0x0000000000000787      0x1d5 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
 
-.debug_str      0x0000000000000000      0x56d
- .debug_str     0x0000000000000000      0x310 main.o
-                                        0x349 (size before relaxing)
- .debug_str     0x0000000000000310       0xa1 startup.o
-                                        0x16d (size before relaxing)
- .debug_str     0x00000000000003b1      0x12f /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+.debug_str      0x0000000000000000      0x770
+ .debug_str     0x0000000000000000      0x513 main.o
+                                        0x559 (size before relaxing)
+ .debug_str     0x0000000000000513       0xa1 startup.o
+                                        0x15d (size before relaxing)
+ .debug_str     0x00000000000005b4      0x12f /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
                                         0x1bf (size before relaxing)
- .debug_str     0x00000000000004e0       0x8d /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .debug_str     0x00000000000006e3       0x8d /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
                                         0x19a (size before relaxing)
 
-.debug_frame    0x0000000000000000      0x1e8
- .debug_frame   0x0000000000000000      0x130 main.o
- .debug_frame   0x0000000000000130       0x38 startup.o
- .debug_frame   0x0000000000000168       0x38 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x00000000000001a0       0x48 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+.debug_frame    0x0000000000000000      0x1ec
+ .debug_frame   0x0000000000000000      0x134 main.o
+ .debug_frame   0x0000000000000134       0x38 startup.o
+ .debug_frame   0x000000000000016c       0x38 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00000000000001a4       0x48 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)

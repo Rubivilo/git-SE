@@ -119,7 +119,7 @@ int main(void)
   irclk_ini(); // Enable internal ref clk to use by LCD
 
   lcd_ini();
-  lcd_display_dec(999);
+  lcd_display_dec(12,4);
 
   // 'Random' sequence :-)
   volatile unsigned int sequence = 0x32B14D98,

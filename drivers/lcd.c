@@ -317,45 +317,49 @@ void lcd_set(uint8_t value, uint8_t digit)
     lcd_display_error(0x01);
   }
 }
+struct Result
+{
+    int resto;
+    int c;
+};
 
-int my_div(int a, int b){
-  int c=0;
-
-  asm(
+struct Result my_div(int a, int b){
+int c=0;
+struct Result result;
+asm(
     ".syntax unified\n\t"
     ".thumb\n\t"
+    "MOVS %[COCIENTE], #0\n\t"
     "Bucle:\n\t"
-    
     "SUBS %[DIVIDENDO], %[DIVISOR]\n\t"
     "BLT End\n\t"
-    "ADDS %[COCIENTE], %[COCIENTE], #1\n\t"
+    "ADDS %[COCIENTE],  #1\n\t"
     
     "B Bucle\n\t"
     "End:\n\t"
-    :[DIVIDENDO] "+l" (a), [COCIENTE] "=l" (c)
-    :[DIVISOR] "l" (b)
+    :[DIVIDENDO] "+r" (a), [COCIENTE] "=r" (c)
+    :[DIVISOR] "r" (b)
 
   );
-
-  return c;
+  result.resto=a;
+  result.c=c;
+  return result;
 }
 
 //
 // Displays a 4 Digit number in decimal
 //
-void lcd_display_dec(uint16_t value)
-
-
+void lcd_display_dec(uint16_t value, uint16_t value2)
 {
-  if (value > 9999) {
+  struct Result result=my_div(value,value2);
+  if (result.c > 99||result.resto > 99){
     //Display "Err" if value is greater than 4 digits
     lcd_display_error(0x10);
   } else {
-    value=my_div(10,2);
-    lcd_set(value/1000, 1);
-    lcd_set((value - (value/1000)*1000)/100, 2);
-    lcd_set((value - (value/100)*100)/10, 3);
-    lcd_set(value - (value/10)*10, 4);
+    lcd_set(result.c/1000, 1);
+    lcd_set((result.c - (result.c/1000)*1000)/100, 2);
+    lcd_set(result.resto /1000, 3);
+    lcd_set((result.resto - (result.resto/1000)*1000)/100, 4);
   }
 }
 

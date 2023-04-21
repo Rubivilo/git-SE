@@ -112,12 +112,14 @@ void leds_ini()
 // - Left switch matches red light
 // - Right switch matches green light
 
+
+
 int main(void)
 {
   irclk_ini(); // Enable internal ref clk to use by LCD
 
   lcd_ini();
-  lcd_display_dec(666);
+  lcd_display_dec(999);
 
   // 'Random' sequence :-)
   volatile unsigned int sequence = 0x32B14D98,

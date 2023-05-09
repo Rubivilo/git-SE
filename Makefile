@@ -1,5 +1,5 @@
-TOOLCHAIN=~/toolchain/gcc-arm-none-eabi-4_9-2014q4/bin
-PREFIX=$(TOOLCHAIN)/arm-none-eabi-
+#TOOLCHAIN=~/toolchain/gcc-arm-none-eabi-4_9-2014q4/bin
+PREFIX=arm-none-eabi-
 
 FREERTOS=freertos
 

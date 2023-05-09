@@ -11,6 +11,11 @@ int data;
 QueueHandle_t cola;
 SemaphoreHandle_t mutex;
 
+void irclk_ini()
+{
+  MCG->C1 = MCG_C1_IRCLKEN(1) | MCG_C1_IREFSTEN(1);
+  MCG->C2 = MCG_C2_IRCS(0); //0 32KHZ internal reference clock; 1= 4MHz irc
+}
 
 void led_green_init()
 {
@@ -93,4 +98,4 @@ int main(void)
 
 	return 0;
 }
-
+//SysTick

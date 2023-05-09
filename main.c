@@ -1,6 +1,16 @@
 #include "MKL46Z4.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "queue.h"
+#include "semphr.h"
+#import "lcd.c"
+
+int prod_prio=1;
+int cons_prio=2;
+int data;
+QueueHandle_t cola;
+SemaphoreHandle_t mutex;
+
 
 void led_green_init()
 {
@@ -30,6 +40,16 @@ void led_red_toggle(void)
 	GPIOE_PTOR = (1 << 29);
 }
 
+void taskProductor(){
+	lcd_display_dec(10);
+	vTaskDelay(500/portTICK_RATE_MS);
+}
+
+void taskConsumidor(){
+	lcd_display_dec(20);
+	vTaskDelay(200/portTICK_RATE_MS);
+}
+
 void taskLedGreen(void *pvParameters)
 {
     for (;;) {
@@ -48,16 +68,22 @@ void taskLedRed(void *pvParameters)
 
 int main(void)
 {
+	//lcd_display_det(1.1);
+	irclk_ini();
+	lcd_ini();
+	lcd_display_dec(0);
+	cola = xQueueCreate(50,sizeof(data));
+	mutex = xSemaphoreCreateMutex();
 	led_green_init();
 	led_red_init();
 
 	/* create green led task */
-	xTaskCreate(taskLedGreen, (signed char *)"TaskLedGreen", 
-		configMINIMAL_STACK_SIZE, (void *)NULL, 1, NULL);
+	xTaskCreate(taskProductor, (signed char *)"TaskLedGreen", 
+		configMINIMAL_STACK_SIZE, (void *)NULL, prod_prio, NULL);
 
 	/* create red led task */
-	xTaskCreate(taskLedRed, (signed char *)"TaskLedRed", 
-		configMINIMAL_STACK_SIZE, (void *)NULL, 1, NULL);
+	xTaskCreate(taskConsumidor, (signed char *)"TaskLedRed", 
+		configMINIMAL_STACK_SIZE, (void *)NULL, cons_prio, NULL);
 	
 	/* start the scheduler */
 	vTaskStartScheduler();

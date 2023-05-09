@@ -1,54 +1,70 @@
 #include "MKL46Z4.h"
+#include "FreeRTOS.h"
+#include "task.h"
 
-// LED (RG)
-// LED_GREEN = PTD5
-// LED_RED = PTE29
-
-void delay(void)
-{
-  volatile int i;
-
-  for (i = 0; i < 1000000; i++);
-}
-
-// LED_GREEN = PTD5
 void led_green_init()
 {
-  SIM->COPC = 0;
-  SIM->SCGC5 |= SIM_SCGC5_PORTD_MASK;
-  PORTD->PCR[5] = PORT_PCR_MUX(1);
-  GPIOD->PDDR |= (1 << 5);
-  GPIOD->PSOR = (1 << 5);
+	SIM_COPC = 0;
+	SIM_SCGC5 |= SIM_SCGC5_PORTD_MASK;
+	PORTD_PCR5 = PORT_PCR_MUX(1);
+	GPIOD_PDDR |= (1 << 5);
+	GPIOD_PSOR = (1 << 5);
 }
 
 void led_green_toggle()
 {
-  GPIOD->PTOR = (1 << 5);
+	GPIOD_PTOR = (1 << 5);
 }
 
-// LED_RED = PTE29
 void led_red_init()
 {
-  SIM->COPC = 0;
-  SIM->SCGC5 |= SIM_SCGC5_PORTE_MASK;
-  PORTE->PCR[29] = PORT_PCR_MUX(1);
-  GPIOE->PDDR |= (1 << 29);
-  GPIOE->PSOR = (1 << 29);
+	SIM_COPC = 0;
+	SIM_SCGC5 |= SIM_SCGC5_PORTE_MASK;
+	PORTE_PCR29 = PORT_PCR_MUX(1);
+	GPIOE_PDDR |= (1 << 29);
+	GPIOE_PSOR = (1 << 29);
 }
 
 void led_red_toggle(void)
 {
-  GPIOE->PTOR = (1 << 29);
+	GPIOE_PTOR = (1 << 29);
+}
+
+void taskLedGreen(void *pvParameters)
+{
+    for (;;) {
+        led_green_toggle();
+        vTaskDelay(200/portTICK_RATE_MS);
+    }
+}
+
+void taskLedRed(void *pvParameters)
+{
+    for (;;) {
+        led_red_toggle();
+        vTaskDelay(500/portTICK_RATE_MS);
+    }
 }
 
 int main(void)
 {
-  led_green_init();
+	led_green_init();
+	led_red_init();
 
-  while (1) {
-    led_green_toggle();
-    delay();
-  }
+	/* create green led task */
+	xTaskCreate(taskLedGreen, (signed char *)"TaskLedGreen", 
+		configMINIMAL_STACK_SIZE, (void *)NULL, 1, NULL);
 
-  return 0;
+	/* create red led task */
+	xTaskCreate(taskLedRed, (signed char *)"TaskLedRed", 
+		configMINIMAL_STACK_SIZE, (void *)NULL, 1, NULL);
+	
+	/* start the scheduler */
+	vTaskStartScheduler();
+
+	/* should never reach here! */
+	for (;;);
+
+	return 0;
 }
+

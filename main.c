@@ -3,7 +3,7 @@
 #include "task.h"
 #include "queue.h"
 #include "semphr.h"
-#import "lcd.c"
+#include "lcd.h"
 
 int prod_prio=1;
 int cons_prio=2;

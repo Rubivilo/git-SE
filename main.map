@@ -472,25 +472,25 @@ LOAD linker stubs
  .comment       0x0000000000000033       0x34 freertos/portable/GCC/ARM_CM0/port.o
  .comment       0x0000000000000033       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
 
-.debug_info     0x0000000000000000     0x2aeb
- .debug_info    0x0000000000000000      0x532 main.o
- .debug_info    0x0000000000000532       0xfc startup.o
- .debug_info    0x000000000000062e      0x2b6 freertos/list.o
- .debug_info    0x00000000000008e4      0xb87 freertos/queue.o
- .debug_info    0x000000000000146b      0xff9 freertos/tasks.o
- .debug_info    0x0000000000002464      0x2d9 freertos/portable/MemMang/heap_2.o
- .debug_info    0x000000000000273d      0x252 freertos/portable/GCC/ARM_CM0/port.o
- .debug_info    0x000000000000298f      0x15c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+.debug_info     0x0000000000000000     0x2aa1
+ .debug_info    0x0000000000000000      0x4e8 main.o
+ .debug_info    0x00000000000004e8       0xfc startup.o
+ .debug_info    0x00000000000005e4      0x2b6 freertos/list.o
+ .debug_info    0x000000000000089a      0xb87 freertos/queue.o
+ .debug_info    0x0000000000001421      0xff9 freertos/tasks.o
+ .debug_info    0x000000000000241a      0x2d9 freertos/portable/MemMang/heap_2.o
+ .debug_info    0x00000000000026f3      0x252 freertos/portable/GCC/ARM_CM0/port.o
+ .debug_info    0x0000000000002945      0x15c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
 
-.debug_abbrev   0x0000000000000000      0xb18
- .debug_abbrev  0x0000000000000000      0x1a0 main.o
- .debug_abbrev  0x00000000000001a0       0xb3 startup.o
- .debug_abbrev  0x0000000000000253       0xe8 freertos/list.o
- .debug_abbrev  0x000000000000033b      0x1cb freertos/queue.o
- .debug_abbrev  0x0000000000000506      0x254 freertos/tasks.o
- .debug_abbrev  0x000000000000075a      0x16a freertos/portable/MemMang/heap_2.o
- .debug_abbrev  0x00000000000008c4      0x18d freertos/portable/GCC/ARM_CM0/port.o
- .debug_abbrev  0x0000000000000a51       0xc7 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+.debug_abbrev   0x0000000000000000      0xb01
+ .debug_abbrev  0x0000000000000000      0x189 main.o
+ .debug_abbrev  0x0000000000000189       0xb3 startup.o
+ .debug_abbrev  0x000000000000023c       0xe8 freertos/list.o
+ .debug_abbrev  0x0000000000000324      0x1cb freertos/queue.o
+ .debug_abbrev  0x00000000000004ef      0x254 freertos/tasks.o
+ .debug_abbrev  0x0000000000000743      0x16a freertos/portable/MemMang/heap_2.o
+ .debug_abbrev  0x00000000000008ad      0x18d freertos/portable/GCC/ARM_CM0/port.o
+ .debug_abbrev  0x0000000000000a3a       0xc7 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
 
 .debug_aranges  0x0000000000000000      0x100
  .debug_aranges
@@ -520,22 +520,22 @@ LOAD linker stubs
  .debug_line    0x0000000000001838      0x1c0 freertos/portable/GCC/ARM_CM0/port.o
  .debug_line    0x00000000000019f8      0x1ba /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
 
-.debug_str      0x0000000000000000     0x14db
- .debug_str     0x0000000000000000      0x306 main.o
-                                        0x344 (size before relaxing)
- .debug_str     0x0000000000000306       0x7f startup.o
+.debug_str      0x0000000000000000     0x14c3
+ .debug_str     0x0000000000000000      0x2ee main.o
+                                        0x32c (size before relaxing)
+ .debug_str     0x00000000000002ee       0x7f startup.o
                                         0x128 (size before relaxing)
- .debug_str     0x0000000000000385      0x139 freertos/list.o
+ .debug_str     0x000000000000036d      0x139 freertos/list.o
                                         0x277 (size before relaxing)
- .debug_str     0x00000000000004be      0x442 freertos/queue.o
+ .debug_str     0x00000000000004a6      0x442 freertos/queue.o
                                         0x673 (size before relaxing)
- .debug_str     0x0000000000000900      0x7f9 freertos/tasks.o
+ .debug_str     0x00000000000008e8      0x7f9 freertos/tasks.o
                                         0xa87 (size before relaxing)
- .debug_str     0x00000000000010f9      0x157 freertos/portable/MemMang/heap_2.o
+ .debug_str     0x00000000000010e1      0x157 freertos/portable/MemMang/heap_2.o
                                         0x2ad (size before relaxing)
- .debug_str     0x0000000000001250      0x168 freertos/portable/GCC/ARM_CM0/port.o
+ .debug_str     0x0000000000001238      0x168 freertos/portable/GCC/ARM_CM0/port.o
                                         0x2e7 (size before relaxing)
- .debug_str     0x00000000000013b8      0x123 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_str     0x00000000000013a0      0x123 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
                                         0x1bf (size before relaxing)
 
 .debug_frame    0x0000000000000000      0xc0c

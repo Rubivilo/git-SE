@@ -1,5 +1,11 @@
 Archive member included to satisfy reference by file (symbol)
 
+/usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+                              drivers/lcd.o (__aeabi_uidiv)
+/usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+                              drivers/lcd.o (__aeabi_idiv)
+/usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+                              /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
                               /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o (atexit)
 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
@@ -57,6 +63,31 @@ Discarded input sections
  .data          0x0000000000000000        0x0 freertos/tasks.o
  .rodata        0x0000000000000000        0x2 freertos/portable/MemMang/heap_2.o
  .bss           0x0000000000000000        0x0 freertos/portable/GCC/ARM_CM0/port.o
+ .text          0x0000000000000000      0x1cc main.o
+ .data          0x0000000000000000        0x8 main.o
+ .bss           0x0000000000000000        0xc main.o
+ .rodata        0x0000000000000000       0x1b main.o
+ .debug_info    0x0000000000000000      0x4e8 main.o
+ .debug_abbrev  0x0000000000000000      0x189 main.o
+ .debug_aranges
+                0x0000000000000000       0x20 main.o
+ .debug_line    0x0000000000000000      0x182 main.o
+ .debug_str     0x0000000000000000      0x32c main.o
+ .comment       0x0000000000000000       0x34 main.o
+ .debug_frame   0x0000000000000000      0x118 main.o
+ .ARM.attributes
+                0x0000000000000000       0x2c main.o
+ .text          0x0000000000000000       0x68 startup.o
+ .data          0x0000000000000000        0x0 startup.o
+ .bss           0x0000000000000000        0x0 startup.o
+ .data          0x0000000000000000        0x0 drivers/lcd.o
+ .bss           0x0000000000000000        0x0 drivers/lcd.o
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
  .text          0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
@@ -205,10 +236,11 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/crtbegin.o
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
                 0x0000000000000400                STACK_SIZE = DEFINED (__stack_size__)?__stack_size__:0x400
 
-.interrupts     0x0000000000000000       0xc0
+.interrupts     0x0000000000000000      0x180
  *(.isr_vector .isr_vector.*)
  .isr_vector    0x0000000000000000       0xc0 startup.o
                 0x0000000000000000                g_pfnVectors
+ .isr_vector    0x00000000000000c0       0xc0 startup.o
 
 .flash_config   0x0000000000000400       0x10
                 0x0000000000000400                . = ALIGN (0x4)
@@ -217,7 +249,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
                 0x0000000000000408        0x4 LONG 0xffffffff
                 0x000000000000040c        0x4 LONG 0xfffffffe
 
-.text           0x0000000000000410     0x27a4
+.text           0x0000000000000410     0x31c4
  *(.text .text.* .gnu.linkonce.t.*)
  .text          0x0000000000000410      0x1cc main.o
                 0x0000000000000410                led_green_init
@@ -342,47 +374,66 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
                 0x00000000000029a4                vClearInterruptMaskFromISR
                 0x00000000000029ac                xPortPendSVHandler
                 0x00000000000029f2                xPortSysTickHandler
- .text          0x0000000000002a48      0x120 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
-                0x0000000000002a48                memcpy
+ .text          0x0000000000002a48      0x778 drivers/lcd.o
+                0x0000000000002a48                lcd_ini
+                0x0000000000002bc8                lcd_set
+                0x0000000000002f38                lcd_display_dec
+                0x000000000000302c                lcd_display_hex
+                0x0000000000003092                lcd_display_time
+                0x0000000000003150                lcd_display_error
+ .text          0x00000000000031c0      0x114 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+                0x00000000000031c0                __udivsi3
+                0x00000000000031c0                __aeabi_uidiv
+                0x00000000000032b4                __aeabi_uidivmod
+ .text          0x00000000000032d4      0x148 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+                0x00000000000032d4                __aeabi_idiv
+                0x00000000000032d4                __divsi3
+                0x00000000000033fc                __aeabi_idivmod
+ .text          0x000000000000341c        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+                0x000000000000341c                __aeabi_ldiv0
+                0x000000000000341c                __aeabi_idiv0
+ .text          0x0000000000003420      0x120 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+                0x0000000000003420                memcpy
  *(.glue_7t)
- .glue_7t       0x0000000000002b68        0x0 linker stubs
+ .glue_7t       0x0000000000003540        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x0000000000002b68        0x0 linker stubs
+ .glue_7        0x0000000000003540        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
- .rodata        0x0000000000002b68       0x1b main.o
- *fill*         0x0000000000002b83        0x1 
- .rodata        0x0000000000002b84       0x30 freertos/tasks.o
+ .rodata        0x0000000000003540       0x1b main.o
+ *fill*         0x000000000000355b        0x1 
+ .rodata        0x000000000000355c       0x30 freertos/tasks.o
+ .rodata        0x000000000000358c       0x48 drivers/lcd.o
 
-.vfp11_veneer   0x0000000000002bb4        0x0
- .vfp11_veneer  0x0000000000002bb4        0x0 linker stubs
+.vfp11_veneer   0x00000000000035d4        0x0
+ .vfp11_veneer  0x00000000000035d4        0x0 linker stubs
 
-.v4_bx          0x0000000000002bb4        0x0
- .v4_bx         0x0000000000002bb4        0x0 linker stubs
+.v4_bx          0x00000000000035d4        0x0
+ .v4_bx         0x00000000000035d4        0x0 linker stubs
 
-.init           0x0000000000002bb4        0xc
- .init          0x0000000000002bb4        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
-                0x0000000000002bb4                _init
+.init           0x00000000000035d4        0xc
+ .init          0x00000000000035d4        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
+                0x00000000000035d4                _init
 
-.fini           0x0000000000002bc0        0xc
- .fini          0x0000000000002bc0        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
-                0x0000000000002bc0                _fini
+.fini           0x00000000000035e0        0xc
+ .fini          0x00000000000035e0        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
+                0x00000000000035e0                _fini
 
-.iplt           0x0000000000002bcc        0x0
- .iplt          0x0000000000002bcc        0x0 main.o
+.iplt           0x00000000000035ec        0x0
+ .iplt          0x00000000000035ec        0x0 main.o
 
-.rel.dyn        0x0000000000002bcc        0x0
- .rel.iplt      0x0000000000002bcc        0x0 main.o
+.rel.dyn        0x00000000000035ec        0x0
+ .rel.iplt      0x00000000000035ec        0x0 main.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000000000002bcc                . = ALIGN (0x4)
-                0x0000000000002bcc                _etext = .
-                0x0000000000002bcc                _sidata = .
+                0x00000000000035ec                . = ALIGN (0x4)
+                0x00000000000035ec                _etext = .
+                0x00000000000035ec                _sidata = .
 
-.data           0x000000001fffe000       0x10 load address 0x0000000000002bcc
+.data           0x000000001fffe000       0x10 load address 0x00000000000035ec
                 0x000000001fffe000                _sdata = .
  *(.data .data.*)
  .data          0x000000001fffe000        0x8 main.o
@@ -393,10 +444,10 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
                 0x000000001fffe010                . = ALIGN (0x4)
                 0x000000001fffe010                _edata = .
 
-.igot.plt       0x000000001fffe010        0x0 load address 0x0000000000002bdc
+.igot.plt       0x000000001fffe010        0x0 load address 0x00000000000035fc
  .igot.plt      0x000000001fffe010        0x0 main.o
 
-.bss            0x000000001fffe010     0x3134 load address 0x0000000000002bdc
+.bss            0x000000001fffe010     0x3134 load address 0x00000000000035fc
                 0x000000001fffe010                _sbss = .
  *(.bss .bss.*)
  .bss           0x000000001fffe010        0xc main.o
@@ -412,7 +463,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
                 0x0000000020001144                . = ALIGN (0x4)
                 0x0000000020001144                _ebss = .
 
-.co_stack       0x0000000020001144      0x404 load address 0x0000000000005d10
+.co_stack       0x0000000020001144      0x404 load address 0x0000000000006730
                 0x0000000020001148                . = ALIGN (0x8)
  *fill*         0x0000000020001144        0x4 
                 0x0000000020001548                . = (. + STACK_SIZE)
@@ -427,6 +478,9 @@ LOAD freertos/queue.o
 LOAD freertos/tasks.o
 LOAD freertos/portable/MemMang/heap_2.o
 LOAD freertos/portable/GCC/ARM_CM0/port.o
+LOAD main.o
+LOAD startup.o
+LOAD drivers/lcd.o
 START GROUP
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a
@@ -459,7 +513,17 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000000000000124       0x2c freertos/portable/GCC/ARM_CM0/port.o
  .ARM.attributes
-                0x0000000000000150       0x2a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+                0x0000000000000150       0x2c startup.o
+ .ARM.attributes
+                0x000000000000017c       0x2c drivers/lcd.o
+ .ARM.attributes
+                0x00000000000001a8       0x1c /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000000000001c4       0x1c /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x00000000000001e0       0x1c /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000000000001fc       0x2a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
 
 .comment        0x0000000000000000       0x33
  .comment       0x0000000000000000       0x33 main.o
@@ -470,9 +534,11 @@ LOAD linker stubs
  .comment       0x0000000000000033       0x34 freertos/tasks.o
  .comment       0x0000000000000033       0x34 freertos/portable/MemMang/heap_2.o
  .comment       0x0000000000000033       0x34 freertos/portable/GCC/ARM_CM0/port.o
+ .comment       0x0000000000000033       0x34 startup.o
+ .comment       0x0000000000000033       0x34 drivers/lcd.o
  .comment       0x0000000000000033       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
 
-.debug_info     0x0000000000000000     0x2aa1
+.debug_info     0x0000000000000000     0x3157
  .debug_info    0x0000000000000000      0x4e8 main.o
  .debug_info    0x00000000000004e8       0xfc startup.o
  .debug_info    0x00000000000005e4      0x2b6 freertos/list.o
@@ -480,9 +546,14 @@ LOAD linker stubs
  .debug_info    0x0000000000001421      0xff9 freertos/tasks.o
  .debug_info    0x000000000000241a      0x2d9 freertos/portable/MemMang/heap_2.o
  .debug_info    0x00000000000026f3      0x252 freertos/portable/GCC/ARM_CM0/port.o
- .debug_info    0x0000000000002945      0x15c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_info    0x0000000000002945       0xfc startup.o
+ .debug_info    0x0000000000002a41      0x548 drivers/lcd.o
+ .debug_info    0x0000000000002f89       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .debug_info    0x0000000000002faf       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .debug_info    0x0000000000002fd5       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x0000000000002ffb      0x15c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
 
-.debug_abbrev   0x0000000000000000      0xb01
+.debug_abbrev   0x0000000000000000      0xd9a
  .debug_abbrev  0x0000000000000000      0x189 main.o
  .debug_abbrev  0x0000000000000189       0xb3 startup.o
  .debug_abbrev  0x000000000000023c       0xe8 freertos/list.o
@@ -490,9 +561,14 @@ LOAD linker stubs
  .debug_abbrev  0x00000000000004ef      0x254 freertos/tasks.o
  .debug_abbrev  0x0000000000000743      0x16a freertos/portable/MemMang/heap_2.o
  .debug_abbrev  0x00000000000008ad      0x18d freertos/portable/GCC/ARM_CM0/port.o
- .debug_abbrev  0x0000000000000a3a       0xc7 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_abbrev  0x0000000000000a3a       0xb3 startup.o
+ .debug_abbrev  0x0000000000000aed      0x1aa drivers/lcd.o
+ .debug_abbrev  0x0000000000000c97       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x0000000000000cab       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x0000000000000cbf       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x0000000000000cd3       0xc7 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
 
-.debug_aranges  0x0000000000000000      0x100
+.debug_aranges  0x0000000000000000      0x1a0
  .debug_aranges
                 0x0000000000000000       0x20 main.o
  .debug_aranges
@@ -508,9 +584,19 @@ LOAD linker stubs
  .debug_aranges
                 0x00000000000000c0       0x20 freertos/portable/GCC/ARM_CM0/port.o
  .debug_aranges
-                0x00000000000000e0       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+                0x00000000000000e0       0x20 startup.o
+ .debug_aranges
+                0x0000000000000100       0x20 drivers/lcd.o
+ .debug_aranges
+                0x0000000000000120       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x0000000000000140       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .debug_aranges
+                0x0000000000000160       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+ .debug_aranges
+                0x0000000000000180       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
 
-.debug_line     0x0000000000000000     0x1bb2
+.debug_line     0x0000000000000000     0x21a1
  .debug_line    0x0000000000000000      0x182 main.o
  .debug_line    0x0000000000000182       0x79 startup.o
  .debug_line    0x00000000000001fb      0x187 freertos/list.o
@@ -518,9 +604,14 @@ LOAD linker stubs
  .debug_line    0x0000000000000bea      0xa7e freertos/tasks.o
  .debug_line    0x0000000000001668      0x1d0 freertos/portable/MemMang/heap_2.o
  .debug_line    0x0000000000001838      0x1c0 freertos/portable/GCC/ARM_CM0/port.o
- .debug_line    0x00000000000019f8      0x1ba /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_line    0x00000000000019f8       0x79 startup.o
+ .debug_line    0x0000000000001a71      0x42b drivers/lcd.o
+ .debug_line    0x0000000000001e9c       0x74 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .debug_line    0x0000000000001f10       0x80 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .debug_line    0x0000000000001f90       0x57 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x0000000000001fe7      0x1ba /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
 
-.debug_str      0x0000000000000000     0x14c3
+.debug_str      0x0000000000000000     0x1632
  .debug_str     0x0000000000000000      0x2ee main.o
                                         0x32c (size before relaxing)
  .debug_str     0x00000000000002ee       0x7f startup.o
@@ -535,10 +626,16 @@ LOAD linker stubs
                                         0x2ad (size before relaxing)
  .debug_str     0x0000000000001238      0x168 freertos/portable/GCC/ARM_CM0/port.o
                                         0x2e7 (size before relaxing)
- .debug_str     0x00000000000013a0      0x123 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_str     0x00000000000013a0      0x128 startup.o
+ .debug_str     0x00000000000013a0       0xe2 drivers/lcd.o
+                                        0x2fb (size before relaxing)
+ .debug_str     0x0000000000001482       0x8d /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .debug_str     0x000000000000150f       0x8d /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .debug_str     0x000000000000150f       0x8d /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+ .debug_str     0x000000000000150f      0x123 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
                                         0x1bf (size before relaxing)
 
-.debug_frame    0x0000000000000000      0xc0c
+.debug_frame    0x0000000000000000      0xd68
  .debug_frame   0x0000000000000000      0x118 main.o
  .debug_frame   0x0000000000000118       0x4c startup.o
  .debug_frame   0x0000000000000164       0xb0 freertos/list.o
@@ -546,7 +643,11 @@ LOAD linker stubs
  .debug_frame   0x0000000000000524      0x498 freertos/tasks.o
  .debug_frame   0x00000000000009bc       0xa8 freertos/portable/MemMang/heap_2.o
  .debug_frame   0x0000000000000a64      0x170 freertos/portable/GCC/ARM_CM0/port.o
- .debug_frame   0x0000000000000bd4       0x38 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x0000000000000bd4       0x4c startup.o
+ .debug_frame   0x0000000000000c20       0xd0 drivers/lcd.o
+ .debug_frame   0x0000000000000cf0       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .debug_frame   0x0000000000000d10       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .debug_frame   0x0000000000000d30       0x38 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
 
 .debug_loc      0x0000000000000000      0x221
  .debug_loc     0x0000000000000000      0x221 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)

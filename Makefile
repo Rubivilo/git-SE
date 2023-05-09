@@ -18,7 +18,8 @@ TARGET=main
 
 SRC=main.c startup.c ${FREERTOS}/list.c ${FREERTOS}/queue.c \
 	${FREERTOS}/tasks.c ${FREERTOS}/portable/MemMang/heap_2.c \
-	${FREERTOS}/portable/GCC/ARM_CM0/port.c
+	${FREERTOS}/portable/GCC/ARM_CM0/port.c\
+	$(wildcard *.c drivers/*.c)
 OBJ=$(patsubst %.c, %.o, $(SRC))
 
 all: build size

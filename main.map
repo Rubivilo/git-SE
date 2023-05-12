@@ -1,0 +1,597 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+                              lcd.o (__aeabi_uidiv)
+/usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+                              lcd.o (__aeabi_idiv)
+/usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+                              /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+/usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
+                              /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o (atexit)
+/usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
+                              /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o (exit)
+/usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-fini.o)
+                              /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o (__libc_fini_array)
+/usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-impure.o)
+                              /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o) (_global_impure_ptr)
+/usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-init.o)
+                              /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o (__libc_init_array)
+/usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+                              freertos/queue.o (memcpy)
+/usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+                              /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o (memset)
+/usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o)
+                              /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o) (__register_exitproc)
+/usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+                              /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o) (__call_exitprocs)
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
+ .text          0x0000000000000000       0xdc /usr/lib/gcc/arm-none-eabi/10.3.1/crtbegin.o
+ .data          0x0000000000000000        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/crtbegin.o
+ .bss           0x0000000000000000       0x1c /usr/lib/gcc/arm-none-eabi/10.3.1/crtbegin.o
+ .rodata        0x0000000000000000       0x24 /usr/lib/gcc/arm-none-eabi/10.3.1/crtbegin.o
+ .init_array    0x0000000000000000        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/crtbegin.o
+ .fini_array    0x0000000000000000        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/crtbegin.o
+ .eh_frame      0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/crtbegin.o
+ .tm_clone_table
+                0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/crtbegin.o
+ .comment       0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/crtbegin.o
+ .ARM.attributes
+                0x0000000000000000       0x2a /usr/lib/gcc/arm-none-eabi/10.3.1/crtbegin.o
+ .text          0x0000000000000000      0x128 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
+ .ARM.extab     0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
+ .ARM.exidx     0x0000000000000000       0x10 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
+ .debug_line    0x0000000000000000       0xa3 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
+ .debug_info    0x0000000000000000       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
+ .debug_abbrev  0x0000000000000000       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
+ .debug_str     0x0000000000000000       0x7b /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
+ .ARM.attributes
+                0x0000000000000000       0x1a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
+ .data          0x0000000000000000        0x8 main.o
+ .bss           0x0000000000000000       0x10 main.o
+ .data          0x0000000000000000        0x0 startup.o
+ .bss           0x0000000000000000        0x0 startup.o
+ .data          0x0000000000000000        0x0 freertos/list.o
+ .bss           0x0000000000000000        0x0 freertos/list.o
+ .text          0x0000000000000000      0xbcc freertos/queue.o
+ .data          0x0000000000000000        0x0 freertos/queue.o
+ .bss           0x0000000000000000       0x40 freertos/queue.o
+ .debug_info    0x0000000000000000      0xb87 freertos/queue.o
+ .debug_abbrev  0x0000000000000000      0x1cb freertos/queue.o
+ .debug_aranges
+                0x0000000000000000       0x20 freertos/queue.o
+ .debug_line    0x0000000000000000      0x868 freertos/queue.o
+ .debug_str     0x0000000000000000      0x673 freertos/queue.o
+ .comment       0x0000000000000000       0x34 freertos/queue.o
+ .debug_frame   0x0000000000000000      0x310 freertos/queue.o
+ .ARM.attributes
+                0x0000000000000000       0x2c freertos/queue.o
+ .data          0x0000000000000000        0x0 freertos/tasks.o
+ .rodata        0x0000000000000000        0x2 freertos/portable/MemMang/heap_2.o
+ .bss           0x0000000000000000        0x0 freertos/portable/GCC/ARM_CM0/port.o
+ .data          0x0000000000000000        0x0 lcd.o
+ .bss           0x0000000000000000        0x0 lcd.o
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+ .text          0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
+ .debug_info    0x0000000000000000      0x100 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
+ .debug_abbrev  0x0000000000000000       0xb4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
+ .debug_loc     0x0000000000000000       0x32 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
+ .debug_line    0x0000000000000000       0xbc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
+ .debug_str     0x0000000000000000      0x1c3 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
+ .comment       0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
+ .debug_frame   0x0000000000000000       0x2c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
+ .ARM.attributes
+                0x0000000000000000       0x2a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-atexit.o)
+ .text          0x0000000000000000       0x40 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
+ .debug_info    0x0000000000000000      0x81a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
+ .debug_abbrev  0x0000000000000000      0x1ba /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
+ .debug_loc     0x0000000000000000       0x22 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
+ .debug_line    0x0000000000000000      0x162 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
+ .debug_str     0x0000000000000000      0x502 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
+ .comment       0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
+ .debug_frame   0x0000000000000000       0x28 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x0000000000000000       0x2a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-exit.o)
+ .text          0x0000000000000000       0x44 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-fini.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-fini.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-fini.o)
+ .debug_info    0x0000000000000000      0x102 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-fini.o)
+ .debug_abbrev  0x0000000000000000       0xcc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-fini.o)
+ .debug_loc     0x0000000000000000       0x68 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-fini.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-fini.o)
+ .debug_line    0x0000000000000000       0xdb /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-fini.o)
+ .debug_str     0x0000000000000000      0x1bb /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-fini.o)
+ .comment       0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-fini.o)
+ .debug_frame   0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-fini.o)
+ .ARM.attributes
+                0x0000000000000000       0x2a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-fini.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-impure.o)
+ .data          0x0000000000000000       0x64 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-impure.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-impure.o)
+ .rodata        0x0000000000000000        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-impure.o)
+ .debug_info    0x0000000000000000      0x863 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-impure.o)
+ .debug_abbrev  0x0000000000000000      0x151 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-impure.o)
+ .debug_aranges
+                0x0000000000000000       0x18 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-impure.o)
+ .debug_line    0x0000000000000000       0xdb /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-impure.o)
+ .debug_str     0x0000000000000000      0x538 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-impure.o)
+ .comment       0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x0000000000000000       0x30 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-impure.o)
+ .text          0x0000000000000000       0x88 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-init.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-init.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-init.o)
+ .debug_info    0x0000000000000000      0x11a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-init.o)
+ .debug_abbrev  0x0000000000000000       0xcc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-init.o)
+ .debug_loc     0x0000000000000000       0xba /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-init.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-init.o)
+ .debug_line    0x0000000000000000      0x121 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-init.o)
+ .debug_str     0x0000000000000000      0x1e5 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-init.o)
+ .comment       0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-init.o)
+ .debug_frame   0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x0000000000000000       0x2a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-init.o)
+ .text          0x0000000000000000      0x120 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_info    0x0000000000000000      0x15c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_abbrev  0x0000000000000000       0xc7 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_loc     0x0000000000000000      0x221 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_line    0x0000000000000000      0x1ba /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_str     0x0000000000000000      0x1bf /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .comment       0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x0000000000000000       0x38 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x0000000000000000       0x2a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memcpy-stub.o)
+ .text          0x0000000000000000      0x11c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .debug_info    0x0000000000000000      0x13d /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .debug_abbrev  0x0000000000000000       0xb4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .debug_loc     0x0000000000000000      0x313 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .debug_line    0x0000000000000000      0x1d5 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .debug_str     0x0000000000000000      0x19a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .comment       0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x0000000000000000       0x48 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x0000000000000000       0x2a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-memset.o)
+ .text          0x0000000000000000      0x108 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o)
+ .data          0x0000000000000000        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o)
+ .bss           0x0000000000000000       0x8c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o)
+ .debug_info    0x0000000000000000      0x269 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o)
+ .debug_abbrev  0x0000000000000000      0x1bd /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o)
+ .debug_loc     0x0000000000000000      0x1b3 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o)
+ .debug_line    0x0000000000000000      0x1ef /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o)
+ .debug_str     0x0000000000000000      0x271 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o)
+ .comment       0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o)
+ .debug_frame   0x0000000000000000       0x40 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o)
+ .ARM.attributes
+                0x0000000000000000       0x2a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__atexit.o)
+ .text          0x0000000000000000      0x130 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+ .bss           0x0000000000000000        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+ .debug_info    0x0000000000000000      0x249 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+ .debug_abbrev  0x0000000000000000      0x179 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+ .debug_loc     0x0000000000000000      0x183 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+ .debug_aranges
+                0x0000000000000000       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+ .debug_ranges  0x0000000000000000       0x28 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+ .debug_line    0x0000000000000000      0x1ee /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+ .debug_str     0x0000000000000000      0x235 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+ .comment       0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+ .debug_frame   0x0000000000000000       0x4c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+ .ARM.attributes
+                0x0000000000000000       0x2a /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a(lib_a-__call_atexit.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/crtend.o
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/crtend.o
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/crtend.o
+ .rodata        0x0000000000000000       0x24 /usr/lib/gcc/arm-none-eabi/10.3.1/crtend.o
+ .eh_frame      0x0000000000000000        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/crtend.o
+ .tm_clone_table
+                0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/crtend.o
+ .comment       0x0000000000000000       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/crtend.o
+ .ARM.attributes
+                0x0000000000000000       0x30 /usr/lib/gcc/arm-none-eabi/10.3.1/crtend.o
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/crtn.o
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/crtn.o
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/crtn.o
+ .init          0x0000000000000000        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/crtn.o
+ .fini          0x0000000000000000        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/crtn.o
+ .ARM.attributes
+                0x0000000000000000       0x1c /usr/lib/gcc/arm-none-eabi/10.3.1/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+INTERRUPTS       0x0000000000000000 0x0000000000000100 xr
+FLASH_CONFIG     0x0000000000000400 0x0000000000000010 xr
+TEXT             0x0000000000000410 0x000000000003fbf0 xr
+RAM              0x000000001fffe000 0x0000000000008000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/crtbegin.o
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/crt0.o
+                0x0000000000000400                STACK_SIZE = DEFINED (__stack_size__)?__stack_size__:0x400
+
+.interrupts     0x0000000000000000       0xc0
+ *(.isr_vector .isr_vector.*)
+ .isr_vector    0x0000000000000000       0xc0 startup.o
+                0x0000000000000000                g_pfnVectors
+
+.flash_config   0x0000000000000400       0x10
+                0x0000000000000400                . = ALIGN (0x4)
+                0x0000000000000400        0x4 LONG 0xffffffff
+                0x0000000000000404        0x4 LONG 0xffffffff
+                0x0000000000000408        0x4 LONG 0xffffffff
+                0x000000000000040c        0x4 LONG 0xfffffffe
+
+.text           0x0000000000000410     0x25b4
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x0000000000000410      0x2e0 main.o
+                0x0000000000000410                irclk_ini
+                0x000000000000042c                delay
+                0x0000000000000454                sw1_ini
+                0x00000000000004a4                sw2_ini
+                0x00000000000004f8                sw1_check
+                0x0000000000000514                sw2_check
+                0x0000000000000534                led_green_init
+                0x0000000000000584                led_green_toggle
+                0x0000000000000598                led_red_init
+                0x00000000000005ec                led_red_toggle
+                0x0000000000000604                leds_ini
+                0x000000000000067c                taskProductor
+                0x0000000000000696                taskConsumidor
+                0x00000000000006ac                taskLedGreen
+                0x00000000000006c0                taskLedRed
+                0x00000000000006d8                main
+ .text          0x00000000000006f0       0x68 startup.o
+                0x00000000000006f0                RTCSIntHandler
+                0x00000000000006f0                FTM1IntHandler
+                0x00000000000006f0                USBOTGIntHandler
+                0x00000000000006f0                UART0SEIntHandler
+                0x00000000000006f0                UART2SEIntHandler
+                0x00000000000006f0                FTM2IntHandler
+                0x00000000000006f0                I2C1IntHandler
+                0x00000000000006f0                PORTDIntHandler
+                0x00000000000006f0                Default_ResetHandler
+                0x00000000000006f0                DMA1IntHandler
+                0x00000000000006f0                DACIntHandler
+                0x00000000000006f0                ACMPIntHandler
+                0x00000000000006f0                ResetHandler
+                0x00000000000006f0                LVDIntHandler
+                0x00000000000006f0                PORTAIntHandler
+                0x00000000000006f0                SPI1IntHandler
+                0x00000000000006f0                FTFAIntHandler
+                0x00000000000006f0                UART1SEIntHandler
+                0x00000000000006f0                ADCIntHandler
+                0x00000000000006f0                DMA0IntHandler
+                0x00000000000006f0                I2C0IntHandler
+                0x00000000000006f0                FTM0IntHandler
+                0x00000000000006f0                LLWUIntHandler
+                0x00000000000006f0                MCGIntHandler
+                0x00000000000006f0                RTCAIntHandler
+                0x00000000000006f0                SPI0IntHandler
+                0x00000000000006f0                TSIIntHandler
+                0x00000000000006f0                LPTMRIntHandler
+                0x00000000000006f0                PITIntHandler
+                0x00000000000006f0                DMA3IntHandler
+                0x00000000000006f0                DMA2IntHandler
+                0x0000000000000750                HardFaultIntHandler
+                0x0000000000000750                BusFaultIntHandler
+                0x0000000000000750                NMIIntHandler
+                0x0000000000000750                UsageFaultIntHandler
+                0x0000000000000750                MemManageIntHandler
+                0x0000000000000750                DebugMonIntHandler
+ .text          0x0000000000000758      0x152 freertos/list.o
+                0x0000000000000758                vListInitialise
+                0x0000000000000794                vListInitialiseItem
+                0x00000000000007aa                vListInsertEnd
+                0x00000000000007ee                vListInsert
+                0x000000000000085a                uxListRemove
+ *fill*         0x00000000000008aa        0x2 
+ .text          0x00000000000008ac     0x12cc freertos/tasks.o
+                0x00000000000008ac                xTaskGenericCreate
+                0x0000000000000a18                vTaskDelayUntil
+                0x0000000000000ad8                vTaskDelay
+                0x0000000000000b40                vTaskStartScheduler
+                0x0000000000000bb0                vTaskEndScheduler
+                0x0000000000000bcc                vTaskSuspendAll
+                0x0000000000000be4                xTaskResumeAll
+                0x0000000000000cec                xTaskGetTickCount
+                0x0000000000000d08                xTaskGetTickCountFromISR
+                0x0000000000000d28                uxTaskGetNumberOfTasks
+                0x0000000000000d3c                xTaskIncrementTick
+                0x0000000000000ea8                vTaskSwitchContext
+                0x0000000000000f48                vTaskPlaceOnEventList
+                0x0000000000000f9c                vTaskPlaceOnUnorderedEventList
+                0x0000000000001010                xTaskRemoveFromEventList
+                0x00000000000010c8                xTaskRemoveFromUnorderedEventList
+                0x0000000000001178                vTaskSetTimeOutState
+                0x00000000000011ac                xTaskCheckForTimeOut
+                0x000000000000123c                vTaskMissedYield
+                0x00000000000014a8                xTaskGetCurrentTaskHandle
+                0x00000000000014c4                vTaskPriorityInherit
+                0x0000000000001580                xTaskPriorityDisinherit
+                0x0000000000001638                uxTaskResetEventItemValue
+                0x0000000000001664                pvTaskIncrementMutexHeldCount
+                0x0000000000001688                ulTaskNotifyTake
+                0x0000000000001724                xTaskNotifyWait
+                0x00000000000017e4                xTaskGenericNotify
+                0x00000000000018fc                xTaskGenericNotifyFromISR
+                0x0000000000001a44                vTaskNotifyGiveFromISR
+                0x0000000000001b28                xTaskNotifyStateClear
+ .text          0x0000000000001b78      0x1fc freertos/portable/MemMang/heap_2.o
+                0x0000000000001b78                pvPortMalloc
+                0x0000000000001c94                vPortFree
+                0x0000000000001d08                xPortGetFreeHeapSize
+                0x0000000000001d1c                vPortInitialiseBlocks
+ .text          0x0000000000001d74      0x21c freertos/portable/GCC/ARM_CM0/port.o
+                0x0000000000001d74                pxPortInitialiseStack
+                0x0000000000001de0                vPortSVCHandler
+                0x0000000000001e0a                xPortStartScheduler
+                0x0000000000001e4c                vPortEndScheduler
+                0x0000000000001e6c                vPortYield
+                0x0000000000001e8c                vPortEnterCritical
+                0x0000000000001eb0                vPortExitCritical
+                0x0000000000001ee0                ulSetInterruptMaskFromISR
+                0x0000000000001eec                vClearInterruptMaskFromISR
+                0x0000000000001ef4                xPortPendSVHandler
+                0x0000000000001f3a                xPortSysTickHandler
+ .text          0x0000000000001f90      0x75c lcd.o
+                0x0000000000001f90                lcd_ini
+                0x00000000000020f4                lcd_set
+                0x0000000000002464                lcd_display_dec
+                0x0000000000002558                lcd_display_hex
+                0x00000000000025be                lcd_display_time
+                0x000000000000267c                lcd_display_error
+ .text          0x00000000000026ec      0x114 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+                0x00000000000026ec                __udivsi3
+                0x00000000000026ec                __aeabi_uidiv
+                0x00000000000027e0                __aeabi_uidivmod
+ .text          0x0000000000002800      0x148 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+                0x0000000000002800                __aeabi_idiv
+                0x0000000000002800                __divsi3
+                0x0000000000002928                __aeabi_idivmod
+ .text          0x0000000000002948        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+                0x0000000000002948                __aeabi_ldiv0
+                0x0000000000002948                __aeabi_idiv0
+ *(.glue_7t)
+ .glue_7t       0x000000000000294c        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x000000000000294c        0x0 linker stubs
+ *(.rodata .rodata* .gnu.linkonce.r.*)
+ .rodata        0x000000000000294c       0x30 freertos/tasks.o
+ .rodata        0x000000000000297c       0x48 lcd.o
+
+.vfp11_veneer   0x00000000000029c4        0x0
+ .vfp11_veneer  0x00000000000029c4        0x0 linker stubs
+
+.v4_bx          0x00000000000029c4        0x0
+ .v4_bx         0x00000000000029c4        0x0 linker stubs
+
+.init           0x00000000000029c4        0xc
+ .init          0x00000000000029c4        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
+                0x00000000000029c4                _init
+
+.fini           0x00000000000029d0        0xc
+ .fini          0x00000000000029d0        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
+                0x00000000000029d0                _fini
+
+.iplt           0x00000000000029dc        0x0
+ .iplt          0x00000000000029dc        0x0 main.o
+
+.rel.dyn        0x00000000000029dc        0x0
+ .rel.iplt      0x00000000000029dc        0x0 main.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00000000000029dc                . = ALIGN (0x4)
+                0x00000000000029dc                _etext = .
+                0x00000000000029dc                _sidata = .
+
+.data           0x000000001fffe000        0x8 load address 0x00000000000029dc
+                0x000000001fffe000                _sdata = .
+ *(.data .data.*)
+ .data          0x000000001fffe000        0x4 freertos/portable/MemMang/heap_2.o
+ .data          0x000000001fffe004        0x4 freertos/portable/GCC/ARM_CM0/port.o
+                0x000000001fffe008                . = ALIGN (0x4)
+                0x000000001fffe008                _edata = .
+
+.igot.plt       0x000000001fffe008        0x0 load address 0x00000000000029e4
+ .igot.plt      0x000000001fffe008        0x0 main.o
+
+.bss            0x000000001fffe008     0x30e8 load address 0x00000000000029e4
+                0x000000001fffe008                _sbss = .
+ *(.bss .bss.*)
+ .bss           0x000000001fffe008       0xd4 freertos/tasks.o
+                0x000000001fffe008                pxCurrentTCB
+ .bss           0x000000001fffe0dc     0x3014 freertos/portable/MemMang/heap_2.o
+ *(COMMON)
+                0x00000000200010f0                . = ALIGN (0x4)
+                0x00000000200010f0                _ebss = .
+
+.co_stack       0x00000000200010f0      0x400 load address 0x0000000000005acc
+                0x00000000200010f0                . = ALIGN (0x8)
+                0x00000000200014f0                . = (. + STACK_SIZE)
+ *fill*         0x00000000200010f0      0x400 
+                0x00000000200014f0                _start_of_stack = .
+                0x00000000200014f0                . = ALIGN (0x4)
+                0x00000000200014f0                _end = .
+LOAD main.o
+LOAD startup.o
+LOAD freertos/list.o
+LOAD freertos/queue.o
+LOAD freertos/tasks.o
+LOAD freertos/portable/MemMang/heap_2.o
+LOAD freertos/portable/GCC/ARM_CM0/port.o
+LOAD lcd.o
+START GROUP
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a
+END GROUP
+START GROUP
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/libc_nano.a
+END GROUP
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/crtend.o
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/crtn.o
+OUTPUT(main.elf elf32-littlearm)
+LOAD linker stubs
+
+.ARM.attributes
+                0x0000000000000000       0x2d
+ .ARM.attributes
+                0x0000000000000000       0x1c /usr/lib/gcc/arm-none-eabi/10.3.1/crti.o
+ .ARM.attributes
+                0x000000000000001c       0x2c main.o
+ .ARM.attributes
+                0x0000000000000048       0x2c startup.o
+ .ARM.attributes
+                0x0000000000000074       0x2c freertos/list.o
+ .ARM.attributes
+                0x00000000000000a0       0x2c freertos/tasks.o
+ .ARM.attributes
+                0x00000000000000cc       0x2c freertos/portable/MemMang/heap_2.o
+ .ARM.attributes
+                0x00000000000000f8       0x2c freertos/portable/GCC/ARM_CM0/port.o
+ .ARM.attributes
+                0x0000000000000124       0x2c lcd.o
+ .ARM.attributes
+                0x0000000000000150       0x1c /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x000000000000016c       0x1c /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x0000000000000188       0x1c /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+
+.comment        0x0000000000000000       0x33
+ .comment       0x0000000000000000       0x33 main.o
+                                         0x34 (size before relaxing)
+ .comment       0x0000000000000033       0x34 startup.o
+ .comment       0x0000000000000033       0x34 freertos/list.o
+ .comment       0x0000000000000033       0x34 freertos/tasks.o
+ .comment       0x0000000000000033       0x34 freertos/portable/MemMang/heap_2.o
+ .comment       0x0000000000000033       0x34 freertos/portable/GCC/ARM_CM0/port.o
+ .comment       0x0000000000000033       0x34 lcd.o
+
+.debug_info     0x0000000000000000     0x24e8
+ .debug_info    0x0000000000000000      0x68b main.o
+ .debug_info    0x000000000000068b       0xfc startup.o
+ .debug_info    0x0000000000000787      0x2b6 freertos/list.o
+ .debug_info    0x0000000000000a3d      0xff9 freertos/tasks.o
+ .debug_info    0x0000000000001a36      0x2d9 freertos/portable/MemMang/heap_2.o
+ .debug_info    0x0000000000001d0f      0x252 freertos/portable/GCC/ARM_CM0/port.o
+ .debug_info    0x0000000000001f61      0x515 lcd.o
+ .debug_info    0x0000000000002476       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .debug_info    0x000000000000249c       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .debug_info    0x00000000000024c2       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+
+.debug_abbrev   0x0000000000000000      0xa55
+ .debug_abbrev  0x0000000000000000      0x1b6 main.o
+ .debug_abbrev  0x00000000000001b6       0xb3 startup.o
+ .debug_abbrev  0x0000000000000269       0xe8 freertos/list.o
+ .debug_abbrev  0x0000000000000351      0x254 freertos/tasks.o
+ .debug_abbrev  0x00000000000005a5      0x16a freertos/portable/MemMang/heap_2.o
+ .debug_abbrev  0x000000000000070f      0x18d freertos/portable/GCC/ARM_CM0/port.o
+ .debug_abbrev  0x000000000000089c      0x17d lcd.o
+ .debug_abbrev  0x0000000000000a19       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x0000000000000a2d       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x0000000000000a41       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+
+.debug_aranges  0x0000000000000000      0x140
+ .debug_aranges
+                0x0000000000000000       0x20 main.o
+ .debug_aranges
+                0x0000000000000020       0x20 startup.o
+ .debug_aranges
+                0x0000000000000040       0x20 freertos/list.o
+ .debug_aranges
+                0x0000000000000060       0x20 freertos/tasks.o
+ .debug_aranges
+                0x0000000000000080       0x20 freertos/portable/MemMang/heap_2.o
+ .debug_aranges
+                0x00000000000000a0       0x20 freertos/portable/GCC/ARM_CM0/port.o
+ .debug_aranges
+                0x00000000000000c0       0x20 lcd.o
+ .debug_aranges
+                0x00000000000000e0       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x0000000000000100       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .debug_aranges
+                0x0000000000000120       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+
+.debug_line     0x0000000000000000     0x1771
+ .debug_line    0x0000000000000000      0x20b main.o
+ .debug_line    0x000000000000020b       0x79 startup.o
+ .debug_line    0x0000000000000284      0x187 freertos/list.o
+ .debug_line    0x000000000000040b      0xa7e freertos/tasks.o
+ .debug_line    0x0000000000000e89      0x1d0 freertos/portable/MemMang/heap_2.o
+ .debug_line    0x0000000000001059      0x1c0 freertos/portable/GCC/ARM_CM0/port.o
+ .debug_line    0x0000000000001219      0x40d lcd.o
+ .debug_line    0x0000000000001626       0x74 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .debug_line    0x000000000000169a       0x80 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .debug_line    0x000000000000171a       0x57 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+
+.debug_str      0x0000000000000000     0x115b
+ .debug_str     0x0000000000000000      0x33e main.o
+                                        0x37c (size before relaxing)
+ .debug_str     0x000000000000033e       0x7f startup.o
+                                        0x128 (size before relaxing)
+ .debug_str     0x00000000000003bd      0x139 freertos/list.o
+                                        0x277 (size before relaxing)
+ .debug_str     0x00000000000004f6      0x86d freertos/tasks.o
+                                        0xa87 (size before relaxing)
+ .debug_str     0x0000000000000d63      0x157 freertos/portable/MemMang/heap_2.o
+                                        0x2ad (size before relaxing)
+ .debug_str     0x0000000000000eba      0x168 freertos/portable/GCC/ARM_CM0/port.o
+                                        0x2e7 (size before relaxing)
+ .debug_str     0x0000000000001022       0xac lcd.o
+                                        0x2c5 (size before relaxing)
+ .debug_str     0x00000000000010ce       0x8d /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .debug_str     0x000000000000115b       0x8d /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)
+ .debug_str     0x000000000000115b       0x8d /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_dvmd_tls.o)
+
+.debug_frame    0x0000000000000000      0xa94
+ .debug_frame   0x0000000000000000      0x1dc main.o
+ .debug_frame   0x00000000000001dc       0x4c startup.o
+ .debug_frame   0x0000000000000228       0xb0 freertos/list.o
+ .debug_frame   0x00000000000002d8      0x498 freertos/tasks.o
+ .debug_frame   0x0000000000000770       0xa8 freertos/portable/MemMang/heap_2.o
+ .debug_frame   0x0000000000000818      0x170 freertos/portable/GCC/ARM_CM0/port.o
+ .debug_frame   0x0000000000000988       0xcc lcd.o
+ .debug_frame   0x0000000000000a54       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_udivsi3.o)
+ .debug_frame   0x0000000000000a74       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/libgcc.a(_divsi3.o)

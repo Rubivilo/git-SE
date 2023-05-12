@@ -9,13 +9,23 @@ int prod_prio=1;
 int cons_prio=2;
 int data;
 QueueHandle_t cola;
-SemaphoreHandle_t mutex;
+SemaphoreHandle_t qMutex;
+SemaphoreHandle_t xMutex;
 
 void irclk_ini()
 {
   MCG->C1 = MCG_C1_IRCLKEN(1) | MCG_C1_IREFSTEN(1);
   MCG->C2 = MCG_C2_IRCS(0); //0 32KHZ internal reference clock; 1= 4MHz irc
 }
+
+void delay(void)
+{
+  volatile int i;
+
+  for (i = 0; i < 1000000; i++);
+}
+
+
 
 void led_green_init()
 {
@@ -46,14 +56,40 @@ void led_red_toggle(void)
 }
 
 void taskProductor(){
-	lcd_display_dec(10);
-	vTaskDelay(500/portTICK_RATE_MS);
+	
+	if( cola != 0 )
+    {
+        /* Send an unsigned long.  Wait for 10 ticks for space to become
+        available if necessary. */
+        if( xQueueSend( cola,
+                       2,
+                       ( TickType_t ) 10 ) != pdPASS )
+        {
+            /* Failed to post the message, even after 10 ticks. */
+        }
+    }
+	lcd_display_dec(50-uxQueueSpacesAvailable(cola));
+
+	vTaskDelay(200/portTICK_RATE_MS);
 }
 
 void taskConsumidor(){
-	lcd_display_dec(20);
-	vTaskDelay(200/portTICK_RATE_MS);
+	if( cola != 0 )
+    {
+        /* Send an unsigned long.  Wait for 10 ticks for space to become
+        available if necessary. */
+        if( xQueueRecieve( cola,
+                       2,
+                       ( TickType_t ) 10 ) != pdPASS )
+        {
+            /* Failed to post the message, even after 10 ticks. */
+        }
+    }
+	lcd_display_dec(50-uxQueueSpacesAvailable(cola));
+
+	vTaskDelay(500/portTICK_RATE_MS);
 }
+
 
 void taskLedGreen(void *pvParameters)
 {
@@ -73,22 +109,21 @@ void taskLedRed(void *pvParameters)
 
 int main(void)
 {
-	//lcd_display_det(1.1);
+
 	irclk_ini();
 	lcd_ini();
-	lcd_display_dec(0);
+	lcd_display_dec(0004);
 	cola = xQueueCreate(50,sizeof(data));
-	mutex = xSemaphoreCreateMutex();
+	xMutex = xSemaphoreCreateMutex();
+	qMutex = xSemaphoreCreateMutex();
 	led_green_init();
 	led_red_init();
 
 	/* create green led task */
-	xTaskCreate(taskProductor, (signed char *)"TaskLedGreen", 
-		configMINIMAL_STACK_SIZE, (void *)NULL, prod_prio, NULL);
+	xTaskCreate(taskProductor, (signed char *)"TaskProductor", configMINIMAL_STACK_SIZE, (void *)1, prod_prio, NULL);
 
 	/* create red led task */
-	xTaskCreate(taskConsumidor, (signed char *)"TaskLedRed", 
-		configMINIMAL_STACK_SIZE, (void *)NULL, cons_prio, NULL);
+	xTaskCreate(taskConsumidor, (signed char *)"TaskConsumidor", configMINIMAL_STACK_SIZE, (void *)1, cons_prio, NULL);
 	
 	/* start the scheduler */
 	vTaskStartScheduler();
@@ -98,4 +133,4 @@ int main(void)
 
 	return 0;
 }
-//SysTick
+

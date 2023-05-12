@@ -2301,10 +2301,14 @@ typedef struct {
     __IO uint32_t WF[16];                            /**< LCD Waveform register, array offset: 0x20, array step: 0x4 */
     __IO uint8_t WF8B[64];                           /**< LCD Waveform Register 0...LCD Waveform Register 63., array offset: 0x20, array step: 0x1 */
   };
-} LCD_Type, *LCD_MemMapPtr;
+} LCD_Type;
 
 /* ----------------------------------------------------------------------------
    -- LCD - Register accessor macros
+   ---------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------
+   -- LCD Register Masks
    ---------------------------------------------------------------------------- */
 
 /*!
@@ -4182,6 +4186,12 @@ typedef struct {
 
 
 
+
+/*!
+ * @}
+ */ /* end of group LCD_Peripheral_Access_Layer */
+
+
 /* ----------------------------------------------------------------------------
    -- LLWU Peripheral Access Layer
    ---------------------------------------------------------------------------- */
@@ -4625,109 +4635,153 @@ typedef struct {
  * @{
  */
 
-/* C1 Bit Fields */
-#define MCG_C1_IREFSTEN_MASK                     0x1u
-#define MCG_C1_IREFSTEN_SHIFT                    0
-#define MCG_C1_IRCLKEN_MASK                      0x2u
-#define MCG_C1_IRCLKEN_SHIFT                     1
-#define MCG_C1_IREFS_MASK                        0x4u
-#define MCG_C1_IREFS_SHIFT                       2
-#define MCG_C1_FRDIV_MASK                        0x38u
-#define MCG_C1_FRDIV_SHIFT                       3
-#define MCG_C1_FRDIV(x)                          (((uint8_t)(((uint8_t)(x))<<MCG_C1_FRDIV_SHIFT))&MCG_C1_FRDIV_MASK)
-#define MCG_C1_CLKS_MASK                         0xC0u
-#define MCG_C1_CLKS_SHIFT                        6
-#define MCG_C1_CLKS(x)                           (((uint8_t)(((uint8_t)(x))<<MCG_C1_CLKS_SHIFT))&MCG_C1_CLKS_MASK)
-/* C2 Bit Fields */
-#define MCG_C2_IRCS_MASK                         0x1u
-#define MCG_C2_IRCS_SHIFT                        0
-#define MCG_C2_LP_MASK                           0x2u
-#define MCG_C2_LP_SHIFT                          1
-#define MCG_C2_EREFS0_MASK                       0x4u
-#define MCG_C2_EREFS0_SHIFT                      2
-#define MCG_C2_HGO0_MASK                         0x8u
-#define MCG_C2_HGO0_SHIFT                        3
-#define MCG_C2_RANGE0_MASK                       0x30u
-#define MCG_C2_RANGE0_SHIFT                      4
-#define MCG_C2_RANGE0(x)                         (((uint8_t)(((uint8_t)(x))<<MCG_C2_RANGE0_SHIFT))&MCG_C2_RANGE0_MASK)
-#define MCG_C2_FCFTRIM_MASK                      0x40u
-#define MCG_C2_FCFTRIM_SHIFT                     6
-#define MCG_C2_LOCRE0_MASK                       0x80u
-#define MCG_C2_LOCRE0_SHIFT                      7
-/* C3 Bit Fields */
-#define MCG_C3_SCTRIM_MASK                       0xFFu
-#define MCG_C3_SCTRIM_SHIFT                      0
-#define MCG_C3_SCTRIM(x)                         (((uint8_t)(((uint8_t)(x))<<MCG_C3_SCTRIM_SHIFT))&MCG_C3_SCTRIM_MASK)
-/* C4 Bit Fields */
-#define MCG_C4_SCFTRIM_MASK                      0x1u
-#define MCG_C4_SCFTRIM_SHIFT                     0
-#define MCG_C4_FCTRIM_MASK                       0x1Eu
-#define MCG_C4_FCTRIM_SHIFT                      1
-#define MCG_C4_FCTRIM(x)                         (((uint8_t)(((uint8_t)(x))<<MCG_C4_FCTRIM_SHIFT))&MCG_C4_FCTRIM_MASK)
-#define MCG_C4_DRST_DRS_MASK                     0x60u
-#define MCG_C4_DRST_DRS_SHIFT                    5
-#define MCG_C4_DRST_DRS(x)                       (((uint8_t)(((uint8_t)(x))<<MCG_C4_DRST_DRS_SHIFT))&MCG_C4_DRST_DRS_MASK)
-#define MCG_C4_DMX32_MASK                        0x80u
-#define MCG_C4_DMX32_SHIFT                       7
-/* C5 Bit Fields */
-#define MCG_C5_PRDIV0_MASK                       0x1Fu
-#define MCG_C5_PRDIV0_SHIFT                      0
-#define MCG_C5_PRDIV0(x)                         (((uint8_t)(((uint8_t)(x))<<MCG_C5_PRDIV0_SHIFT))&MCG_C5_PRDIV0_MASK)
-#define MCG_C5_PLLSTEN0_MASK                     0x20u
-#define MCG_C5_PLLSTEN0_SHIFT                    5
-#define MCG_C5_PLLCLKEN0_MASK                    0x40u
-#define MCG_C5_PLLCLKEN0_SHIFT                   6
-/* C6 Bit Fields */
-#define MCG_C6_VDIV0_MASK                        0x1Fu
-#define MCG_C6_VDIV0_SHIFT                       0
-#define MCG_C6_VDIV0(x)                          (((uint8_t)(((uint8_t)(x))<<MCG_C6_VDIV0_SHIFT))&MCG_C6_VDIV0_MASK)
-#define MCG_C6_CME0_MASK                         0x20u
-#define MCG_C6_CME0_SHIFT                        5
-#define MCG_C6_PLLS_MASK                         0x40u
-#define MCG_C6_PLLS_SHIFT                        6
-#define MCG_C6_LOLIE0_MASK                       0x80u
-#define MCG_C6_LOLIE0_SHIFT                      7
-/* S Bit Fields */
-#define MCG_S_IRCST_MASK                         0x1u
-#define MCG_S_IRCST_SHIFT                        0
-#define MCG_S_OSCINIT0_MASK                      0x2u
-#define MCG_S_OSCINIT0_SHIFT                     1
-#define MCG_S_CLKST_MASK                         0xCu
-#define MCG_S_CLKST_SHIFT                        2
-#define MCG_S_CLKST(x)                           (((uint8_t)(((uint8_t)(x))<<MCG_S_CLKST_SHIFT))&MCG_S_CLKST_MASK)
-#define MCG_S_IREFST_MASK                        0x10u
-#define MCG_S_IREFST_SHIFT                       4
-#define MCG_S_PLLST_MASK                         0x20u
-#define MCG_S_PLLST_SHIFT                        5
-#define MCG_S_LOCK0_MASK                         0x40u
-#define MCG_S_LOCK0_SHIFT                        6
-#define MCG_S_LOLS0_MASK                         0x80u
-#define MCG_S_LOLS0_SHIFT                        7
-/* SC Bit Fields */
-#define MCG_SC_LOCS0_MASK                        0x1u
-#define MCG_SC_LOCS0_SHIFT                       0
-#define MCG_SC_FCRDIV_MASK                       0xEu
-#define MCG_SC_FCRDIV_SHIFT                      1
-#define MCG_SC_FCRDIV(x)                         (((uint8_t)(((uint8_t)(x))<<MCG_SC_FCRDIV_SHIFT))&MCG_SC_FCRDIV_MASK)
-#define MCG_SC_FLTPRSRV_MASK                     0x10u
-#define MCG_SC_FLTPRSRV_SHIFT                    4
-#define MCG_SC_ATMF_MASK                         0x20u
-#define MCG_SC_ATMF_SHIFT                        5
-#define MCG_SC_ATMS_MASK                         0x40u
-#define MCG_SC_ATMS_SHIFT                        6
-#define MCG_SC_ATME_MASK                         0x80u
-#define MCG_SC_ATME_SHIFT                        7
-/* ATCVH Bit Fields */
-#define MCG_ATCVH_ATCVH_MASK                     0xFFu
-#define MCG_ATCVH_ATCVH_SHIFT                    0
-#define MCG_ATCVH_ATCVH(x)                       (((uint8_t)(((uint8_t)(x))<<MCG_ATCVH_ATCVH_SHIFT))&MCG_ATCVH_ATCVH_MASK)
-/* ATCVL Bit Fields */
-#define MCG_ATCVL_ATCVL_MASK                     0xFFu
-#define MCG_ATCVL_ATCVL_SHIFT                    0
-#define MCG_ATCVL_ATCVL(x)                       (((uint8_t)(((uint8_t)(x))<<MCG_ATCVL_ATCVL_SHIFT))&MCG_ATCVL_ATCVL_MASK)
-/* C8 Bit Fields */
-#define MCG_C8_LOLRE_MASK                        0x40u
-#define MCG_C8_LOLRE_SHIFT                       6
+/*! @name C1 - MCG Control 1 Register */
+#define MCG_C1_IREFSTEN_MASK                     (0x1U)
+#define MCG_C1_IREFSTEN_SHIFT                    (0U)
+#define MCG_C1_IREFSTEN(x)                       (((uint8_t)(((uint8_t)(x)) << MCG_C1_IREFSTEN_SHIFT)) & MCG_C1_IREFSTEN_MASK)
+#define MCG_C1_IRCLKEN_MASK                      (0x2U)
+#define MCG_C1_IRCLKEN_SHIFT                     (1U)
+#define MCG_C1_IRCLKEN(x)                        (((uint8_t)(((uint8_t)(x)) << MCG_C1_IRCLKEN_SHIFT)) & MCG_C1_IRCLKEN_MASK)
+#define MCG_C1_IREFS_MASK                        (0x4U)
+#define MCG_C1_IREFS_SHIFT                       (2U)
+#define MCG_C1_IREFS(x)                          (((uint8_t)(((uint8_t)(x)) << MCG_C1_IREFS_SHIFT)) & MCG_C1_IREFS_MASK)
+#define MCG_C1_FRDIV_MASK                        (0x38U)
+#define MCG_C1_FRDIV_SHIFT                       (3U)
+#define MCG_C1_FRDIV(x)                          (((uint8_t)(((uint8_t)(x)) << MCG_C1_FRDIV_SHIFT)) & MCG_C1_FRDIV_MASK)
+#define MCG_C1_CLKS_MASK                         (0xC0U)
+#define MCG_C1_CLKS_SHIFT                        (6U)
+#define MCG_C1_CLKS(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_C1_CLKS_SHIFT)) & MCG_C1_CLKS_MASK)
+
+/*! @name C2 - MCG Control 2 Register */
+#define MCG_C2_IRCS_MASK                         (0x1U)
+#define MCG_C2_IRCS_SHIFT                        (0U)
+#define MCG_C2_IRCS(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_C2_IRCS_SHIFT)) & MCG_C2_IRCS_MASK)
+#define MCG_C2_LP_MASK                           (0x2U)
+#define MCG_C2_LP_SHIFT                          (1U)
+#define MCG_C2_LP(x)                             (((uint8_t)(((uint8_t)(x)) << MCG_C2_LP_SHIFT)) & MCG_C2_LP_MASK)
+#define MCG_C2_EREFS0_MASK                       (0x4U)
+#define MCG_C2_EREFS0_SHIFT                      (2U)
+#define MCG_C2_EREFS0(x)                         (((uint8_t)(((uint8_t)(x)) << MCG_C2_EREFS0_SHIFT)) & MCG_C2_EREFS0_MASK)
+#define MCG_C2_HGO0_MASK                         (0x8U)
+#define MCG_C2_HGO0_SHIFT                        (3U)
+#define MCG_C2_HGO0(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_C2_HGO0_SHIFT)) & MCG_C2_HGO0_MASK)
+#define MCG_C2_RANGE0_MASK                       (0x30U)
+#define MCG_C2_RANGE0_SHIFT                      (4U)
+#define MCG_C2_RANGE0(x)                         (((uint8_t)(((uint8_t)(x)) << MCG_C2_RANGE0_SHIFT)) & MCG_C2_RANGE0_MASK)
+#define MCG_C2_FCFTRIM_MASK                      (0x40U)
+#define MCG_C2_FCFTRIM_SHIFT                     (6U)
+#define MCG_C2_FCFTRIM(x)                        (((uint8_t)(((uint8_t)(x)) << MCG_C2_FCFTRIM_SHIFT)) & MCG_C2_FCFTRIM_MASK)
+#define MCG_C2_LOCRE0_MASK                       (0x80U)
+#define MCG_C2_LOCRE0_SHIFT                      (7U)
+#define MCG_C2_LOCRE0(x)                         (((uint8_t)(((uint8_t)(x)) << MCG_C2_LOCRE0_SHIFT)) & MCG_C2_LOCRE0_MASK)
+
+/*! @name C3 - MCG Control 3 Register */
+#define MCG_C3_SCTRIM_MASK                       (0xFFU)
+#define MCG_C3_SCTRIM_SHIFT                      (0U)
+#define MCG_C3_SCTRIM(x)                         (((uint8_t)(((uint8_t)(x)) << MCG_C3_SCTRIM_SHIFT)) & MCG_C3_SCTRIM_MASK)
+
+/*! @name C4 - MCG Control 4 Register */
+#define MCG_C4_SCFTRIM_MASK                      (0x1U)
+#define MCG_C4_SCFTRIM_SHIFT                     (0U)
+#define MCG_C4_SCFTRIM(x)                        (((uint8_t)(((uint8_t)(x)) << MCG_C4_SCFTRIM_SHIFT)) & MCG_C4_SCFTRIM_MASK)
+#define MCG_C4_FCTRIM_MASK                       (0x1EU)
+#define MCG_C4_FCTRIM_SHIFT                      (1U)
+#define MCG_C4_FCTRIM(x)                         (((uint8_t)(((uint8_t)(x)) << MCG_C4_FCTRIM_SHIFT)) & MCG_C4_FCTRIM_MASK)
+#define MCG_C4_DRST_DRS_MASK                     (0x60U)
+#define MCG_C4_DRST_DRS_SHIFT                    (5U)
+#define MCG_C4_DRST_DRS(x)                       (((uint8_t)(((uint8_t)(x)) << MCG_C4_DRST_DRS_SHIFT)) & MCG_C4_DRST_DRS_MASK)
+#define MCG_C4_DMX32_MASK                        (0x80U)
+#define MCG_C4_DMX32_SHIFT                       (7U)
+#define MCG_C4_DMX32(x)                          (((uint8_t)(((uint8_t)(x)) << MCG_C4_DMX32_SHIFT)) & MCG_C4_DMX32_MASK)
+
+/*! @name C5 - MCG Control 5 Register */
+#define MCG_C5_PRDIV0_MASK                       (0x1FU)
+#define MCG_C5_PRDIV0_SHIFT                      (0U)
+#define MCG_C5_PRDIV0(x)                         (((uint8_t)(((uint8_t)(x)) << MCG_C5_PRDIV0_SHIFT)) & MCG_C5_PRDIV0_MASK)
+#define MCG_C5_PLLSTEN0_MASK                     (0x20U)
+#define MCG_C5_PLLSTEN0_SHIFT                    (5U)
+#define MCG_C5_PLLSTEN0(x)                       (((uint8_t)(((uint8_t)(x)) << MCG_C5_PLLSTEN0_SHIFT)) & MCG_C5_PLLSTEN0_MASK)
+#define MCG_C5_PLLCLKEN0_MASK                    (0x40U)
+#define MCG_C5_PLLCLKEN0_SHIFT                   (6U)
+#define MCG_C5_PLLCLKEN0(x)                      (((uint8_t)(((uint8_t)(x)) << MCG_C5_PLLCLKEN0_SHIFT)) & MCG_C5_PLLCLKEN0_MASK)
+
+/*! @name C6 - MCG Control 6 Register */
+#define MCG_C6_VDIV0_MASK                        (0x1FU)
+#define MCG_C6_VDIV0_SHIFT                       (0U)
+#define MCG_C6_VDIV0(x)                          (((uint8_t)(((uint8_t)(x)) << MCG_C6_VDIV0_SHIFT)) & MCG_C6_VDIV0_MASK)
+#define MCG_C6_CME0_MASK                         (0x20U)
+#define MCG_C6_CME0_SHIFT                        (5U)
+#define MCG_C6_CME0(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_C6_CME0_SHIFT)) & MCG_C6_CME0_MASK)
+#define MCG_C6_PLLS_MASK                         (0x40U)
+#define MCG_C6_PLLS_SHIFT                        (6U)
+#define MCG_C6_PLLS(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_C6_PLLS_SHIFT)) & MCG_C6_PLLS_MASK)
+#define MCG_C6_LOLIE0_MASK                       (0x80U)
+#define MCG_C6_LOLIE0_SHIFT                      (7U)
+#define MCG_C6_LOLIE0(x)                         (((uint8_t)(((uint8_t)(x)) << MCG_C6_LOLIE0_SHIFT)) & MCG_C6_LOLIE0_MASK)
+
+/*! @name S - MCG Status Register */
+#define MCG_S_IRCST_MASK                         (0x1U)
+#define MCG_S_IRCST_SHIFT                        (0U)
+#define MCG_S_IRCST(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_S_IRCST_SHIFT)) & MCG_S_IRCST_MASK)
+#define MCG_S_OSCINIT0_MASK                      (0x2U)
+#define MCG_S_OSCINIT0_SHIFT                     (1U)
+#define MCG_S_OSCINIT0(x)                        (((uint8_t)(((uint8_t)(x)) << MCG_S_OSCINIT0_SHIFT)) & MCG_S_OSCINIT0_MASK)
+#define MCG_S_CLKST_MASK                         (0xCU)
+#define MCG_S_CLKST_SHIFT                        (2U)
+#define MCG_S_CLKST(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_S_CLKST_SHIFT)) & MCG_S_CLKST_MASK)
+#define MCG_S_IREFST_MASK                        (0x10U)
+#define MCG_S_IREFST_SHIFT                       (4U)
+#define MCG_S_IREFST(x)                          (((uint8_t)(((uint8_t)(x)) << MCG_S_IREFST_SHIFT)) & MCG_S_IREFST_MASK)
+#define MCG_S_PLLST_MASK                         (0x20U)
+#define MCG_S_PLLST_SHIFT                        (5U)
+#define MCG_S_PLLST(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_S_PLLST_SHIFT)) & MCG_S_PLLST_MASK)
+#define MCG_S_LOCK0_MASK                         (0x40U)
+#define MCG_S_LOCK0_SHIFT                        (6U)
+#define MCG_S_LOCK0(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_S_LOCK0_SHIFT)) & MCG_S_LOCK0_MASK)
+#define MCG_S_LOLS0_MASK                         (0x80U)
+#define MCG_S_LOLS0_SHIFT                        (7U)
+#define MCG_S_LOLS0(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_S_LOLS0_SHIFT)) & MCG_S_LOLS0_MASK)
+
+/*! @name SC - MCG Status and Control Register */
+#define MCG_SC_LOCS0_MASK                        (0x1U)
+#define MCG_SC_LOCS0_SHIFT                       (0U)
+#define MCG_SC_LOCS0(x)                          (((uint8_t)(((uint8_t)(x)) << MCG_SC_LOCS0_SHIFT)) & MCG_SC_LOCS0_MASK)
+#define MCG_SC_FCRDIV_MASK                       (0xEU)
+#define MCG_SC_FCRDIV_SHIFT                      (1U)
+#define MCG_SC_FCRDIV(x)                         (((uint8_t)(((uint8_t)(x)) << MCG_SC_FCRDIV_SHIFT)) & MCG_SC_FCRDIV_MASK)
+#define MCG_SC_FLTPRSRV_MASK                     (0x10U)
+#define MCG_SC_FLTPRSRV_SHIFT                    (4U)
+#define MCG_SC_FLTPRSRV(x)                       (((uint8_t)(((uint8_t)(x)) << MCG_SC_FLTPRSRV_SHIFT)) & MCG_SC_FLTPRSRV_MASK)
+#define MCG_SC_ATMF_MASK                         (0x20U)
+#define MCG_SC_ATMF_SHIFT                        (5U)
+#define MCG_SC_ATMF(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_SC_ATMF_SHIFT)) & MCG_SC_ATMF_MASK)
+#define MCG_SC_ATMS_MASK                         (0x40U)
+#define MCG_SC_ATMS_SHIFT                        (6U)
+#define MCG_SC_ATMS(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_SC_ATMS_SHIFT)) & MCG_SC_ATMS_MASK)
+#define MCG_SC_ATME_MASK                         (0x80U)
+#define MCG_SC_ATME_SHIFT                        (7U)
+#define MCG_SC_ATME(x)                           (((uint8_t)(((uint8_t)(x)) << MCG_SC_ATME_SHIFT)) & MCG_SC_ATME_MASK)
+
+/*! @name ATCVH - MCG Auto Trim Compare Value High Register */
+#define MCG_ATCVH_ATCVH_MASK                     (0xFFU)
+#define MCG_ATCVH_ATCVH_SHIFT                    (0U)
+#define MCG_ATCVH_ATCVH(x)                       (((uint8_t)(((uint8_t)(x)) << MCG_ATCVH_ATCVH_SHIFT)) & MCG_ATCVH_ATCVH_MASK)
+
+/*! @name ATCVL - MCG Auto Trim Compare Value Low Register */
+#define MCG_ATCVL_ATCVL_MASK                     (0xFFU)
+#define MCG_ATCVL_ATCVL_SHIFT                    (0U)
+#define MCG_ATCVL_ATCVL(x)                       (((uint8_t)(((uint8_t)(x)) << MCG_ATCVL_ATCVL_SHIFT)) & MCG_ATCVL_ATCVL_MASK)
+
+/*! @name C7 - MCG Control 7 Register */
+#define MCG_C7_OSCSEL_MASK                       (0x1U)
+#define MCG_C7_OSCSEL_SHIFT                      (0U)
+#define MCG_C7_OSCSEL(x)                         (((uint8_t)(((uint8_t)(x)) << MCG_C7_OSCSEL_SHIFT)) & MCG_C7_OSCSEL_MASK)
+
+/*! @name C8 - MCG Control 8 Register */
+#define MCG_C8_LOLRE_MASK                        (0x40U)
+#define MCG_C8_LOLRE_SHIFT                       (6U)
+#define MCG_C8_LOLRE(x)                          (((uint8_t)(((uint8_t)(x)) << MCG_C8_LOLRE_SHIFT)) & MCG_C8_LOLRE_MASK)
+
 
 /*!
  * @}
@@ -4739,46 +4793,35 @@ typedef struct {
 #define MCG_BASE                                 (0x40064000u)
 /** Peripheral MCG base pointer */
 #define MCG                                      ((MCG_Type *)MCG_BASE)
-#define MCG_BASE_PTR                             (MCG)
 /** Array initializer of MCG peripheral base addresses */
 #define MCG_BASE_ADDRS                           { MCG_BASE }
 /** Array initializer of MCG peripheral base pointers */
 #define MCG_BASE_PTRS                            { MCG }
+/** Interrupt vectors for the MCG peripheral type */
+#define MCG_IRQS                                 { MCG_IRQn }
+/* MCG C2[EREFS] backward compatibility */
+#define MCG_C2_EREFS_MASK         (MCG_C2_EREFS0_MASK)
+#define MCG_C2_EREFS_SHIFT        (MCG_C2_EREFS0_SHIFT)
+#define MCG_C2_EREFS_WIDTH        (MCG_C2_EREFS0_WIDTH)
+#define MCG_C2_EREFS(x)           (MCG_C2_EREFS0(x))
 
-/* ----------------------------------------------------------------------------
-   -- MCG - Register accessor macros
-   ---------------------------------------------------------------------------- */
+/* MCG C2[HGO] backward compatibility */
+#define MCG_C2_HGO_MASK         (MCG_C2_HGO0_MASK)
+#define MCG_C2_HGO_SHIFT        (MCG_C2_HGO0_SHIFT)
+#define MCG_C2_HGO_WIDTH        (MCG_C2_HGO0_WIDTH)
+#define MCG_C2_HGO(x)           (MCG_C2_HGO0(x))
 
-/*!
- * @addtogroup MCG_Register_Accessor_Macros MCG - Register accessor macros
- * @{
- */
-
-
-/* MCG - Register instance definitions */
-/* MCG */
-#define MCG_C1                                   MCG_C1_REG(MCG)
-#define MCG_C2                                   MCG_C2_REG(MCG)
-#define MCG_C3                                   MCG_C3_REG(MCG)
-#define MCG_C4                                   MCG_C4_REG(MCG)
-#define MCG_C5                                   MCG_C5_REG(MCG)
-#define MCG_C6                                   MCG_C6_REG(MCG)
-#define MCG_S                                    MCG_S_REG(MCG)
-#define MCG_SC                                   MCG_SC_REG(MCG)
-#define MCG_ATCVH                                MCG_ATCVH_REG(MCG)
-#define MCG_ATCVL                                MCG_ATCVL_REG(MCG)
-#define MCG_C8                                   MCG_C8_REG(MCG)
-#define MCG_C9                                   MCG_C9_REG(MCG)
-#define MCG_C10                                  MCG_C10_REG(MCG)
-
-/*!
- * @}
- */ /* end of group MCG_Register_Accessor_Macros */
+/* MCG C2[RANGE] backward compatibility */
+#define MCG_C2_RANGE_MASK         (MCG_C2_RANGE0_MASK)
+#define MCG_C2_RANGE_SHIFT        (MCG_C2_RANGE0_SHIFT)
+#define MCG_C2_RANGE_WIDTH        (MCG_C2_RANGE0_WIDTH)
+#define MCG_C2_RANGE(x)           (MCG_C2_RANGE0(x))
 
 
 /*!
  * @}
  */ /* end of group MCG_Peripheral_Access_Layer */
+
 
 
 /* ----------------------------------------------------------------------------
@@ -5920,43 +5963,56 @@ typedef struct {
  * @{
  */
 
-/* PCR Bit Fields */
-#define PORT_PCR_PS_MASK                         0x1u
-#define PORT_PCR_PS_SHIFT                        0
-#define PORT_PCR_PE_MASK                         0x2u
-#define PORT_PCR_PE_SHIFT                        1
-#define PORT_PCR_SRE_MASK                        0x4u
-#define PORT_PCR_SRE_SHIFT                       2
-#define PORT_PCR_PFE_MASK                        0x10u
-#define PORT_PCR_PFE_SHIFT                       4
-#define PORT_PCR_DSE_MASK                        0x40u
-#define PORT_PCR_DSE_SHIFT                       6
-#define PORT_PCR_MUX_MASK                        0x700u
-#define PORT_PCR_MUX_SHIFT                       8
-#define PORT_PCR_MUX(x)                          (((uint32_t)(((uint32_t)(x))<<PORT_PCR_MUX_SHIFT))&PORT_PCR_MUX_MASK)
-#define PORT_PCR_IRQC_MASK                       0xF0000u
-#define PORT_PCR_IRQC_SHIFT                      16
-#define PORT_PCR_IRQC(x)                         (((uint32_t)(((uint32_t)(x))<<PORT_PCR_IRQC_SHIFT))&PORT_PCR_IRQC_MASK)
-#define PORT_PCR_ISF_MASK                        0x1000000u
-#define PORT_PCR_ISF_SHIFT                       24
-/* GPCLR Bit Fields */
-#define PORT_GPCLR_GPWD_MASK                     0xFFFFu
-#define PORT_GPCLR_GPWD_SHIFT                    0
-#define PORT_GPCLR_GPWD(x)                       (((uint32_t)(((uint32_t)(x))<<PORT_GPCLR_GPWD_SHIFT))&PORT_GPCLR_GPWD_MASK)
-#define PORT_GPCLR_GPWE_MASK                     0xFFFF0000u
-#define PORT_GPCLR_GPWE_SHIFT                    16
-#define PORT_GPCLR_GPWE(x)                       (((uint32_t)(((uint32_t)(x))<<PORT_GPCLR_GPWE_SHIFT))&PORT_GPCLR_GPWE_MASK)
-/* GPCHR Bit Fields */
-#define PORT_GPCHR_GPWD_MASK                     0xFFFFu
-#define PORT_GPCHR_GPWD_SHIFT                    0
-#define PORT_GPCHR_GPWD(x)                       (((uint32_t)(((uint32_t)(x))<<PORT_GPCHR_GPWD_SHIFT))&PORT_GPCHR_GPWD_MASK)
-#define PORT_GPCHR_GPWE_MASK                     0xFFFF0000u
-#define PORT_GPCHR_GPWE_SHIFT                    16
-#define PORT_GPCHR_GPWE(x)                       (((uint32_t)(((uint32_t)(x))<<PORT_GPCHR_GPWE_SHIFT))&PORT_GPCHR_GPWE_MASK)
-/* ISFR Bit Fields */
-#define PORT_ISFR_ISF_MASK                       0xFFFFFFFFu
-#define PORT_ISFR_ISF_SHIFT                      0
-#define PORT_ISFR_ISF(x)                         (((uint32_t)(((uint32_t)(x))<<PORT_ISFR_ISF_SHIFT))&PORT_ISFR_ISF_MASK)
+/*! @name PCR - Pin Control Register n */
+#define PORT_PCR_PS_MASK                         (0x1U)
+#define PORT_PCR_PS_SHIFT                        (0U)
+#define PORT_PCR_PS(x)                           (((uint32_t)(((uint32_t)(x)) << PORT_PCR_PS_SHIFT)) & PORT_PCR_PS_MASK)
+#define PORT_PCR_PE_MASK                         (0x2U)
+#define PORT_PCR_PE_SHIFT                        (1U)
+#define PORT_PCR_PE(x)                           (((uint32_t)(((uint32_t)(x)) << PORT_PCR_PE_SHIFT)) & PORT_PCR_PE_MASK)
+#define PORT_PCR_SRE_MASK                        (0x4U)
+#define PORT_PCR_SRE_SHIFT                       (2U)
+#define PORT_PCR_SRE(x)                          (((uint32_t)(((uint32_t)(x)) << PORT_PCR_SRE_SHIFT)) & PORT_PCR_SRE_MASK)
+#define PORT_PCR_PFE_MASK                        (0x10U)
+#define PORT_PCR_PFE_SHIFT                       (4U)
+#define PORT_PCR_PFE(x)                          (((uint32_t)(((uint32_t)(x)) << PORT_PCR_PFE_SHIFT)) & PORT_PCR_PFE_MASK)
+#define PORT_PCR_DSE_MASK                        (0x40U)
+#define PORT_PCR_DSE_SHIFT                       (6U)
+#define PORT_PCR_DSE(x)                          (((uint32_t)(((uint32_t)(x)) << PORT_PCR_DSE_SHIFT)) & PORT_PCR_DSE_MASK)
+#define PORT_PCR_MUX_MASK                        (0x700U)
+#define PORT_PCR_MUX_SHIFT                       (8U)
+#define PORT_PCR_MUX(x)                          (((uint32_t)(((uint32_t)(x)) << PORT_PCR_MUX_SHIFT)) & PORT_PCR_MUX_MASK)
+#define PORT_PCR_IRQC_MASK                       (0xF0000U)
+#define PORT_PCR_IRQC_SHIFT                      (16U)
+#define PORT_PCR_IRQC(x)                         (((uint32_t)(((uint32_t)(x)) << PORT_PCR_IRQC_SHIFT)) & PORT_PCR_IRQC_MASK)
+#define PORT_PCR_ISF_MASK                        (0x1000000U)
+#define PORT_PCR_ISF_SHIFT                       (24U)
+#define PORT_PCR_ISF(x)                          (((uint32_t)(((uint32_t)(x)) << PORT_PCR_ISF_SHIFT)) & PORT_PCR_ISF_MASK)
+
+/* The count of PORT_PCR */
+#define PORT_PCR_COUNT                           (32U)
+
+/*! @name GPCLR - Global Pin Control Low Register */
+#define PORT_GPCLR_GPWD_MASK                     (0xFFFFU)
+#define PORT_GPCLR_GPWD_SHIFT                    (0U)
+#define PORT_GPCLR_GPWD(x)                       (((uint32_t)(((uint32_t)(x)) << PORT_GPCLR_GPWD_SHIFT)) & PORT_GPCLR_GPWD_MASK)
+#define PORT_GPCLR_GPWE_MASK                     (0xFFFF0000U)
+#define PORT_GPCLR_GPWE_SHIFT                    (16U)
+#define PORT_GPCLR_GPWE(x)                       (((uint32_t)(((uint32_t)(x)) << PORT_GPCLR_GPWE_SHIFT)) & PORT_GPCLR_GPWE_MASK)
+
+/*! @name GPCHR - Global Pin Control High Register */
+#define PORT_GPCHR_GPWD_MASK                     (0xFFFFU)
+#define PORT_GPCHR_GPWD_SHIFT                    (0U)
+#define PORT_GPCHR_GPWD(x)                       (((uint32_t)(((uint32_t)(x)) << PORT_GPCHR_GPWD_SHIFT)) & PORT_GPCHR_GPWD_MASK)
+#define PORT_GPCHR_GPWE_MASK                     (0xFFFF0000U)
+#define PORT_GPCHR_GPWE_SHIFT                    (16U)
+#define PORT_GPCHR_GPWE(x)                       (((uint32_t)(((uint32_t)(x)) << PORT_GPCHR_GPWE_SHIFT)) & PORT_GPCHR_GPWE_MASK)
+
+/*! @name ISFR - Interrupt Status Flag Register */
+#define PORT_ISFR_ISF_MASK                       (0xFFFFFFFFU)
+#define PORT_ISFR_ISF_SHIFT                      (0U)
+#define PORT_ISFR_ISF(x)                         (((uint32_t)(((uint32_t)(x)) << PORT_ISFR_ISF_SHIFT)) & PORT_ISFR_ISF_MASK)
+
 
 /*!
  * @}
@@ -5968,33 +6024,33 @@ typedef struct {
 #define PORTA_BASE                               (0x40049000u)
 /** Peripheral PORTA base pointer */
 #define PORTA                                    ((PORT_Type *)PORTA_BASE)
-#define PORTA_BASE_PTR                           (PORTA)
 /** Peripheral PORTB base address */
 #define PORTB_BASE                               (0x4004A000u)
 /** Peripheral PORTB base pointer */
 #define PORTB                                    ((PORT_Type *)PORTB_BASE)
-#define PORTB_BASE_PTR                           (PORTB)
 /** Peripheral PORTC base address */
 #define PORTC_BASE                               (0x4004B000u)
 /** Peripheral PORTC base pointer */
 #define PORTC                                    ((PORT_Type *)PORTC_BASE)
-#define PORTC_BASE_PTR                           (PORTC)
 /** Peripheral PORTD base address */
 #define PORTD_BASE                               (0x4004C000u)
 /** Peripheral PORTD base pointer */
 #define PORTD                                    ((PORT_Type *)PORTD_BASE)
-#define PORTD_BASE_PTR                           (PORTD)
 /** Peripheral PORTE base address */
 #define PORTE_BASE                               (0x4004D000u)
 /** Peripheral PORTE base pointer */
 #define PORTE                                    ((PORT_Type *)PORTE_BASE)
-#define PORTE_BASE_PTR                           (PORTE)
 /** Array initializer of PORT peripheral base addresses */
 #define PORT_BASE_ADDRS                          { PORTA_BASE, PORTB_BASE, PORTC_BASE, PORTD_BASE, PORTE_BASE }
 /** Array initializer of PORT peripheral base pointers */
 #define PORT_BASE_PTRS                           { PORTA, PORTB, PORTC, PORTD, PORTE }
 /** Interrupt vectors for the PORT peripheral type */
 #define PORT_IRQS                                { PORTA_IRQn, NotAvail_IRQn, PORTC_PORTD_IRQn, PORTC_PORTD_IRQn, NotAvail_IRQn }
+
+/*!
+ * @}
+ */ /* end of group PORT_Peripheral_Access_Layer */
+
 
 /* ----------------------------------------------------------------------------
    -- PORT - Register accessor macros

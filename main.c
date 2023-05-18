@@ -159,10 +159,12 @@ void PORTDIntHandler(void)
     
   }else if(sw2_check()){
     if(segundos >= 55){
-      segundos = 0;
-      minutos++;
-      lcd_display_time(minutos, segundos);
-      TPM0->SC |= TPM_SC_TOF_MASK;
+      if(minutos<99){
+        segundos = 0;
+        minutos++;
+        lcd_display_time(minutos, segundos);
+        TPM0->SC |= TPM_SC_TOF_MASK;
+    }
     }else{
       segundos += 5;
       lcd_display_time(minutos, segundos);

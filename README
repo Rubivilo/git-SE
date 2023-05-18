@@ -1,3 +1,11 @@
-Implementación dun "Reloxo" empregando o timer TPM con fonte MCGIRCLK.
-Co botón dereito podes resetear os minutos e segundos a 0.
-Co botón esquerdo podes aumentar a conta 5 segundos.
+Traballo tutelado Opcion 1: Cronometro
+Ruben Villanustre Loureiro
+
+Se inicia la pantalla led a ceros, con el boton izquierdo aumentas de 5 en 5 los segundos para la cuenta atras, al llegar a 60 se sube un minuto y resetea segundos, con el boton derecho se inicia la cuenta atras bloqueando futuros aumentos en el cronometro.
+
+cuando la cuenta atras llega a cero el numero parpadea y los leds tambien,como se indica en el enunciado.
+
+La maxima cuenta atras es de 99 minutos y 55 segundos, mas alla no permite aadir mas tiempo
+
+
+

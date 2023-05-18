@@ -255,7 +255,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x0000000000000408        0x4 LONG 0xffffffff
                 0x000000000000040c        0x4 LONG 0xfffffffe
 
-.text           0x0000000000000410      0xc18
+.text           0x0000000000000410      0xc08
  *(.text .text.* .gnu.linkonce.t.*)
  .text          0x0000000000000410      0x478 lcd.o
                 0x0000000000000410                lcd_ini
@@ -264,7 +264,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x0000000000000758                lcd_display_hex
                 0x0000000000000786                lcd_display_dec
                 0x0000000000000814                lcd_display_time
- .text          0x0000000000000888      0x430 main.o
+ .text          0x0000000000000888      0x420 main.o
                 0x0000000000000888                irclk_ini
                 0x0000000000000898                delay
                 0x00000000000008b8                sw1_ini
@@ -276,101 +276,102 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x00000000000009bc                sws_ini
                 0x0000000000000a04                led_green_ini
                 0x0000000000000a40                led_green_toggle
-                0x0000000000000a58                led_red_ini
-                0x0000000000000a98                led_red_toggle
-                0x0000000000000ab0                leds_ini
-                0x0000000000000b08                enable_TPM
-                0x0000000000000b5c                check_timer
-                0x0000000000000bb8                PORTDIntHandler
-                0x0000000000000c34                main
- .text          0x0000000000000cb8       0x3c startup.o
-                0x0000000000000cb8                HardFaultIntHandler
-                0x0000000000000cb8                PendSVIntHandler
-                0x0000000000000cb8                SysTickIntHandler
-                0x0000000000000cb8                BusFaultIntHandler
-                0x0000000000000cb8                NMIIntHandler
-                0x0000000000000cb8                UsageFaultIntHandler
-                0x0000000000000cb8                MemManageIntHandler
-                0x0000000000000cb8                SVCIntHandler
-                0x0000000000000cb8                DebugMonIntHandler
-                0x0000000000000cba                RTCSIntHandler
-                0x0000000000000cba                FTM1IntHandler
-                0x0000000000000cba                USBOTGIntHandler
-                0x0000000000000cba                UART0SEIntHandler
-                0x0000000000000cba                UART2SEIntHandler
-                0x0000000000000cba                FTM2IntHandler
-                0x0000000000000cba                I2C1IntHandler
-                0x0000000000000cba                Default_ResetHandler
-                0x0000000000000cba                DMA1IntHandler
-                0x0000000000000cba                DACIntHandler
-                0x0000000000000cba                ACMPIntHandler
-                0x0000000000000cba                ResetHandler
-                0x0000000000000cba                LVDIntHandler
-                0x0000000000000cba                PORTAIntHandler
-                0x0000000000000cba                SPI1IntHandler
-                0x0000000000000cba                FTFAIntHandler
-                0x0000000000000cba                UART1SEIntHandler
-                0x0000000000000cba                ADCIntHandler
-                0x0000000000000cba                DMA0IntHandler
-                0x0000000000000cba                I2C0IntHandler
-                0x0000000000000cba                FTM0IntHandler
-                0x0000000000000cba                LLWUIntHandler
-                0x0000000000000cba                MCGIntHandler
-                0x0000000000000cba                RTCAIntHandler
-                0x0000000000000cba                SPI0IntHandler
-                0x0000000000000cba                TSIIntHandler
-                0x0000000000000cba                LPTMRIntHandler
-                0x0000000000000cba                PITIntHandler
-                0x0000000000000cba                DMA3IntHandler
-                0x0000000000000cba                DMA2IntHandler
- .text          0x0000000000000cf4      0x114 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
-                0x0000000000000cf4                __udivsi3
-                0x0000000000000cf4                __aeabi_uidiv
-                0x0000000000000e00                __aeabi_uidivmod
- .text          0x0000000000000e08      0x1d4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
-                0x0000000000000e08                __aeabi_idiv
-                0x0000000000000e08                __divsi3
-                0x0000000000000fd4                __aeabi_idivmod
- .text          0x0000000000000fdc        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
-                0x0000000000000fdc                __aeabi_ldiv0
-                0x0000000000000fdc                __aeabi_idiv0
+                0x0000000000000a4c                led_red_ini
+                0x0000000000000a8c                led_red_toggle
+                0x0000000000000a9c                leds_toggle
+                0x0000000000000ab4                leds_ini
+                0x0000000000000b0c                enable_TPM
+                0x0000000000000b60                check_timer
+                0x0000000000000bbc                PORTDIntHandler
+                0x0000000000000c38                main
+ .text          0x0000000000000ca8       0x3c startup.o
+                0x0000000000000ca8                HardFaultIntHandler
+                0x0000000000000ca8                PendSVIntHandler
+                0x0000000000000ca8                SysTickIntHandler
+                0x0000000000000ca8                BusFaultIntHandler
+                0x0000000000000ca8                NMIIntHandler
+                0x0000000000000ca8                UsageFaultIntHandler
+                0x0000000000000ca8                MemManageIntHandler
+                0x0000000000000ca8                SVCIntHandler
+                0x0000000000000ca8                DebugMonIntHandler
+                0x0000000000000caa                RTCSIntHandler
+                0x0000000000000caa                FTM1IntHandler
+                0x0000000000000caa                USBOTGIntHandler
+                0x0000000000000caa                UART0SEIntHandler
+                0x0000000000000caa                UART2SEIntHandler
+                0x0000000000000caa                FTM2IntHandler
+                0x0000000000000caa                I2C1IntHandler
+                0x0000000000000caa                Default_ResetHandler
+                0x0000000000000caa                DMA1IntHandler
+                0x0000000000000caa                DACIntHandler
+                0x0000000000000caa                ACMPIntHandler
+                0x0000000000000caa                ResetHandler
+                0x0000000000000caa                LVDIntHandler
+                0x0000000000000caa                PORTAIntHandler
+                0x0000000000000caa                SPI1IntHandler
+                0x0000000000000caa                FTFAIntHandler
+                0x0000000000000caa                UART1SEIntHandler
+                0x0000000000000caa                ADCIntHandler
+                0x0000000000000caa                DMA0IntHandler
+                0x0000000000000caa                I2C0IntHandler
+                0x0000000000000caa                FTM0IntHandler
+                0x0000000000000caa                LLWUIntHandler
+                0x0000000000000caa                MCGIntHandler
+                0x0000000000000caa                RTCAIntHandler
+                0x0000000000000caa                SPI0IntHandler
+                0x0000000000000caa                TSIIntHandler
+                0x0000000000000caa                LPTMRIntHandler
+                0x0000000000000caa                PITIntHandler
+                0x0000000000000caa                DMA3IntHandler
+                0x0000000000000caa                DMA2IntHandler
+ .text          0x0000000000000ce4      0x114 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+                0x0000000000000ce4                __udivsi3
+                0x0000000000000ce4                __aeabi_uidiv
+                0x0000000000000df0                __aeabi_uidivmod
+ .text          0x0000000000000df8      0x1d4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+                0x0000000000000df8                __aeabi_idiv
+                0x0000000000000df8                __divsi3
+                0x0000000000000fc4                __aeabi_idivmod
+ .text          0x0000000000000fcc        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x0000000000000fcc                __aeabi_ldiv0
+                0x0000000000000fcc                __aeabi_idiv0
  *(.glue_7t)
- .glue_7t       0x0000000000000fe0        0x0 linker stubs
+ .glue_7t       0x0000000000000fd0        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x0000000000000fe0        0x0 linker stubs
+ .glue_7        0x0000000000000fd0        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
- .rodata        0x0000000000000fe0       0x48 lcd.o
+ .rodata        0x0000000000000fd0       0x48 lcd.o
 
-.vfp11_veneer   0x0000000000001028        0x0
- .vfp11_veneer  0x0000000000001028        0x0 linker stubs
+.vfp11_veneer   0x0000000000001018        0x0
+ .vfp11_veneer  0x0000000000001018        0x0 linker stubs
 
-.v4_bx          0x0000000000001028        0x0
- .v4_bx         0x0000000000001028        0x0 linker stubs
+.v4_bx          0x0000000000001018        0x0
+ .v4_bx         0x0000000000001018        0x0 linker stubs
 
-.init           0x0000000000001028        0x4
- .init          0x0000000000001028        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crti.o
-                0x0000000000001028                _init
+.init           0x0000000000001018        0x4
+ .init          0x0000000000001018        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crti.o
+                0x0000000000001018                _init
 
-.fini           0x000000000000102c        0x4
- .fini          0x000000000000102c        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crti.o
-                0x000000000000102c                _fini
+.fini           0x000000000000101c        0x4
+ .fini          0x000000000000101c        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crti.o
+                0x000000000000101c                _fini
 
-.iplt           0x0000000000001030        0x0
- .iplt          0x0000000000001030        0x0 lcd.o
+.iplt           0x0000000000001020        0x0
+ .iplt          0x0000000000001020        0x0 lcd.o
 
-.rel.dyn        0x0000000000001030        0x0
- .rel.iplt      0x0000000000001030        0x0 lcd.o
+.rel.dyn        0x0000000000001020        0x0
+ .rel.iplt      0x0000000000001020        0x0 lcd.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000000000001030                . = ALIGN (0x4)
-                0x0000000000001030                _etext = .
-                0x0000000000001030                _sidata = .
+                0x0000000000001020                . = ALIGN (0x4)
+                0x0000000000001020                _etext = .
+                0x0000000000001020                _sidata = .
 
-.data           0x000000001fffe000        0x0 load address 0x0000000000001030
+.data           0x000000001fffe000        0x0 load address 0x0000000000001020
                 0x000000001fffe000                _sdata = .
  *(.data .data.*)
                 0x000000001fffe000                . = ALIGN (0x4)
@@ -439,13 +440,13 @@ LOAD linker stubs
  .comment       0x0000000000000033       0x34 main.o
  .comment       0x0000000000000033       0x34 startup.o
 
-.debug_info     0x0000000000000000     0x153c
+.debug_info     0x0000000000000000     0x154e
  .debug_info    0x0000000000000000      0x704 lcd.o
- .debug_info    0x0000000000000704      0xca7 main.o
- .debug_info    0x00000000000013ab      0x11f startup.o
- .debug_info    0x00000000000014ca       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_info    0x00000000000014f0       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_info    0x0000000000001516       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x0000000000000704      0xcb9 main.o
+ .debug_info    0x00000000000013bd      0x11f startup.o
+ .debug_info    0x00000000000014dc       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_info    0x0000000000001502       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_info    0x0000000000001528       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
 .debug_abbrev   0x0000000000000000      0x56d
  .debug_abbrev  0x0000000000000000      0x1c2 lcd.o
@@ -490,28 +491,28 @@ LOAD linker stubs
  .debug_macro   0x0000000000009c5a       0x22 main.o
  .debug_macro   0x0000000000009c7c       0x17 startup.o
 
-.debug_line     0x0000000000000000      0xc0b
+.debug_line     0x0000000000000000      0xc12
  .debug_line    0x0000000000000000      0x55e lcd.o
- .debug_line    0x000000000000055e      0x4cb main.o
- .debug_line    0x0000000000000a29       0xa3 startup.o
- .debug_line    0x0000000000000acc       0x6c /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_line    0x0000000000000b38       0x73 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_line    0x0000000000000bab       0x60 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x000000000000055e      0x4d2 main.o
+ .debug_line    0x0000000000000a30       0xa3 startup.o
+ .debug_line    0x0000000000000ad3       0x6c /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_line    0x0000000000000b3f       0x73 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_line    0x0000000000000bb2       0x60 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_str      0x0000000000000000    0x4284f
+.debug_str      0x0000000000000000    0x4285b
  .debug_str     0x0000000000000000    0x42341 lcd.o
                                       0x42613 (size before relaxing)
- .debug_str     0x0000000000042341      0x3cd main.o
-                                      0x4298a (size before relaxing)
- .debug_str     0x000000000004270e       0x9b startup.o
+ .debug_str     0x0000000000042341      0x3d9 main.o
+                                      0x42996 (size before relaxing)
+ .debug_str     0x000000000004271a       0x9b startup.o
                                        0x2c17 (size before relaxing)
- .debug_str     0x00000000000427a9       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_str     0x000000000004284f       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_str     0x000000000004284f       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_str     0x00000000000427b5       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_str     0x000000000004285b       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_str     0x000000000004285b       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_frame    0x0000000000000000      0x278
+.debug_frame    0x0000000000000000      0x288
  .debug_frame   0x0000000000000000       0xac lcd.o
- .debug_frame   0x00000000000000ac      0x154 main.o
- .debug_frame   0x0000000000000200       0x38 startup.o
- .debug_frame   0x0000000000000238       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_frame   0x0000000000000258       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_frame   0x00000000000000ac      0x164 main.o
+ .debug_frame   0x0000000000000210       0x38 startup.o
+ .debug_frame   0x0000000000000248       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_frame   0x0000000000000268       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)

@@ -12,7 +12,7 @@
 // LEFT (SW2) = PTC12 (pin 88)
 
 // Enable IRCLK (Internal Reference Clock)
-// see Chapter 24 in MCU doc
+
 volatile unsigned int minutos=0;
 volatile unsigned int segundos=0;
 bool settingFlag = false;
@@ -37,7 +37,7 @@ void sw1_ini()
   SIM->SCGC5 |= SIM_SCGC5_PORTC_MASK;
   PORTC->PCR[3] |= PORT_PCR_MUX(1) | PORT_PCR_PE(1);
   GPIOC->PDDR &= ~(1 << 3);
-  PORTC->PCR[3] |= PORT_PCR_IRQC(10); // Poñer estado do botón para a detección das interrupcións
+  PORTC->PCR[3] |= PORT_PCR_IRQC(10); 
 }
 
 // LEFT_SWITCH (SW2) = PTC12
@@ -47,19 +47,19 @@ void sw2_ini()
   SIM->SCGC5 |= SIM_SCGC5_PORTC_MASK;
   PORTC->PCR[12] |= PORT_PCR_MUX(1) | PORT_PCR_PE(1);
   GPIOC->PDDR &= ~(1 << 12);
-  PORTC->PCR[12] |= PORT_PCR_IRQC(10); // Poñer estado do botón para a detección das interrupcións
+  PORTC->PCR[12] |= PORT_PCR_IRQC(10); 
 }
 
 void enableInterrupt()
 {
-  // Activar interrupcions dos portos C e D;
+  // Activate interruptions on ports C e D;
   NVIC_SetPriority(PORTC_PORTD_IRQn,0);
   NVIC_EnableIRQ(PORTC_PORTD_IRQn);
 }
 
 void disableInterrupt()
 {
-  // Activar interrupcions dos portos C e D;
+  // Deactivate interruptions on ports C e D;
   NVIC_SetPriority(PORTC_PORTD_IRQn,0xFF);
   NVIC_DisableIRQ(PORTC_PORTD_IRQn);
 }
@@ -97,7 +97,6 @@ void led_green_ini()
 
 void led_green_toggle()
 {
-  GPIOE->PSOR = (1 << 29);
   GPIOD->PTOR = (1 << 5);
 }
 
@@ -113,42 +112,26 @@ void led_red_ini()
 
 void led_red_toggle(void)
 {
-  GPIOD->PSOR = (1 << 5);
   GPIOE->PTOR = (1 << 29);
 }
-
-// LED_RED = PTE29
-// LED_GREEN = PTD5
-void leds_ini()
+void leds_toggle(void)
 {
-  SIM->COPC = 0;
-  SIM->SCGC5 |= SIM_SCGC5_PORTD_MASK | SIM_SCGC5_PORTE_MASK;
-  PORTD->PCR[5] = PORT_PCR_MUX(1);
-  PORTE->PCR[29] = PORT_PCR_MUX(1);
-  GPIOD->PDDR |= (1 << 5);
-  GPIOE->PDDR |= (1 << 29);
-  // both LEDS off after init
-  GPIOD->PSOR = (1 << 5);
-  GPIOE->PSOR = (1 << 29);
+  GPIOE->PTOR = (1 << 29);
+  GPIOD->PTOR = (1 << 5);
 }
+
 
 void enable_TPM()
 {
   SIM->SCGC6 |= SIM_SCGC6_TPM0_MASK; // Darlle reloxo ao TPM
-  //MCG->C1 |= MCG_C1_IRCLKEN(0x00);
-  //MCG->C2 |= MCG_C2_IRCS(0x00); // Escollemos o modo lento do MCG
-  //MCG->SC |= MCG_SC_FCRDIV(0x07); // Divisor da frecuencia do reloxo MCGIRCLK
-  //MCG->C1 |= MCG_C1_IRCLKEN(0x01); // Activar fast IRC
-  //MCG->S |= MCG_S_IRCST(0x00);
-  //MCG->S |= MCG_S_IRCST(0x00); // Escollemos que se use a freq rapida do MCGIRCLK
-  SIM->SOPT2 |= SIM_SOPT2_TPMSRC(0x03); // Escoller o MCGIRCLK como fonte do reloxo, por defecto esta a 32KHz
-  TPM0->SC = TPM_SC_CMOD(0x00); // Desactivase para poder editar as opcions
-  TPM0->SC |= TPM_SC_CPWMS(0x00); // Escollemos que sexa up-counting
-  TPM0->SC |= TPM_SC_PS(0x00); // Factor de division do Prescale, nos non dividimos aqui dado que xa esta a 32KHz
-  //TPM0->MOD = TPM_MOD_MOD(0x7A12); // Rexistro do modulo que activa o flag TOF
-  TPM0->MOD = TPM_MOD_MOD(0x7CFF); // Numero do counter ao que ten que chegar en cada conta 31999+1
-  TPM0->SC |= TPM_SC_TOF_MASK; // Mask para resetear o bit de TOF
-  TPM0->SC |= TPM_SC_CMOD(0x01); // Activase de novo, xa estaría funcionando como queremos
+  
+  SIM->SOPT2 |= SIM_SOPT2_TPMSRC(0x03); // MCGIRCLK 
+  TPM0->SC = TPM_SC_CMOD(0x00); // TPM counter is disabled
+  TPM0->SC |= TPM_SC_CPWMS(0x00); // Up-counting
+  TPM0->SC |= TPM_SC_PS(0x00); // Prescale divide by 1
+  TPM0->MOD = TPM_MOD_MOD(0x7CFF); // max counter
+  TPM0->SC |= TPM_SC_TOF_MASK; // Mask 
+  TPM0->SC |= TPM_SC_CMOD(0x01); // TPM enabled the counter increments on every TPM counter clock
 }
 
 void check_timer()
@@ -198,11 +181,11 @@ int main(void)
   led_green_ini();
   led_red_ini();
   
-
   irclk_ini(); // Enable internal ref clk to use by LCD
   enable_TPM();
 
   lcd_ini();
+
   lcd_display_time(minutos, segundos);
 
   while(!settingFlag){
@@ -220,9 +203,11 @@ int main(void)
   LCD->AR =
   LCD_AR_BLINK(1) | //Clear LCD_SEG_AR_BLINK, Disable SLCD blinking. Enable to make LCD Blink
   LCD_AR_BRATE(0x08);
-
+  
+  led_red_toggle();
   while(1){
-    
+    leds_toggle();
+    delay();
   }
 
   return 0;

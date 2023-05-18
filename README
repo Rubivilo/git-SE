@@ -1,0 +1,3 @@
+Implementación dun "Reloxo" empregando o timer TPM con fonte MCGIRCLK.
+Co botón dereito podes resetear os minutos e segundos a 0.
+Co botón esquerdo podes aumentar a conta 5 segundos.

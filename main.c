@@ -219,6 +219,9 @@ int main(void)
   char ch;
   char str[100];
   bool isnumber=true;
+  bool sum=false;
+  bool resta=false;
+  int result=0;
   enableInterrupt();
   sw1_ini();
   sw2_ini();
@@ -240,14 +243,47 @@ int main(void)
   while (1)
     {
       ch = GETCHAR();
-      if(!isdigit(ch) && ch!='\r'){
+
+      if (ch=='+'&& isnumber){
+        if (sum==true||result==0){
+          result=result+atoi(str);
+        }
+        else if(resta==true){
+          result=result-atoi(str);
+        }
+        sum=true;
+        resta=false;
+      }
+      if (ch=='-'&& isnumber){
+        if (sum==true||result==0){
+          result=result+atoi(str);
+        }
+        else if(resta==true){
+          result=result-atoi(str);
+        }
+        resta=true;
+        sum=false;
+      }else if(!isdigit(ch) && ch!='\r'){
         isnumber=false;
       }
+      
+      
       append(str,ch);
       PUTCHAR(ch);
       if (ch=='\r'){
         //strcat(str, "\r\n");
         PRINTF("\r\n");
+
+        if (sum==true){
+            result=result+atoi(str);
+            lcd_display_dec(result);
+            result=0;
+          }
+        if (resta==true){
+            result=result-atoi(str);
+            lcd_display_dec(result);
+            result=0;
+          }
         
         if(strcmp(str,"led1\r")==0){
           turn_red_led_on();
@@ -267,7 +303,6 @@ int main(void)
         }
         if(isnumber){
           lcd_display_dec(atoi(str));
-          PRINTF("EHNUMEROSIU\r\n");
         }
         
       

@@ -1599,7 +1599,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x0000000000000408        0x4 LONG 0xffffffff
                 0x000000000000040c        0x4 LONG 0xfffffffe
 
-.text           0x0000000000000410     0x7f61
+.text           0x0000000000000410     0x8065
  *(.text .text.* .gnu.linkonce.t.*)
  .text          0x0000000000000410      0x75c lcd.o
                 0x0000000000000410                lcd_ini
@@ -1608,7 +1608,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x00000000000009d8                lcd_display_hex
                 0x0000000000000a3e                lcd_display_time
                 0x0000000000000afc                lcd_display_error
- .text          0x0000000000000b6c      0x670 main.o
+ .text          0x0000000000000b6c      0x784 main.o
                 0x0000000000000c7c                irclk_ini
                 0x0000000000000c98                delay
                 0x0000000000000cc0                enable_TPM
@@ -1629,294 +1629,293 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x0000000000001008                PORTDIntHandler
                 0x0000000000001040                append
                 0x000000000000107a                main
- .text          0x00000000000011dc       0x6c startup.o
-                0x00000000000011dc                PIT_Int_Handler
-                0x00000000000011dc                ACMP_Int_Handler
-                0x00000000000011dc                DMA1_Int_Handler
-                0x00000000000011dc                PORTA_Int_Handler
-                0x00000000000011dc                LPTMR_Int_Handler
-                0x00000000000011dc                Default_ResetHandler
-                0x00000000000011dc                RTCA_Int_Handler
-                0x00000000000011dc                USBOTG_Int_Handler
-                0x00000000000011dc                ResetHandler
-                0x00000000000011dc                MCG_Int_Handler
-                0x00000000000011dc                UART0SE_Int_Handler
-                0x00000000000011dc                LLWU_Int_Handler
-                0x00000000000011dc                LVD_Int_Handler
-                0x00000000000011dc                FTM1_Int_Handler
-                0x00000000000011dc                TSI_Int_Handler
-                0x00000000000011dc                PORTD_Int_Handler
-                0x00000000000011dc                FTFA_Int_Handler
-                0x00000000000011dc                UART2SE_Int_Handler
-                0x00000000000011dc                DAC_Int_Handler
-                0x00000000000011dc                FTM0_Int_Handler
-                0x00000000000011dc                SPI1_Int_Handler
-                0x00000000000011dc                FTM2_Int_Handler
-                0x00000000000011dc                UART1SE_Int_Handler
-                0x00000000000011dc                I2C1_Int_Handler
-                0x00000000000011dc                DMA3_Int_Handler
-                0x00000000000011dc                ADC_Int_Handler
-                0x00000000000011dc                SPI0_Int_Handler
-                0x00000000000011dc                I2C0_Int_Handler
-                0x00000000000011dc                DMA0_Int_Handler
-                0x00000000000011dc                RTCS_Int_Handler
-                0x00000000000011dc                DMA2_Int_Handler
-                0x0000000000001240                SVC_Int_Handler
-                0x0000000000001240                UsageFault_Int_Handler
-                0x0000000000001240                MemManage_Int_Handler
-                0x0000000000001240                PendSV_Int_Handler
-                0x0000000000001240                BusFault_Int_Handler
-                0x0000000000001240                NMI_Int_Handler
-                0x0000000000001240                SysTick_Int_Handler
-                0x0000000000001240                DebugMon_Int_Handler
-                0x0000000000001240                HardFault_Int_Handler
- .text          0x0000000000001248       0x68 BOARD/board.o
-                0x0000000000001280                BOARD_InitDebugConsole
- .text          0x00000000000012b0      0x16c BOARD/clock_config.o
-                0x000000000000135c                BOARD_BootClockRUN
-                0x00000000000013c0                BOARD_BootClockVLPR
- .text          0x000000000000141c       0xc0 BOARD/pin_mux.o
-                0x0000000000001490                BOARD_InitPins
- .text          0x00000000000014dc      0x274 CMSIS/system_MKL46Z4.o
-                0x00000000000014dc                SystemInit
-                0x00000000000014f8                SystemCoreClockUpdate
-                0x0000000000001744                SystemInitHook
- .text          0x0000000000001750     0x1ad0 drivers/fsl_clock.o
-                0x0000000000001a74                CLOCK_GetOsc0ErClkFreq
-                0x0000000000001abc                CLOCK_GetEr32kClkFreq
-                0x0000000000001b40                CLOCK_GetPllFllSelClkFreq
-                0x0000000000001b8c                CLOCK_GetPlatClkFreq
-                0x0000000000001bb8                CLOCK_GetFlashClkFreq
-                0x0000000000001c08                CLOCK_GetBusClkFreq
-                0x0000000000001c58                CLOCK_GetCoreSysClkFreq
-                0x0000000000001c84                CLOCK_GetFreq
-                0x0000000000001d64                CLOCK_SetSimConfig
-                0x0000000000001d9c                CLOCK_EnableUsbfs0Clock
-                0x0000000000001e20                CLOCK_GetOutClkFreq
-                0x0000000000001e98                CLOCK_GetFllFreq
-                0x0000000000001f1c                CLOCK_GetInternalRefClkFreq
-                0x0000000000001f44                CLOCK_GetFixedFreqClkFreq
-                0x0000000000001f74                CLOCK_GetPll0Freq
-                0x0000000000001ff4                CLOCK_SetExternalRefClkConfig
-                0x000000000000200a                CLOCK_SetInternalRefClkConfig
-                0x0000000000002130                CLOCK_CalcPllDiv
-                0x00000000000022f0                CLOCK_EnablePll0
-                0x0000000000002390                CLOCK_SetOsc0MonitorMode
-                0x0000000000002410                CLOCK_SetPll0MonitorMode
-                0x0000000000002494                CLOCK_GetStatusFlags
-                0x0000000000002500                CLOCK_ClearStatusFlags
-                0x000000000000253c                CLOCK_InitOsc0
-                0x00000000000025d0                CLOCK_DeinitOsc0
-                0x00000000000025f8                CLOCK_TrimInternalRefClk
-                0x0000000000002760                CLOCK_GetMode
-                0x0000000000002848                CLOCK_SetFeiMode
-                0x0000000000002924                CLOCK_SetFeeMode
-                0x0000000000002a50                CLOCK_SetFbiMode
-                0x0000000000002b40                CLOCK_SetFbeMode
-                0x0000000000002c8c                CLOCK_SetBlpiMode
-                0x0000000000002cac                CLOCK_SetBlpeMode
-                0x0000000000002ccc                CLOCK_SetPbeMode
-                0x0000000000002d8c                CLOCK_SetPeeMode
-                0x0000000000002dc0                CLOCK_ExternalModeToFbeModeQuick
-                0x0000000000002e2c                CLOCK_InternalModeToFbiModeQuick
-                0x0000000000002e74                CLOCK_BootToFeiMode
-                0x0000000000002ea2                CLOCK_BootToFeeMode
-                0x0000000000002ef0                CLOCK_BootToBlpiMode
-                0x0000000000002f68                CLOCK_BootToBlpeMode
-                0x0000000000002fe4                CLOCK_BootToPeeMode
-                0x0000000000003064                CLOCK_SetMcgConfig
- .text          0x0000000000003220      0x190 drivers/fsl_ftfx_cache.o
-                0x0000000000003220                FTFx_CACHE_Init
-                0x0000000000003258                FTFx_CACHE_ClearCachePrefetchSpeculation
-                0x0000000000003286                FTFx_CACHE_PflashSetPrefetchSpeculation
-                0x0000000000003304                FTFx_CACHE_PflashGetPrefetchSpeculation
-                0x0000000000003380                mcm_flash_cache_clear
- .text          0x00000000000033b0     0x147c drivers/fsl_lpsci.o
-                0x0000000000003480                LPSCI_GetInstance
-                0x00000000000034d4                LPSCI_TransferGetRxRingBufferLength
-                0x0000000000003648                LPSCI_Init
-                0x00000000000038c8                LPSCI_Deinit
-                0x00000000000038fc                LPSCI_GetDefaultConfig
-                0x0000000000003954                LPSCI_SetBaudRate
-                0x0000000000003b0c                LPSCI_EnableInterrupts
-                0x0000000000003b64                LPSCI_DisableInterrupts
-                0x0000000000003bc8                LPSCI_GetEnabledInterrupts
-                0x0000000000003c00                LPSCI_GetStatusFlags
-                0x0000000000003c26                LPSCI_ClearStatusFlags
-                0x0000000000003cbc                LPSCI_WriteBlocking
-                0x0000000000003d18                LPSCI_ReadBlocking
-                0x0000000000003de8                LPSCI_TransferCreateHandle
-                0x0000000000003e78                LPSCI_TransferStartRingBuffer
-                0x0000000000003f10                LPSCI_TransferStopRingBuffer
-                0x0000000000003f94                LPSCI_TransferSendNonBlocking
-                0x0000000000004064                LPSCI_TransferAbortSend
-                0x00000000000040b4                LPSCI_TransferGetSendCount
-                0x0000000000004124                LPSCI_TransferReceiveNonBlocking
-                0x000000000000431c                LPSCI_TransferAbortReceive
-                0x0000000000004394                LPSCI_TransferGetReceiveCount
-                0x0000000000004404                LPSCI_TransferHandleIRQ
-                0x00000000000047f4                LPSCI_TransferHandleErrorIRQ
-                0x0000000000004806                UART0_DriverIRQHandler
- .text          0x000000000000482c      0x41c drivers/fsl_smc.o
-                0x0000000000004866                SMC_PreEnterStopModes
-                0x000000000000489c                SMC_PostExitStopModes
-                0x00000000000048d4                SMC_PreEnterWaitModes
-                0x00000000000048f4                SMC_PostExitWaitModes
-                0x0000000000004914                SMC_SetPowerModeRun
-                0x000000000000494c                SMC_SetPowerModeWait
-                0x000000000000497c                SMC_SetPowerModeStop
-                0x0000000000004a20                SMC_SetPowerModeVlpr
-                0x0000000000004a5c                SMC_SetPowerModeVlpw
-                0x0000000000004a8c                SMC_SetPowerModeVlps
-                0x0000000000004b00                SMC_SetPowerModeLls
-                0x0000000000004b74                SMC_SetPowerModeVlls
- .text          0x0000000000004c48     0x13bc drivers/fsl_uart.o
-                0x0000000000004d18                UART_GetInstance
-                0x0000000000004d78                UART_TransferGetRxRingBufferLength
-                0x0000000000004e40                UART_Init
-                0x0000000000005048                UART_Deinit
-                0x0000000000005088                UART_GetDefaultConfig
-                0x00000000000050e0                UART_SetBaudRate
-                0x0000000000005210                UART_EnableInterrupts
-                0x0000000000005268                UART_DisableInterrupts
-                0x00000000000052cc                UART_GetEnabledInterrupts
-                0x0000000000005304                UART_GetStatusFlags
-                0x000000000000532a                UART_ClearStatusFlags
-                0x00000000000053a4                UART_WriteBlocking
-                0x0000000000005438                UART_ReadBlocking
-                0x000000000000553c                UART_TransferCreateHandle
-                0x00000000000055d8                UART_TransferStartRingBuffer
-                0x0000000000005670                UART_TransferStopRingBuffer
-                0x00000000000056f4                UART_TransferSendNonBlocking
-                0x00000000000057c4                UART_TransferAbortSend
-                0x0000000000005814                UART_TransferGetSendCount
-                0x0000000000005884                UART_TransferReceiveNonBlocking
-                0x0000000000005a7c                UART_TransferAbortReceive
-                0x0000000000005af4                UART_TransferGetReceiveCount
-                0x0000000000005b70                UART_TransferHandleIRQ
-                0x0000000000005f88                UART_TransferHandleErrorIRQ
-                0x0000000000005f9a                UART1_DriverIRQHandler
-                0x0000000000005fc0                UART1_RX_TX_DriverIRQHandler
-                0x0000000000005fce                UART2_DriverIRQHandler
-                0x0000000000005ff4                UART2_RX_TX_DriverIRQHandler
- .text          0x0000000000006004       0x28 utilities/fsl_assert.o
-                0x0000000000006004                __assert_func
- .text          0x000000000000602c      0x250 utilities/fsl_debug_console.o
-                0x000000000000602c                DbgConsole_Init
-                0x0000000000006078                DbgConsole_Deinit
-                0x0000000000006088                DbgConsole_Flush
-                0x0000000000006098                DbgConsole_Printf
-                0x0000000000006120                DbgConsole_Putchar
-                0x000000000000613c                DbgConsole_Scanf
-                0x0000000000006186                DbgConsole_Getchar
-                0x000000000000620c                _write
-                0x000000000000624c                _read
- .text          0x000000000000627c      0x30c utilities/fsl_io.o
-                0x000000000000637c                IO_Init
-                0x0000000000006450                IO_Deinit
-                0x00000000000064a8                IO_WaitIdle
-                0x00000000000064f4                IO_Transfer
- .text          0x0000000000006588      0x210 utilities/fsl_log.o
-                0x0000000000006588                LOG_Init
-                0x00000000000065c2                LOG_Deinit
-                0x00000000000065d0                LOG_WaitIdle
-                0x00000000000065e0                LOG_Push
-                0x0000000000006620                LOG_Pop
-                0x000000000000666a                LOG_ReadLine
-                0x0000000000006720                LOG_ReadCharacter
- .text          0x0000000000006798      0x9a0 utilities/fsl_str.o
-                0x000000000000692c                StrFormatPrintf
-                0x0000000000006c50                StrFormatScanf
- .text          0x0000000000007138      0x114 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
-                0x0000000000007138                __udivsi3
-                0x0000000000007138                __aeabi_uidiv
-                0x0000000000007244                __aeabi_uidivmod
- .text          0x000000000000724c      0x1d4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
-                0x000000000000724c                __aeabi_idiv
-                0x000000000000724c                __divsi3
-                0x0000000000007418                __aeabi_idivmod
- .text          0x0000000000007420        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
-                0x0000000000007420                __aeabi_ldiv0
-                0x0000000000007420                __aeabi_idiv0
- .text          0x0000000000007424       0x18 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-atoi.o)
-                0x0000000000007424                atoi
-                0x0000000000007430                _atoi_r
- .text          0x000000000000743c       0xa4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memcpy-stub.o)
-                0x000000000000743c                memcpy
- .text          0x00000000000074e0       0xa8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memset.o)
-                0x00000000000074e0                memset
- .text          0x0000000000007588       0x88 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strcmp.o)
-                0x0000000000007588                strcmp
- .text          0x0000000000007610       0x5c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strlen-stub.o)
-                0x0000000000007610                strlen
- .text          0x000000000000766c      0x1b8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strtol.o)
-                0x00000000000077b0                _strtol_r
-                0x00000000000077cc                strtol_l
-                0x00000000000077f8                strtol
- .text          0x0000000000007824        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-errno.o)
-                0x0000000000007824                __errno
+ .text          0x00000000000012f0       0x6c startup.o
+                0x00000000000012f0                PIT_Int_Handler
+                0x00000000000012f0                ACMP_Int_Handler
+                0x00000000000012f0                DMA1_Int_Handler
+                0x00000000000012f0                PORTA_Int_Handler
+                0x00000000000012f0                LPTMR_Int_Handler
+                0x00000000000012f0                Default_ResetHandler
+                0x00000000000012f0                RTCA_Int_Handler
+                0x00000000000012f0                USBOTG_Int_Handler
+                0x00000000000012f0                ResetHandler
+                0x00000000000012f0                MCG_Int_Handler
+                0x00000000000012f0                UART0SE_Int_Handler
+                0x00000000000012f0                LLWU_Int_Handler
+                0x00000000000012f0                LVD_Int_Handler
+                0x00000000000012f0                FTM1_Int_Handler
+                0x00000000000012f0                TSI_Int_Handler
+                0x00000000000012f0                PORTD_Int_Handler
+                0x00000000000012f0                FTFA_Int_Handler
+                0x00000000000012f0                UART2SE_Int_Handler
+                0x00000000000012f0                DAC_Int_Handler
+                0x00000000000012f0                FTM0_Int_Handler
+                0x00000000000012f0                SPI1_Int_Handler
+                0x00000000000012f0                FTM2_Int_Handler
+                0x00000000000012f0                UART1SE_Int_Handler
+                0x00000000000012f0                I2C1_Int_Handler
+                0x00000000000012f0                DMA3_Int_Handler
+                0x00000000000012f0                ADC_Int_Handler
+                0x00000000000012f0                SPI0_Int_Handler
+                0x00000000000012f0                I2C0_Int_Handler
+                0x00000000000012f0                DMA0_Int_Handler
+                0x00000000000012f0                RTCS_Int_Handler
+                0x00000000000012f0                DMA2_Int_Handler
+                0x0000000000001354                SVC_Int_Handler
+                0x0000000000001354                UsageFault_Int_Handler
+                0x0000000000001354                MemManage_Int_Handler
+                0x0000000000001354                PendSV_Int_Handler
+                0x0000000000001354                BusFault_Int_Handler
+                0x0000000000001354                NMI_Int_Handler
+                0x0000000000001354                SysTick_Int_Handler
+                0x0000000000001354                DebugMon_Int_Handler
+                0x0000000000001354                HardFault_Int_Handler
+ .text          0x000000000000135c       0x68 BOARD/board.o
+                0x0000000000001394                BOARD_InitDebugConsole
+ .text          0x00000000000013c4      0x16c BOARD/clock_config.o
+                0x0000000000001470                BOARD_BootClockRUN
+                0x00000000000014d4                BOARD_BootClockVLPR
+ .text          0x0000000000001530       0xc0 BOARD/pin_mux.o
+                0x00000000000015a4                BOARD_InitPins
+ .text          0x00000000000015f0      0x274 CMSIS/system_MKL46Z4.o
+                0x00000000000015f0                SystemInit
+                0x000000000000160c                SystemCoreClockUpdate
+                0x0000000000001858                SystemInitHook
+ .text          0x0000000000001864     0x1ad0 drivers/fsl_clock.o
+                0x0000000000001b88                CLOCK_GetOsc0ErClkFreq
+                0x0000000000001bd0                CLOCK_GetEr32kClkFreq
+                0x0000000000001c54                CLOCK_GetPllFllSelClkFreq
+                0x0000000000001ca0                CLOCK_GetPlatClkFreq
+                0x0000000000001ccc                CLOCK_GetFlashClkFreq
+                0x0000000000001d1c                CLOCK_GetBusClkFreq
+                0x0000000000001d6c                CLOCK_GetCoreSysClkFreq
+                0x0000000000001d98                CLOCK_GetFreq
+                0x0000000000001e78                CLOCK_SetSimConfig
+                0x0000000000001eb0                CLOCK_EnableUsbfs0Clock
+                0x0000000000001f34                CLOCK_GetOutClkFreq
+                0x0000000000001fac                CLOCK_GetFllFreq
+                0x0000000000002030                CLOCK_GetInternalRefClkFreq
+                0x0000000000002058                CLOCK_GetFixedFreqClkFreq
+                0x0000000000002088                CLOCK_GetPll0Freq
+                0x0000000000002108                CLOCK_SetExternalRefClkConfig
+                0x000000000000211e                CLOCK_SetInternalRefClkConfig
+                0x0000000000002244                CLOCK_CalcPllDiv
+                0x0000000000002404                CLOCK_EnablePll0
+                0x00000000000024a4                CLOCK_SetOsc0MonitorMode
+                0x0000000000002524                CLOCK_SetPll0MonitorMode
+                0x00000000000025a8                CLOCK_GetStatusFlags
+                0x0000000000002614                CLOCK_ClearStatusFlags
+                0x0000000000002650                CLOCK_InitOsc0
+                0x00000000000026e4                CLOCK_DeinitOsc0
+                0x000000000000270c                CLOCK_TrimInternalRefClk
+                0x0000000000002874                CLOCK_GetMode
+                0x000000000000295c                CLOCK_SetFeiMode
+                0x0000000000002a38                CLOCK_SetFeeMode
+                0x0000000000002b64                CLOCK_SetFbiMode
+                0x0000000000002c54                CLOCK_SetFbeMode
+                0x0000000000002da0                CLOCK_SetBlpiMode
+                0x0000000000002dc0                CLOCK_SetBlpeMode
+                0x0000000000002de0                CLOCK_SetPbeMode
+                0x0000000000002ea0                CLOCK_SetPeeMode
+                0x0000000000002ed4                CLOCK_ExternalModeToFbeModeQuick
+                0x0000000000002f40                CLOCK_InternalModeToFbiModeQuick
+                0x0000000000002f88                CLOCK_BootToFeiMode
+                0x0000000000002fb6                CLOCK_BootToFeeMode
+                0x0000000000003004                CLOCK_BootToBlpiMode
+                0x000000000000307c                CLOCK_BootToBlpeMode
+                0x00000000000030f8                CLOCK_BootToPeeMode
+                0x0000000000003178                CLOCK_SetMcgConfig
+ .text          0x0000000000003334      0x190 drivers/fsl_ftfx_cache.o
+                0x0000000000003334                FTFx_CACHE_Init
+                0x000000000000336c                FTFx_CACHE_ClearCachePrefetchSpeculation
+                0x000000000000339a                FTFx_CACHE_PflashSetPrefetchSpeculation
+                0x0000000000003418                FTFx_CACHE_PflashGetPrefetchSpeculation
+                0x0000000000003494                mcm_flash_cache_clear
+ .text          0x00000000000034c4     0x147c drivers/fsl_lpsci.o
+                0x0000000000003594                LPSCI_GetInstance
+                0x00000000000035e8                LPSCI_TransferGetRxRingBufferLength
+                0x000000000000375c                LPSCI_Init
+                0x00000000000039dc                LPSCI_Deinit
+                0x0000000000003a10                LPSCI_GetDefaultConfig
+                0x0000000000003a68                LPSCI_SetBaudRate
+                0x0000000000003c20                LPSCI_EnableInterrupts
+                0x0000000000003c78                LPSCI_DisableInterrupts
+                0x0000000000003cdc                LPSCI_GetEnabledInterrupts
+                0x0000000000003d14                LPSCI_GetStatusFlags
+                0x0000000000003d3a                LPSCI_ClearStatusFlags
+                0x0000000000003dd0                LPSCI_WriteBlocking
+                0x0000000000003e2c                LPSCI_ReadBlocking
+                0x0000000000003efc                LPSCI_TransferCreateHandle
+                0x0000000000003f8c                LPSCI_TransferStartRingBuffer
+                0x0000000000004024                LPSCI_TransferStopRingBuffer
+                0x00000000000040a8                LPSCI_TransferSendNonBlocking
+                0x0000000000004178                LPSCI_TransferAbortSend
+                0x00000000000041c8                LPSCI_TransferGetSendCount
+                0x0000000000004238                LPSCI_TransferReceiveNonBlocking
+                0x0000000000004430                LPSCI_TransferAbortReceive
+                0x00000000000044a8                LPSCI_TransferGetReceiveCount
+                0x0000000000004518                LPSCI_TransferHandleIRQ
+                0x0000000000004908                LPSCI_TransferHandleErrorIRQ
+                0x000000000000491a                UART0_DriverIRQHandler
+ .text          0x0000000000004940      0x41c drivers/fsl_smc.o
+                0x000000000000497a                SMC_PreEnterStopModes
+                0x00000000000049b0                SMC_PostExitStopModes
+                0x00000000000049e8                SMC_PreEnterWaitModes
+                0x0000000000004a08                SMC_PostExitWaitModes
+                0x0000000000004a28                SMC_SetPowerModeRun
+                0x0000000000004a60                SMC_SetPowerModeWait
+                0x0000000000004a90                SMC_SetPowerModeStop
+                0x0000000000004b34                SMC_SetPowerModeVlpr
+                0x0000000000004b70                SMC_SetPowerModeVlpw
+                0x0000000000004ba0                SMC_SetPowerModeVlps
+                0x0000000000004c14                SMC_SetPowerModeLls
+                0x0000000000004c88                SMC_SetPowerModeVlls
+ .text          0x0000000000004d5c     0x13bc drivers/fsl_uart.o
+                0x0000000000004e2c                UART_GetInstance
+                0x0000000000004e8c                UART_TransferGetRxRingBufferLength
+                0x0000000000004f54                UART_Init
+                0x000000000000515c                UART_Deinit
+                0x000000000000519c                UART_GetDefaultConfig
+                0x00000000000051f4                UART_SetBaudRate
+                0x0000000000005324                UART_EnableInterrupts
+                0x000000000000537c                UART_DisableInterrupts
+                0x00000000000053e0                UART_GetEnabledInterrupts
+                0x0000000000005418                UART_GetStatusFlags
+                0x000000000000543e                UART_ClearStatusFlags
+                0x00000000000054b8                UART_WriteBlocking
+                0x000000000000554c                UART_ReadBlocking
+                0x0000000000005650                UART_TransferCreateHandle
+                0x00000000000056ec                UART_TransferStartRingBuffer
+                0x0000000000005784                UART_TransferStopRingBuffer
+                0x0000000000005808                UART_TransferSendNonBlocking
+                0x00000000000058d8                UART_TransferAbortSend
+                0x0000000000005928                UART_TransferGetSendCount
+                0x0000000000005998                UART_TransferReceiveNonBlocking
+                0x0000000000005b90                UART_TransferAbortReceive
+                0x0000000000005c08                UART_TransferGetReceiveCount
+                0x0000000000005c84                UART_TransferHandleIRQ
+                0x000000000000609c                UART_TransferHandleErrorIRQ
+                0x00000000000060ae                UART1_DriverIRQHandler
+                0x00000000000060d4                UART1_RX_TX_DriverIRQHandler
+                0x00000000000060e2                UART2_DriverIRQHandler
+                0x0000000000006108                UART2_RX_TX_DriverIRQHandler
+ .text          0x0000000000006118       0x28 utilities/fsl_assert.o
+                0x0000000000006118                __assert_func
+ .text          0x0000000000006140      0x250 utilities/fsl_debug_console.o
+                0x0000000000006140                DbgConsole_Init
+                0x000000000000618c                DbgConsole_Deinit
+                0x000000000000619c                DbgConsole_Flush
+                0x00000000000061ac                DbgConsole_Printf
+                0x0000000000006234                DbgConsole_Putchar
+                0x0000000000006250                DbgConsole_Scanf
+                0x000000000000629a                DbgConsole_Getchar
+                0x0000000000006320                _write
+                0x0000000000006360                _read
+ .text          0x0000000000006390      0x30c utilities/fsl_io.o
+                0x0000000000006490                IO_Init
+                0x0000000000006564                IO_Deinit
+                0x00000000000065bc                IO_WaitIdle
+                0x0000000000006608                IO_Transfer
+ .text          0x000000000000669c      0x210 utilities/fsl_log.o
+                0x000000000000669c                LOG_Init
+                0x00000000000066d6                LOG_Deinit
+                0x00000000000066e4                LOG_WaitIdle
+                0x00000000000066f4                LOG_Push
+                0x0000000000006734                LOG_Pop
+                0x000000000000677e                LOG_ReadLine
+                0x0000000000006834                LOG_ReadCharacter
+ .text          0x00000000000068ac      0x9a0 utilities/fsl_str.o
+                0x0000000000006a40                StrFormatPrintf
+                0x0000000000006d64                StrFormatScanf
+ .text          0x000000000000724c      0x114 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+                0x000000000000724c                __udivsi3
+                0x000000000000724c                __aeabi_uidiv
+                0x0000000000007358                __aeabi_uidivmod
+ .text          0x0000000000007360      0x1d4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+                0x0000000000007360                __aeabi_idiv
+                0x0000000000007360                __divsi3
+                0x000000000000752c                __aeabi_idivmod
+ .text          0x0000000000007534        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x0000000000007534                __aeabi_ldiv0
+                0x0000000000007534                __aeabi_idiv0
+ .text          0x0000000000007538       0x18 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-atoi.o)
+                0x0000000000007538                atoi
+                0x0000000000007544                _atoi_r
+ .text          0x0000000000007550       0xa4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memcpy-stub.o)
+                0x0000000000007550                memcpy
+ .text          0x00000000000075f4       0xa8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memset.o)
+                0x00000000000075f4                memset
+ .text          0x000000000000769c       0x88 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strcmp.o)
+                0x000000000000769c                strcmp
+ .text          0x0000000000007724       0x5c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strlen-stub.o)
+                0x0000000000007724                strlen
+ .text          0x0000000000007780      0x1b8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strtol.o)
+                0x00000000000078c4                _strtol_r
+                0x00000000000078e0                strtol_l
+                0x000000000000790c                strtol
+ .text          0x0000000000007938        0xc /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-errno.o)
+                0x0000000000007938                __errno
  *(.glue_7t)
- .glue_7t       0x0000000000007830        0x0 linker stubs
+ .glue_7t       0x0000000000007944        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x0000000000007830        0x0 linker stubs
+ .glue_7        0x0000000000007944        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
- .rodata        0x0000000000007830       0x48 lcd.o
- .rodata        0x0000000000007878       0x42 main.o
- *fill*         0x00000000000078ba        0x2 
- .rodata        0x00000000000078bc       0x38 BOARD/clock_config.o
-                0x00000000000078bc                mcgConfig_BOARD_BootClockRUN
-                0x00000000000078c8                simConfig_BOARD_BootClockRUN
-                0x00000000000078d0                oscConfig_BOARD_BootClockRUN
-                0x00000000000078d8                mcgConfig_BOARD_BootClockVLPR
-                0x00000000000078e4                simConfig_BOARD_BootClockVLPR
-                0x00000000000078ec                oscConfig_BOARD_BootClockVLPR
- .rodata        0x00000000000078f4      0x190 drivers/fsl_clock.o
- .rodata        0x0000000000007a84       0x1c drivers/fsl_ftfx_cache.o
- .rodata        0x0000000000007aa0      0x2d0 drivers/fsl_lpsci.o
- .rodata        0x0000000000007d70        0x2 drivers/fsl_smc.o
- *fill*         0x0000000000007d72        0x2 
- .rodata        0x0000000000007d74      0x2b7 drivers/fsl_uart.o
- *fill*         0x000000000000802b        0x1 
- .rodata        0x000000000000802c       0x3e utilities/fsl_assert.o
- *fill*         0x000000000000806a        0x2 
- .rodata        0x000000000000806c       0x5c utilities/fsl_debug_console.o
- .rodata        0x00000000000080c8       0x28 utilities/fsl_io.o
- .rodata        0x00000000000080f0       0x5a utilities/fsl_log.o
- *fill*         0x000000000000814a        0x2 
- .rodata        0x000000000000814c      0x124 utilities/fsl_str.o
- .rodata        0x0000000000008270      0x101 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-ctype_.o)
-                0x0000000000008270                _ctype_
+ .rodata        0x0000000000007944       0x48 lcd.o
+ .rodata        0x000000000000798c       0x34 main.o
+ .rodata        0x00000000000079c0       0x38 BOARD/clock_config.o
+                0x00000000000079c0                mcgConfig_BOARD_BootClockRUN
+                0x00000000000079cc                simConfig_BOARD_BootClockRUN
+                0x00000000000079d4                oscConfig_BOARD_BootClockRUN
+                0x00000000000079dc                mcgConfig_BOARD_BootClockVLPR
+                0x00000000000079e8                simConfig_BOARD_BootClockVLPR
+                0x00000000000079f0                oscConfig_BOARD_BootClockVLPR
+ .rodata        0x00000000000079f8      0x190 drivers/fsl_clock.o
+ .rodata        0x0000000000007b88       0x1c drivers/fsl_ftfx_cache.o
+ .rodata        0x0000000000007ba4      0x2d0 drivers/fsl_lpsci.o
+ .rodata        0x0000000000007e74        0x2 drivers/fsl_smc.o
+ *fill*         0x0000000000007e76        0x2 
+ .rodata        0x0000000000007e78      0x2b7 drivers/fsl_uart.o
+ *fill*         0x000000000000812f        0x1 
+ .rodata        0x0000000000008130       0x3e utilities/fsl_assert.o
+ *fill*         0x000000000000816e        0x2 
+ .rodata        0x0000000000008170       0x5c utilities/fsl_debug_console.o
+ .rodata        0x00000000000081cc       0x28 utilities/fsl_io.o
+ .rodata        0x00000000000081f4       0x5a utilities/fsl_log.o
+ *fill*         0x000000000000824e        0x2 
+ .rodata        0x0000000000008250      0x124 utilities/fsl_str.o
+ .rodata        0x0000000000008374      0x101 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-ctype_.o)
+                0x0000000000008374                _ctype_
 
-.vfp11_veneer   0x0000000000008374        0x0
- .vfp11_veneer  0x0000000000008374        0x0 linker stubs
+.vfp11_veneer   0x0000000000008478        0x0
+ .vfp11_veneer  0x0000000000008478        0x0 linker stubs
 
-.v4_bx          0x0000000000008374        0x0
- .v4_bx         0x0000000000008374        0x0 linker stubs
+.v4_bx          0x0000000000008478        0x0
+ .v4_bx         0x0000000000008478        0x0 linker stubs
 
-.init           0x0000000000008374        0x4
- .init          0x0000000000008374        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crti.o
-                0x0000000000008374                _init
+.init           0x0000000000008478        0x4
+ .init          0x0000000000008478        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crti.o
+                0x0000000000008478                _init
 
-.fini           0x0000000000008378        0x4
- .fini          0x0000000000008378        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crti.o
-                0x0000000000008378                _fini
+.fini           0x000000000000847c        0x4
+ .fini          0x000000000000847c        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crti.o
+                0x000000000000847c                _fini
 
-.iplt           0x000000000000837c        0x0
- .iplt          0x000000000000837c        0x0 lcd.o
+.iplt           0x0000000000008480        0x0
+ .iplt          0x0000000000008480        0x0 lcd.o
 
-.rel.dyn        0x000000000000837c        0x0
- .rel.iplt      0x000000000000837c        0x0 lcd.o
+.rel.dyn        0x0000000000008480        0x0
+ .rel.iplt      0x0000000000008480        0x0 lcd.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000000000000837c                . = ALIGN (0x4)
-                0x000000000000837c                _etext = .
-                0x000000000000837c                _sidata = .
+                0x0000000000008480                . = ALIGN (0x4)
+                0x0000000000008480                _etext = .
+                0x0000000000008480                _sidata = .
 
-.data           0x000000001fffe000       0x70 load address 0x000000000000837c
+.data           0x000000001fffe000       0x70 load address 0x0000000000008480
                 0x000000001fffe000                _sdata = .
  *(.data .data.*)
  .data          0x000000001fffe000        0x4 CMSIS/system_MKL46Z4.o
@@ -1927,10 +1926,10 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x000000001fffe070                . = ALIGN (0x4)
                 0x000000001fffe070                _edata = .
 
-.igot.plt       0x000000001fffe070        0x0 load address 0x00000000000083ec
+.igot.plt       0x000000001fffe070        0x0 load address 0x00000000000084f0
  .igot.plt      0x000000001fffe070        0x0 lcd.o
 
-.bss            0x000000001fffe070       0x6c load address 0x00000000000083ec
+.bss            0x000000001fffe070       0x6c load address 0x00000000000084f0
                 0x000000001fffe070                _sbss = .
  *(.bss .bss.*)
  .bss           0x000000001fffe070        0x8 drivers/fsl_clock.o
@@ -1945,7 +1944,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x000000001fffe0dc                . = ALIGN (0x4)
                 0x000000001fffe0dc                _ebss = .
 
-.co_stack       0x000000001fffe0dc      0x404 load address 0x0000000000008458
+.co_stack       0x000000001fffe0dc      0x404 load address 0x000000000000855c
                 0x000000001fffe0e0                . = ALIGN (0x8)
  *fill*         0x000000001fffe0dc        0x4 
                 0x000000001fffe4e0                . = (. + STACK_SIZE)
@@ -2077,36 +2076,36 @@ LOAD linker stubs
  .comment       0x0000000000000033       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strtol.o)
  .comment       0x0000000000000033       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-errno.o)
 
-.debug_info     0x0000000000000000     0xc56e
+.debug_info     0x0000000000000000     0xc59b
  .debug_info    0x0000000000000000      0x519 lcd.o
- .debug_info    0x0000000000000519      0xc6d main.o
- .debug_info    0x0000000000001186      0x100 startup.o
- .debug_info    0x0000000000001286      0x3a2 BOARD/board.o
- .debug_info    0x0000000000001628      0xb00 BOARD/clock_config.o
- .debug_info    0x0000000000002128      0x555 BOARD/pin_mux.o
- .debug_info    0x000000000000267d      0x40e CMSIS/system_MKL46Z4.o
- .debug_info    0x0000000000002a8b     0x1b7a drivers/fsl_clock.o
- .debug_info    0x0000000000004605      0x631 drivers/fsl_ftfx_cache.o
- .debug_info    0x0000000000004c36     0x16e7 drivers/fsl_lpsci.o
- .debug_info    0x000000000000631d      0x946 drivers/fsl_smc.o
- .debug_info    0x0000000000006c63     0x1664 drivers/fsl_uart.o
- .debug_info    0x00000000000082c7       0xd8 utilities/fsl_assert.o
- .debug_info    0x000000000000839f      0x402 utilities/fsl_debug_console.o
- .debug_info    0x00000000000087a1      0x8fd utilities/fsl_io.o
- .debug_info    0x000000000000909e      0x374 utilities/fsl_log.o
- .debug_info    0x0000000000009412      0x505 utilities/fsl_str.o
- .debug_info    0x0000000000009917       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_info    0x000000000000993d       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_info    0x0000000000009963       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
- .debug_info    0x0000000000009989      0x848 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-atoi.o)
- .debug_info    0x000000000000a1d1       0xb8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-ctype_.o)
- .debug_info    0x000000000000a289      0x863 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-impure.o)
- .debug_info    0x000000000000aaec      0x15c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memcpy-stub.o)
- .debug_info    0x000000000000ac48      0x13d /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memset.o)
- .debug_info    0x000000000000ad85       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strcmp.o)
- .debug_info    0x000000000000adab       0xee /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strlen-stub.o)
- .debug_info    0x000000000000ae99      0xf27 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strtol.o)
- .debug_info    0x000000000000bdc0      0x7ae /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-errno.o)
+ .debug_info    0x0000000000000519      0xc9a main.o
+ .debug_info    0x00000000000011b3      0x100 startup.o
+ .debug_info    0x00000000000012b3      0x3a2 BOARD/board.o
+ .debug_info    0x0000000000001655      0xb00 BOARD/clock_config.o
+ .debug_info    0x0000000000002155      0x555 BOARD/pin_mux.o
+ .debug_info    0x00000000000026aa      0x40e CMSIS/system_MKL46Z4.o
+ .debug_info    0x0000000000002ab8     0x1b7a drivers/fsl_clock.o
+ .debug_info    0x0000000000004632      0x631 drivers/fsl_ftfx_cache.o
+ .debug_info    0x0000000000004c63     0x16e7 drivers/fsl_lpsci.o
+ .debug_info    0x000000000000634a      0x946 drivers/fsl_smc.o
+ .debug_info    0x0000000000006c90     0x1664 drivers/fsl_uart.o
+ .debug_info    0x00000000000082f4       0xd8 utilities/fsl_assert.o
+ .debug_info    0x00000000000083cc      0x402 utilities/fsl_debug_console.o
+ .debug_info    0x00000000000087ce      0x8fd utilities/fsl_io.o
+ .debug_info    0x00000000000090cb      0x374 utilities/fsl_log.o
+ .debug_info    0x000000000000943f      0x505 utilities/fsl_str.o
+ .debug_info    0x0000000000009944       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_info    0x000000000000996a       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_info    0x0000000000009990       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x00000000000099b6      0x848 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-atoi.o)
+ .debug_info    0x000000000000a1fe       0xb8 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-ctype_.o)
+ .debug_info    0x000000000000a2b6      0x863 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-impure.o)
+ .debug_info    0x000000000000ab19      0x15c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_info    0x000000000000ac75      0x13d /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memset.o)
+ .debug_info    0x000000000000adb2       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strcmp.o)
+ .debug_info    0x000000000000add8       0xee /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strlen-stub.o)
+ .debug_info    0x000000000000aec6      0xf27 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strtol.o)
+ .debug_info    0x000000000000bded      0x7ae /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-errno.o)
 
 .debug_abbrev   0x0000000000000000     0x2903
  .debug_abbrev  0x0000000000000000      0x180 lcd.o
@@ -2291,92 +2290,92 @@ LOAD linker stubs
  .debug_macro   0x000000000000e28e      0x1ec utilities/fsl_str.o
  .debug_macro   0x000000000000e47a      0x1a9 utilities/fsl_str.o
 
-.debug_line     0x0000000000000000     0x6cee
+.debug_line     0x0000000000000000     0x6d5b
  .debug_line    0x0000000000000000      0x477 lcd.o
- .debug_line    0x0000000000000477      0x610 main.o
- .debug_line    0x0000000000000a87       0x7c startup.o
- .debug_line    0x0000000000000b03      0x326 BOARD/board.o
- .debug_line    0x0000000000000e29      0x33f BOARD/clock_config.o
- .debug_line    0x0000000000001168      0x309 BOARD/pin_mux.o
- .debug_line    0x0000000000001471      0x247 CMSIS/system_MKL46Z4.o
- .debug_line    0x00000000000016b8      0xef4 drivers/fsl_clock.o
- .debug_line    0x00000000000025ac      0x3b6 drivers/fsl_ftfx_cache.o
- .debug_line    0x0000000000002962      0xb7c drivers/fsl_lpsci.o
- .debug_line    0x00000000000034de      0x5a3 drivers/fsl_smc.o
- .debug_line    0x0000000000003a81      0xb52 drivers/fsl_uart.o
- .debug_line    0x00000000000045d3      0x2ca utilities/fsl_assert.o
- .debug_line    0x000000000000489d      0x3f7 utilities/fsl_debug_console.o
- .debug_line    0x0000000000004c94      0x472 utilities/fsl_io.o
- .debug_line    0x0000000000005106      0x3d0 utilities/fsl_log.o
- .debug_line    0x00000000000054d6      0x946 utilities/fsl_str.o
- .debug_line    0x0000000000005e1c       0x6c /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_line    0x0000000000005e88       0x73 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_line    0x0000000000005efb       0x60 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
- .debug_line    0x0000000000005f5b      0x15e /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-atoi.o)
- .debug_line    0x00000000000060b9       0x5e /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-ctype_.o)
- .debug_line    0x0000000000006117       0xe4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-impure.o)
- .debug_line    0x00000000000061fb      0x1b5 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memcpy-stub.o)
- .debug_line    0x00000000000063b0      0x1ce /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memset.o)
- .debug_line    0x000000000000657e       0xb0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strcmp.o)
- .debug_line    0x000000000000662e      0x172 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strlen-stub.o)
- .debug_line    0x00000000000067a0      0x43f /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strtol.o)
- .debug_line    0x0000000000006bdf      0x10f /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-errno.o)
+ .debug_line    0x0000000000000477      0x67d main.o
+ .debug_line    0x0000000000000af4       0x7c startup.o
+ .debug_line    0x0000000000000b70      0x326 BOARD/board.o
+ .debug_line    0x0000000000000e96      0x33f BOARD/clock_config.o
+ .debug_line    0x00000000000011d5      0x309 BOARD/pin_mux.o
+ .debug_line    0x00000000000014de      0x247 CMSIS/system_MKL46Z4.o
+ .debug_line    0x0000000000001725      0xef4 drivers/fsl_clock.o
+ .debug_line    0x0000000000002619      0x3b6 drivers/fsl_ftfx_cache.o
+ .debug_line    0x00000000000029cf      0xb7c drivers/fsl_lpsci.o
+ .debug_line    0x000000000000354b      0x5a3 drivers/fsl_smc.o
+ .debug_line    0x0000000000003aee      0xb52 drivers/fsl_uart.o
+ .debug_line    0x0000000000004640      0x2ca utilities/fsl_assert.o
+ .debug_line    0x000000000000490a      0x3f7 utilities/fsl_debug_console.o
+ .debug_line    0x0000000000004d01      0x472 utilities/fsl_io.o
+ .debug_line    0x0000000000005173      0x3d0 utilities/fsl_log.o
+ .debug_line    0x0000000000005543      0x946 utilities/fsl_str.o
+ .debug_line    0x0000000000005e89       0x6c /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_line    0x0000000000005ef5       0x73 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_line    0x0000000000005f68       0x60 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x0000000000005fc8      0x15e /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-atoi.o)
+ .debug_line    0x0000000000006126       0x5e /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-ctype_.o)
+ .debug_line    0x0000000000006184       0xe4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-impure.o)
+ .debug_line    0x0000000000006268      0x1b5 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_line    0x000000000000641d      0x1ce /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memset.o)
+ .debug_line    0x00000000000065eb       0xb0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strcmp.o)
+ .debug_line    0x000000000000669b      0x172 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strlen-stub.o)
+ .debug_line    0x000000000000680d      0x43f /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strtol.o)
+ .debug_line    0x0000000000006c4c      0x10f /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-errno.o)
 
-.debug_str      0x0000000000000000    0x562fa
+.debug_str      0x0000000000000000    0x56300
  .debug_str     0x0000000000000000    0x4213e lcd.o
                                       0x4241c (size before relaxing)
- .debug_str     0x000000000004213e     0xd1f9 main.o
-                                      0x4f6a8 (size before relaxing)
- .debug_str     0x000000000004f337       0x9d startup.o
+ .debug_str     0x000000000004213e     0xd1ff main.o
+                                      0x4f6b5 (size before relaxing)
+ .debug_str     0x000000000004f33d       0x9d startup.o
                                        0x2c41 (size before relaxing)
- .debug_str     0x000000000004f3d4       0xbb BOARD/board.o
+ .debug_str     0x000000000004f3da       0xbb BOARD/board.o
                                       0x4ce95 (size before relaxing)
- .debug_str     0x000000000004f48f      0x6f6 BOARD/clock_config.o
+ .debug_str     0x000000000004f495      0x6f6 BOARD/clock_config.o
                                       0x4d127 (size before relaxing)
- .debug_str     0x000000000004fb85      0x2e1 BOARD/pin_mux.o
+ .debug_str     0x000000000004fb8b      0x2e1 BOARD/pin_mux.o
                                       0x4c9b5 (size before relaxing)
- .debug_str     0x000000000004fe66       0x5b CMSIS/system_MKL46Z4.o
+ .debug_str     0x000000000004fe6c       0x5b CMSIS/system_MKL46Z4.o
                                       0x489dc (size before relaxing)
- .debug_str     0x000000000004fec1     0x139c drivers/fsl_clock.o
+ .debug_str     0x000000000004fec7     0x139c drivers/fsl_clock.o
                                       0x4e2a0 (size before relaxing)
- .debug_str     0x000000000005125d     0x1c9f drivers/fsl_ftfx_cache.o
+ .debug_str     0x0000000000051263     0x1c9f drivers/fsl_ftfx_cache.o
                                       0x4e59d (size before relaxing)
- .debug_str     0x0000000000052efc      0xb5f drivers/fsl_lpsci.o
+ .debug_str     0x0000000000052f02      0xb5f drivers/fsl_lpsci.o
                                       0x4d8c9 (size before relaxing)
- .debug_str     0x0000000000053a5b      0x3eb drivers/fsl_smc.o
+ .debug_str     0x0000000000053a61      0x3eb drivers/fsl_smc.o
                                       0x4e42c (size before relaxing)
- .debug_str     0x0000000000053e46      0x9e6 drivers/fsl_uart.o
+ .debug_str     0x0000000000053e4c      0x9e6 drivers/fsl_uart.o
                                       0x4d8e6 (size before relaxing)
- .debug_str     0x000000000005482c       0x30 utilities/fsl_assert.o
+ .debug_str     0x0000000000054832       0x30 utilities/fsl_assert.o
                                       0x4c3fa (size before relaxing)
- .debug_str     0x000000000005485c      0x377 utilities/fsl_debug_console.o
+ .debug_str     0x0000000000054862      0x377 utilities/fsl_debug_console.o
                                       0x4c8d1 (size before relaxing)
- .debug_str     0x0000000000054bd3       0xe4 utilities/fsl_io.o
+ .debug_str     0x0000000000054bd9       0xe4 utilities/fsl_io.o
                                       0x4d16a (size before relaxing)
- .debug_str     0x0000000000054cb7      0x1d5 utilities/fsl_log.o
+ .debug_str     0x0000000000054cbd      0x1d5 utilities/fsl_log.o
                                       0x4c7d1 (size before relaxing)
- .debug_str     0x0000000000054e8c      0x9b8 utilities/fsl_str.o
+ .debug_str     0x0000000000054e92      0x9b8 utilities/fsl_str.o
                                       0x4d027 (size before relaxing)
- .debug_str     0x0000000000055844       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_str     0x00000000000558ea       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_str     0x00000000000558ea       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
- .debug_str     0x00000000000558ea      0x41c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-atoi.o)
+ .debug_str     0x000000000005584a       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_str     0x00000000000558f0       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_str     0x00000000000558f0       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_str     0x00000000000558f0      0x41c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-atoi.o)
                                         0x50b (size before relaxing)
- .debug_str     0x0000000000055d06       0x90 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-ctype_.o)
+ .debug_str     0x0000000000055d0c       0x90 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-ctype_.o)
                                         0x19d (size before relaxing)
- .debug_str     0x0000000000055d96       0xdb /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-impure.o)
+ .debug_str     0x0000000000055d9c       0xdb /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-impure.o)
                                         0x557 (size before relaxing)
- .debug_str     0x0000000000055e71       0xd2 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_str     0x0000000000055e77       0xd2 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memcpy-stub.o)
                                         0x1de (size before relaxing)
- .debug_str     0x0000000000055f43       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memset.o)
+ .debug_str     0x0000000000055f49       0xa6 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-memset.o)
                                         0x1b9 (size before relaxing)
- .debug_str     0x0000000000055fe9       0x43 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strcmp.o)
+ .debug_str     0x0000000000055fef       0x43 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strcmp.o)
                                          0xb2 (size before relaxing)
- .debug_str     0x000000000005602c       0x4e /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strlen-stub.o)
+ .debug_str     0x0000000000056032       0x4e /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strlen-stub.o)
                                         0x1ca (size before relaxing)
- .debug_str     0x000000000005607a      0x1f1 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strtol.o)
+ .debug_str     0x0000000000056080      0x1f1 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-strtol.o)
                                         0x784 (size before relaxing)
- .debug_str     0x000000000005626b       0x8f /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-errno.o)
+ .debug_str     0x0000000000056271       0x8f /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-errno.o)
                                         0x500 (size before relaxing)
 
 .debug_frame    0x0000000000000000     0x1d90

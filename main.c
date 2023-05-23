@@ -35,8 +35,9 @@
 #include "fsl_device_registers.h"
 #include "fsl_debug_console.h"
 #include "board.h"
-
+#include "MKL46Z4.h"
 #include "pin_mux.h"
+#include <string.h>
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
@@ -52,6 +53,136 @@
 /*!
  * @brief Main function
  */
+/*******************************************************************************
+ * Definitions
+ ******************************************************************************/
+int verde=0, rojo=0;
+
+/*******************************************************************************
+ * Prototypes
+ ******************************************************************************/
+
+/*******************************************************************************
+ * Code
+ ******************************************************************************/
+ void delay(void)
+{
+  volatile int i;
+
+  for (i = 0; i < 1000000; i++);
+}
+ 
+ // LED_GREEN = PTD5
+void led_green_ini()
+{
+  SIM->COPC = 0;
+  SIM->SCGC5 |= SIM_SCGC5_PORTD_MASK;
+  PORTD->PCR[5] = PORT_PCR_MUX(1);
+  GPIOD->PDDR |= (1 << 5);
+  GPIOD->PSOR = (1 << 5);
+}
+
+// LED_RED = PTE29
+void led_red_ini()
+{
+  SIM->COPC = 0;
+  SIM->SCGC5 |= SIM_SCGC5_PORTE_MASK;
+  PORTE->PCR[29] = PORT_PCR_MUX(1);
+  GPIOE->PDDR |= (1 << 29);
+  GPIOE->PSOR = (1 << 29);
+}
+
+void turn_green_led_off()
+{
+	GPIOD->PSOR |= (1 << 5);
+	
+}
+
+void turn_red_led_off()
+{
+	GPIOE->PSOR |= (1 << 29);
+}
+
+void turn_green_led_on()
+{
+	GPIOD->PCOR |= (1 << 5);
+}
+
+void turn_red_led_on()
+{
+	GPIOE->PCOR |= (1 << 29);
+}
+
+void led_green_toggle()
+{
+  GPIOD->PTOR = (1 << 5);
+}
+
+void led_red_toggle()
+{
+  GPIOE->PTOR = (1 << 29);
+}
+// LED_RED = PTE29
+// LED_GREEN = PTD5
+void leds_ini()
+{
+  SIM->COPC = 0;
+  SIM->SCGC5 |= SIM_SCGC5_PORTD_MASK | SIM_SCGC5_PORTE_MASK;
+  PORTD->PCR[5] = PORT_PCR_MUX(1);
+  PORTE->PCR[29] = PORT_PCR_MUX(1);
+  GPIOD->PDDR |= (1 << 5);
+  GPIOE->PDDR |= (1 << 29);
+  // both LEDS off after init
+  GPIOD->PSOR = (1 << 5);
+  GPIOE->PSOR = (1 << 29);
+}
+//comun a ambos botones
+void sws_ini(){
+  SIM->COPC = 0;             
+  SIM->SCGC5 |= SIM_SCGC5_PORTC_MASK;
+  NVIC_SetPriority(31, 0);  
+  NVIC_EnableIRQ(31);  
+}
+
+// RIGHT_SWITCH (SW1) = PTC3
+void sw1_ini()
+{
+  PORTC->PCR[3] |= PORT_PCR_MUX(1); 
+  PORTC->PCR[3] |= PORT_PCR_PE_MASK;
+  PORTC->PCR[3] |= PORT_PCR_PS_MASK;
+
+  PORTC->PCR[3] |= PORT_PCR_IRQC(0xA);    
+}
+
+// LEFT_SWITCH (SW2) = PTC12
+void sw2_ini()
+{
+  PORTC->PCR[12] |= PORT_PCR_MUX(1); 
+  PORTC->PCR[12] |= PORT_PCR_PE_MASK;
+  PORTC->PCR[12] |= PORT_PCR_PS_MASK;
+
+  PORTC->PCR[12] |= PORT_PCR_IRQC(0xA);   
+}
+
+void PORTDIntHandler(void) {
+  int pressed_switch = PORTC->ISFR;
+  PORTC->ISFR = 0xFFFFFFFF; // Clear IRQ
+
+  // SW1
+  if(pressed_switch == (0x8)) {
+    turn_green_led_on();
+    turn_red_led_off();
+    verde++;
+    rojo=0;
+  }
+  // SW2
+  if(pressed_switch == (0x1000)) {
+    turn_red_led_on();
+    turn_green_led_off();
+    rojo++;
+    verde=0;
+  }
+}
 int main(void)
 {
   char ch;

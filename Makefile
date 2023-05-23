@@ -3,10 +3,10 @@
 PREFIX=arm-none-eabi-
 
 ARCHFLAGS=-mthumb -mcpu=cortex-m0plus
-COMMONFLAGS=-g3 -Og -Wall -Werror $(ARCHFLAGS)
+COMMONFLAGS=-g3 -O0 -Wall -Werror $(ARCHFLAGS)
 
-CFLAGS=-I./includes $(COMMONFLAGS)
-LDFLAGS=$(COMMONFLAGS) --specs=nano.specs -Wl,--gc-sections,-Map,$(TARGET).map,-Tlink.ld
+CFLAGS=-I./BOARD $(COMMONFLAGS) -I./CMSIS $(COMMONFLAGS) -I./drivers $(COMMONFLAGS) -I./utilities $(COMMONFLAGS) -DCPU_MKL46Z256VLL4
+LDFLAGS=$(COMMONFLAGS) --specs=nano.specs -Wl,-t,--gc-sections,-Map,$(TARGET).map,-Tlink.ld
 LDLIBS=
 
 CC=$(PREFIX)gcc
@@ -17,7 +17,7 @@ RM=rm -f
 
 TARGET=main
 
-SRC=$(wildcard *.c)
+SRC=$(wildcard *.c BOARD/*.c CMSIS/*.c drivers/*.c utilities/*.c)
 OBJ=$(patsubst %.c, %.o, $(SRC))
 
 all: build size

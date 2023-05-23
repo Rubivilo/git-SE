@@ -5,44 +5,44 @@
 #define WEAK __attribute__ ((weak))
 
 void WEAK  ResetHandler(void);
-void WEAK  NMIIntHandler(void);
-void WEAK  HardFaultIntHandler(void);
-void WEAK  MemManageIntHandler(void);
-void WEAK  BusFaultIntHandler(void);
-void WEAK  UsageFaultIntHandler(void);
-void WEAK  SVCIntHandler(void);
-void WEAK  DebugMonIntHandler(void);
-void WEAK  PendSVIntHandler(void);
-void WEAK  SysTickIntHandler(void);
-void WEAK  DMA0IntHandler(void);
-void WEAK  DMA1IntHandler(void);
-void WEAK  DMA2IntHandler(void);
-void WEAK  DMA3IntHandler(void);
-void WEAK  FTFAIntHandler(void);
-void WEAK  LVDIntHandler(void);
-void WEAK  LLWUIntHandler(void);
-void WEAK  I2C0IntHandler(void);
-void WEAK  I2C1IntHandler(void);
-void WEAK  SPI0IntHandler(void);
-void WEAK  SPI1IntHandler(void);
-void WEAK  UART0SEIntHandler(void);
-void WEAK  UART1SEIntHandler(void);
-void WEAK  UART2SEIntHandler(void);
-void WEAK  ADCIntHandler(void);
-void WEAK  ACMPIntHandler(void);
-void WEAK  FTM0IntHandler(void);
-void WEAK  FTM1IntHandler(void);
-void WEAK  FTM2IntHandler(void);
-void WEAK  RTCAIntHandler(void);
-void WEAK  RTCSIntHandler(void);
-void WEAK  PITIntHandler(void);
-void WEAK  USBOTGIntHandler(void);
-void WEAK  DACIntHandler(void);
-void WEAK  TSIIntHandler(void);
-void WEAK  MCGIntHandler(void);
-void WEAK  LPTMRIntHandler(void);
-void WEAK  PORTAIntHandler(void);
-void WEAK  PORTDIntHandler(void);
+void WEAK  NMI_Int_Handler(void);
+void WEAK  HardFault_Int_Handler(void);
+void WEAK  MemManage_Int_Handler(void);
+void WEAK  BusFault_Int_Handler(void);
+void WEAK  UsageFault_Int_Handler(void);
+void WEAK  SVC_Int_Handler(void);
+void WEAK  DebugMon_Int_Handler(void);
+void WEAK  PendSV_Int_Handler(void);
+void WEAK  SysTick_Int_Handler(void);
+void WEAK  DMA0_Int_Handler(void);
+void WEAK  DMA1_Int_Handler(void);
+void WEAK  DMA2_Int_Handler(void);
+void WEAK  DMA3_Int_Handler(void);
+void WEAK  FTFA_Int_Handler(void);
+void WEAK  LVD_Int_Handler(void);
+void WEAK  LLWU_Int_Handler(void);
+void WEAK  I2C0_Int_Handler(void);
+void WEAK  I2C1_Int_Handler(void);
+void WEAK  SPI0_Int_Handler(void);
+void WEAK  SPI1_Int_Handler(void);
+void WEAK  UART0SE_Int_Handler(void);
+void WEAK  UART1SE_Int_Handler(void);
+void WEAK  UART2SE_Int_Handler(void);
+void WEAK  ADC_Int_Handler(void);
+void WEAK  ACMP_Int_Handler(void);
+void WEAK  FTM0_Int_Handler(void);
+void WEAK  FTM1_Int_Handler(void);
+void WEAK  FTM2_Int_Handler(void);
+void WEAK  RTCA_Int_Handler(void);
+void WEAK  RTCS_Int_Handler(void);
+void WEAK  PIT_Int_Handler(void);
+void WEAK  USBOTG_Int_Handler(void);
+void WEAK  DAC_Int_Handler(void);
+void WEAK  TSI_Int_Handler(void);
+void WEAK  MCG_Int_Handler(void);
+void WEAK  LPTMR_Int_Handler(void);
+void WEAK  PORTA_Int_Handler(void);
+void WEAK  PORTD_Int_Handler(void);
 
 //*****************************************************************************
 // Symbols defined in linker script
@@ -74,7 +74,7 @@ extern unsigned long _start_of_stack;
 //*****************************************************************************
 extern int main(void);
 void ResetHandler(void);
-static void DefaultIntHandler(void);
+static void Default_Int_Handler(void);
 
 //*****************************************************************************
 // The minimal vector table for a Cortex M0+.  Note that the proper constructs
@@ -86,50 +86,50 @@ void (* const g_pfnVectors[])(void) =
   {
     (void *)&_start_of_stack,
     ResetHandler,                           // The reset handler
-    NMIIntHandler,                          // The NMI handler
-    HardFaultIntHandler,                    // The hard fault handler
+    NMI_Int_Handler,                          // The NMI handler
+    HardFault_Int_Handler,                    // The hard fault handler
     0, 0, 0, 0, 0, 0, 0,                    // Reserved
-    SVCIntHandler,                          // SVCall handler
+    SVC_Int_Handler,                          // SVCall handler
     0, 0,                                   // Reserved
-    PendSVIntHandler,                       // The PendSV handler
-    SysTickIntHandler,                      // The SysTick handler
+    PendSV_Int_Handler,                       // The PendSV handler
+    SysTick_Int_Handler,                      // The SysTick handler
 
-    DMA0IntHandler,                         // DMA channel 0 transfer complete
+    DMA0_Int_Handler,                         // DMA channel 0 transfer complete
                                             // and error handler
-    DMA1IntHandler,                         // DMA channel 1 transfer complete
+    DMA1_Int_Handler,                         // DMA channel 1 transfer complete
                                             // and error handler
-    DMA2IntHandler,                         // DMA channel 2 transfer complete
+    DMA2_Int_Handler,                         // DMA channel 2 transfer complete
                                             // and error handler
-    DMA3IntHandler,                         // DMA channel 3 transfer complete
+    DMA3_Int_Handler,                         // DMA channel 3 transfer complete
                                             // and error handler
     0,                                      // Reserved
-    FTFAIntHandler,                         // Command complete and read collision
-    LVDIntHandler,                          // Low-voltage detect, low-voltage warning
-    LLWUIntHandler,                         // Low Leakage Wakeup
-    I2C0IntHandler,                         // I2C0 handler
-    I2C1IntHandler,                         // I2C1 handler
-    SPI0IntHandler,                         // SPI0 handler
-    SPI1IntHandler,                         // SPI1 handler
-    UART0SEIntHandler,                      // UART0SE handler
-    UART1SEIntHandler,                      // UART1SE handler
-    UART2SEIntHandler,                      // UART2SE handler
-    ADCIntHandler,                          // ADC handler
-    ACMPIntHandler,                         // ACMP handler
-    FTM0IntHandler,                         // FTM0 handler
-    FTM1IntHandler,                         // FTM1 handler
-    FTM2IntHandler,                         // FTM2 handler
-    RTCAIntHandler,                         // RTCA handler
-    RTCSIntHandler,                         // RTCS handler
-    PITIntHandler,                          // PIT handler
+    FTFA_Int_Handler,                         // Command complete and read collision
+    LVD_Int_Handler,                          // Low-voltage detect, low-voltage warning
+    LLWU_Int_Handler,                         // Low Leakage Wakeup
+    I2C0_Int_Handler,                         // I2C0 handler
+    I2C1_Int_Handler,                         // I2C1 handler
+    SPI0_Int_Handler,                         // SPI0 handler
+    SPI1_Int_Handler,                         // SPI1 handler
+    UART0SE_Int_Handler,                      // UART0SE handler
+    UART1SE_Int_Handler,                      // UART1SE handler
+    UART2SE_Int_Handler,                      // UART2SE handler
+    ADC_Int_Handler,                          // ADC handler
+    ACMP_Int_Handler,                         // ACMP handler
+    FTM0_Int_Handler,                         // FTM0 handler
+    FTM1_Int_Handler,                         // FTM1 handler
+    FTM2_Int_Handler,                         // FTM2 handler
+    RTCA_Int_Handler,                         // RTCA handler
+    RTCS_Int_Handler,                         // RTCS handler
+    PIT_Int_Handler,                          // PIT handler
     0,                                      // Reserved
-    USBOTGIntHandler,                       // USBOTG handler
-    DACIntHandler,                          // DAC handler
-    TSIIntHandler,                          // TSI handler
-    MCGIntHandler,                          // MCG handler
-    LPTMRIntHandler,                        // PIT handler
+    USBOTG_Int_Handler,                       // USBOTG handler
+    DAC_Int_Handler,                          // DAC handler
+    TSI_Int_Handler,                          // TSI handler
+    MCG_Int_Handler,                          // MCG handler
+    LPTMR_Int_Handler,                        // PIT handler
     0,                                      // Reserved
-    PORTAIntHandler,                        // PORTA handler
-    PORTDIntHandler,                        // PORTC/PORTD handler
+    PORTA_Int_Handler,                        // PORTA handler
+    PORTD_Int_Handler,                        // PORTC/PORTD handler
   };
 
 //*****************************************************************************
@@ -143,9 +143,15 @@ void (* const g_pfnVectors[])(void) =
 //!
 //! \return None.
 //*****************************************************************************
+
+// Defined in system_MKL46Z4.c: disables watchdog
+extern void SystemInit(void);
+
 void Default_ResetHandler(void)
 {
   unsigned long *pulSrc, *pulDest;
+
+  SystemInit();
 
   /* copy the data segment initializers from flash to SRAM */
   pulSrc = &_sidata;
@@ -165,49 +171,49 @@ void Default_ResetHandler(void)
 }
 
 //*****************************************************************************
-// Provide weak aliases for each Exception handler to the DefaultIntHandler.
+// Provide weak aliases for each Exception handler to the Default_Int_Handler.
 // As they are weak aliases, any function with the same name will override
 // this definition.
 //*****************************************************************************
 #pragma weak ResetHandler = Default_ResetHandler
-#pragma weak NMIIntHandler = DefaultIntHandler
-#pragma weak HardFaultIntHandler = DefaultIntHandler
-#pragma weak MemManageIntHandler = DefaultIntHandler
-#pragma weak BusFaultIntHandler = DefaultIntHandler
-#pragma weak UsageFaultIntHandler = DefaultIntHandler
-#pragma weak SVCIntHandler = DefaultIntHandler
-#pragma weak DebugMonIntHandler = DefaultIntHandler
-#pragma weak PendSVIntHandler = DefaultIntHandler
-#pragma weak SysTickIntHandler = DefaultIntHandler
-#pragma weak DMA0IntHandler = Default_ResetHandler
-#pragma weak DMA1IntHandler = Default_ResetHandler
-#pragma weak DMA2IntHandler = Default_ResetHandler
-#pragma weak DMA3IntHandler = Default_ResetHandler
-#pragma weak FTFAIntHandler = Default_ResetHandler
-#pragma weak LVDIntHandler = Default_ResetHandler
-#pragma weak LLWUIntHandler = Default_ResetHandler
-#pragma weak I2C0IntHandler = Default_ResetHandler
-#pragma weak I2C1IntHandler = Default_ResetHandler
-#pragma weak SPI0IntHandler = Default_ResetHandler
-#pragma weak SPI1IntHandler = Default_ResetHandler
-#pragma weak UART0SEIntHandler = Default_ResetHandler
-#pragma weak UART1SEIntHandler = Default_ResetHandler
-#pragma weak UART2SEIntHandler = Default_ResetHandler
-#pragma weak ADCIntHandler = Default_ResetHandler
-#pragma weak ACMPIntHandler = Default_ResetHandler
-#pragma weak FTM0IntHandler = Default_ResetHandler
-#pragma weak FTM1IntHandler = Default_ResetHandler
-#pragma weak FTM2IntHandler = Default_ResetHandler
-#pragma weak RTCAIntHandler = Default_ResetHandler
-#pragma weak RTCSIntHandler = Default_ResetHandler
-#pragma weak PITIntHandler = Default_ResetHandler
-#pragma weak USBOTGIntHandler = Default_ResetHandler
-#pragma weak DACIntHandler = Default_ResetHandler
-#pragma weak TSIIntHandler = Default_ResetHandler
-#pragma weak MCGIntHandler = Default_ResetHandler
-#pragma weak LPTMRIntHandler = Default_ResetHandler
-#pragma weak PORTAIntHandler = Default_ResetHandler
-#pragma weak PORTDIntHandler = Default_ResetHandler
+#pragma weak NMI_Int_Handler = Default_Int_Handler
+#pragma weak HardFault_Int_Handler = Default_Int_Handler
+#pragma weak MemManage_Int_Handler = Default_Int_Handler
+#pragma weak BusFault_Int_Handler = Default_Int_Handler
+#pragma weak UsageFault_Int_Handler = Default_Int_Handler
+#pragma weak SVC_Int_Handler = Default_Int_Handler
+#pragma weak DebugMon_Int_Handler = Default_Int_Handler
+#pragma weak PendSV_Int_Handler = Default_Int_Handler
+#pragma weak SysTick_Int_Handler = Default_Int_Handler
+#pragma weak DMA0_Int_Handler = Default_ResetHandler
+#pragma weak DMA1_Int_Handler = Default_ResetHandler
+#pragma weak DMA2_Int_Handler = Default_ResetHandler
+#pragma weak DMA3_Int_Handler = Default_ResetHandler
+#pragma weak FTFA_Int_Handler = Default_ResetHandler
+#pragma weak LVD_Int_Handler = Default_ResetHandler
+#pragma weak LLWU_Int_Handler = Default_ResetHandler
+#pragma weak I2C0_Int_Handler = Default_ResetHandler
+#pragma weak I2C1_Int_Handler = Default_ResetHandler
+#pragma weak SPI0_Int_Handler = Default_ResetHandler
+#pragma weak SPI1_Int_Handler = Default_ResetHandler
+#pragma weak UART0SE_Int_Handler = Default_ResetHandler
+#pragma weak UART1SE_Int_Handler = Default_ResetHandler
+#pragma weak UART2SE_Int_Handler = Default_ResetHandler
+#pragma weak ADC_Int_Handler = Default_ResetHandler
+#pragma weak ACMP_Int_Handler = Default_ResetHandler
+#pragma weak FTM0_Int_Handler = Default_ResetHandler
+#pragma weak FTM1_Int_Handler = Default_ResetHandler
+#pragma weak FTM2_Int_Handler = Default_ResetHandler
+#pragma weak RTCA_Int_Handler = Default_ResetHandler
+#pragma weak RTCS_Int_Handler = Default_ResetHandler
+#pragma weak PIT_Int_Handler = Default_ResetHandler
+#pragma weak USBOTG_Int_Handler = Default_ResetHandler
+#pragma weak DAC_Int_Handler = Default_ResetHandler
+#pragma weak TSI_Int_Handler = Default_ResetHandler
+#pragma weak MCG_Int_Handler = Default_ResetHandler
+#pragma weak LPTMR_Int_Handler = Default_ResetHandler
+#pragma weak PORTA_Int_Handler = Default_ResetHandler
+#pragma weak PORTD_Int_Handler = Default_ResetHandler
 
 //*****************************************************************************
 //! \brief This is the code that gets called when the processor receives an
@@ -220,7 +226,7 @@ void Default_ResetHandler(void)
 //!
 //! \return None.
 //*****************************************************************************
-static void DefaultIntHandler(void)
+static void Default_Int_Handler(void)
 {
   for(;;);
 }

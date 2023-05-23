@@ -38,6 +38,9 @@
 #include "MKL46Z4.h"
 #include "pin_mux.h"
 #include <string.h>
+#include<stdio.h>
+#include<ctype.h>
+#include "lcd.h"
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
@@ -206,10 +209,16 @@ void PORTDIntHandler(void) {
     turn_green_led_off();
   }
 }
+void append(char* s, char c) {
+        int len = strlen(s);
+        s[len] = c;
+        s[len+1] = '\0';
+}
 int main(void)
 {
   char ch;
-
+  char str[100];
+  bool isnumber=true;
   enableInterrupt();
   sw1_ini();
   sw2_ini();
@@ -220,6 +229,7 @@ int main(void)
   irclk_ini(); // Enable internal ref clk to use by LCD
   enable_TPM();
 
+  lcd_ini();
   /* Init board hardware. */
   BOARD_InitPins();
   BOARD_BootClockRUN();
@@ -230,6 +240,39 @@ int main(void)
   while (1)
     {
       ch = GETCHAR();
+      if(!isdigit(ch) && ch!='\r'){
+        isnumber=false;
+      }
+      append(str,ch);
       PUTCHAR(ch);
+      if (ch=='\r'){
+        //strcat(str, "\r\n");
+        PRINTF("\r\n");
+        
+        if(strcmp(str,"led1\r")==0){
+          turn_red_led_on();
+          turn_green_led_off();
+        }
+        if(strcmp(str,"led2\r")==0){
+          turn_green_led_on();
+          turn_red_led_off();
+        }
+        if(strcmp(str,"off\r")==0){
+          turn_green_led_off();
+          turn_red_led_off();
+        }
+        if(strcmp(str,"toggle\r")==0){
+          led_green_toggle();
+          led_red_toggle();
+        }
+        if(isnumber){
+          lcd_display_dec(atoi(str));
+          PRINTF("EHNUMEROSIU\r\n");
+        }
+        
+      
+        memset(str,0,strlen(str));
+        isnumber=true;
+      }
     }
 }
